@@ -1,0 +1,939 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< org.example:StyleMatch >-----------------------
+[INFO] Building StyleMatch 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] >>> spring-boot:3.4.4:run (default-cli) > test-compile @ StyleMatch >>>
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ StyleMatch ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 15 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ StyleMatch ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ StyleMatch ---
+[INFO] skip non existing resourceDirectory /Users/albinakabaniuk/IdeaProjects/StyleMatch/src/test/resources
+[INFO] 
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ StyleMatch ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO] 
+[INFO] <<< spring-boot:3.4.4:run (default-cli) < test-compile @ StyleMatch <<<
+[INFO] 
+[INFO] 
+[INFO] --- spring-boot:3.4.4:run (default-cli) @ StyleMatch ---
+[INFO] Attaching agents: []
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2026-03-25T18:14:27.871+01:00  INFO 7405 --- [StyleMatch] [           main] com.stylematch.StyleMatchApplication     : Starting StyleMatchApplication using Java 26 with PID 7405 (/Users/albinakabaniuk/IdeaProjects/StyleMatch/target/classes started by albinakabaniuk in /Users/albinakabaniuk/IdeaProjects/StyleMatch)
+2026-03-25T18:14:27.872+01:00 DEBUG 7405 --- [StyleMatch] [           main] com.stylematch.StyleMatchApplication     : Running with Spring Boot v3.4.4, Spring v6.2.5
+2026-03-25T18:14:27.873+01:00  INFO 7405 --- [StyleMatch] [           main] com.stylematch.StyleMatchApplication     : No active profile set, falling back to 1 default profile: "default"
+2026-03-25T18:14:28.201+01:00  INFO 7405 --- [StyleMatch] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-03-25T18:14:28.227+01:00  INFO 7405 --- [StyleMatch] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2026-03-25T18:14:28.421+01:00  INFO 7405 --- [StyleMatch] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-03-25T18:14:28.427+01:00  INFO 7405 --- [StyleMatch] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-03-25T18:14:28.428+01:00  INFO 7405 --- [StyleMatch] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.39]
+2026-03-25T18:14:28.449+01:00  INFO 7405 --- [StyleMatch] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-03-25T18:14:28.449+01:00  INFO 7405 --- [StyleMatch] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 562 ms
+2026-03-25T18:14:28.503+01:00  INFO 7405 --- [StyleMatch] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-03-25T18:14:28.575+01:00  INFO 7405 --- [StyleMatch] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@19b5214b
+2026-03-25T18:14:28.576+01:00  INFO 7405 --- [StyleMatch] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-03-25T18:14:28.688+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.database                       : Set default schema name to public
+2026-03-25T18:14:28.855+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-03-25T18:14:28.871+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.ui                             : Database is up to date, no changesets to execute
+2026-03-25T18:14:28.871+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.changelog                      : Reading from public.databasechangelog
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : UPDATE SUMMARY
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : Run:                          0
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : Previously run:              14
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : Filtered out:                 0
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : -------------------------------
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : Total change sets:           14
+2026-03-25T18:14:28.875+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.util                           : Update summary generated
+2026-03-25T18:14:28.876+01:00  INFO 7405 --- [StyleMatch] [           main] liquibase.command                        : Command execution complete
+2026-03-25T18:14:28.906+01:00  INFO 7405 --- [StyleMatch] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-03-25T18:14:28.928+01:00  INFO 7405 --- [StyleMatch] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2026-03-25T18:14:28.942+01:00  INFO 7405 --- [StyleMatch] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-03-25T18:14:29.036+01:00  INFO 7405 --- [StyleMatch] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-03-25T18:14:29.070+01:00  INFO 7405 --- [StyleMatch] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.17
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-03-25T18:14:29.536+01:00  INFO 7405 --- [StyleMatch] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-03-25T18:14:29.555+01:00  INFO 7405 --- [StyleMatch] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25T18:14:29.674+01:00 DEBUG 7405 --- [StyleMatch] [           main] c.s.security.JwtAuthenticationFilter     : Filter 'jwtAuthenticationFilter' configured for use
+2026-03-25T18:14:29.739+01:00  INFO 7405 --- [StyleMatch] [           main] eAuthenticationProviderManagerConfigurer : Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-03-25T18:14:29.739+01:00  WARN 7405 --- [StyleMatch] [           main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with an AuthenticationProvider bean. UserDetailsService beans will not be used by Spring Security for automatically configuring username/password login. Consider removing the AuthenticationProvider bean. Alternatively, consider using the UserDetailsService in a manually instantiated DaoAuthenticationProvider. If the current configuration is intentional, to turn off this warning, increase the logging level of 'org.springframework.security.config.annotation.authentication.configuration.InitializeUserDetailsBeanManagerConfigurer' to ERROR
+2026-03-25T18:14:29.781+01:00  WARN 7405 --- [StyleMatch] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-03-25T18:14:29.965+01:00  INFO 7405 --- [StyleMatch] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-03-25T18:14:29.969+01:00  INFO 7405 --- [StyleMatch] [           main] com.stylematch.StyleMatchApplication     : Started StyleMatchApplication in 2.236 seconds (process running for 2.349)
+2026-03-25T18:14:29.970+01:00  INFO 7405 --- [StyleMatch] [           main] com.stylematch.config.DataInitializer    : Checking if sample data needs to be initialized...
+2026-03-25T18:14:29.972+01:00  INFO 7405 --- [StyleMatch] [           main] c.s.service.impl.CustomerServiceImpl     : Fetching all customers
+Hibernate: 
+    select
+        c1_0.id,
+        c1_0.body_shape,
+        c1_0.color_type,
+        c1_0.contrast_level,
+        c1_0.created_at,
+        c1_0.email,
+        c1_0.name,
+        c1_0.undertone,
+        c1_0.updated_at 
+    from
+        customers c1_0
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:18:19.973+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-03-25T18:18:19.973+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-03-25T18:18:19.975+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-03-25T18:18:20.270+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 171 ms
+2026-03-25T18:19:02.107+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] c.s.controller.AuthenticationController  : Login attempt: littleritmix@gmail.com
+2026-03-25T18:19:02.108+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.AuthService       : [AUTH] Login attempt — email=littleritmix@gmail.com
+2026-03-25T18:19:02.184+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:19:02.257+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.AuthService       : [PERF] BCrypt authenticate took 149ms
+2026-03-25T18:19:02.280+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.AuthService       : [AUTH] Login SUCCESS: littleritmix@gmail.com, total=172ms
+2026-03-25T18:19:02.281+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] c.s.controller.AuthenticationController  : Login SUCCESS: littleritmix@gmail.com
+2026-03-25T18:21:50.417+01:00 DEBUG 7405 --- [StyleMatch] [io-8080-exec-10] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:21:50.426+01:00  INFO 7405 --- [StyleMatch] [io-8080-exec-10] c.stylematch.controller.UserController   : GET /api/users/me called by littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:21:50.436+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:21:50.438+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:21:50.441+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-1] c.stylematch.controller.UserController   : GET /api/users/me called by littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        tr1_0.id,
+        tr1_0.created_at,
+        tr1_0.metadata,
+        tr1_0.result,
+        tr1_0.summary,
+        tr1_0.test_type,
+        tr1_0.user_id 
+    from
+        test_results tr1_0 
+    where
+        tr1_0.user_id=? 
+    order by
+        tr1_0.created_at desc
+2026-03-25T18:21:50.458+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        tr1_0.id,
+        tr1_0.created_at,
+        tr1_0.metadata,
+        tr1_0.result,
+        tr1_0.summary,
+        tr1_0.test_type,
+        tr1_0.user_id 
+    from
+        test_results tr1_0 
+    where
+        tr1_0.user_id=? 
+    order by
+        tr1_0.created_at desc
+2026-03-25T18:21:53.849+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        tr1_0.id,
+        tr1_0.created_at,
+        tr1_0.metadata,
+        tr1_0.result,
+        tr1_0.summary,
+        tr1_0.test_type,
+        tr1_0.user_id 
+    from
+        test_results tr1_0 
+    where
+        tr1_0.user_id=?
+2026-03-25T18:21:53.872+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.stylematch.service.TestResultService   : Deleted all test results for user: littleritmix@gmail.com
+Hibernate: 
+    delete 
+    from
+        test_results 
+    where
+        id=?
+Hibernate: 
+    delete 
+    from
+        test_results 
+    where
+        id=?
+2026-03-25T18:33:54.669+01:00 ERROR 7405 --- [StyleMatch] [nio-8080-exec-5] c.s.exception.GlobalExceptionHandler     : Unhandled exception occurred
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource health/ping.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at com.stylematch.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:39) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at java.base/java.lang.Thread.run(Thread.java:1516) ~[na:na]
+
+2026-03-25T18:34:50.317+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:34:50.332+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@19b5214b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.334+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@263d90a6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.334+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@65383474 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.335+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3aa3c9fe (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.335+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2c0a98f6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.335+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@66789571 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.335+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4247965e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.336+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@668f5bd1 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.336+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1ebaa2de (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.336+01:00  WARN 7405 --- [StyleMatch] [nio-8080-exec-2] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3ccb6f65 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-03-25T18:34:50.369+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-2] c.s.controller.AuthenticationController  : Login attempt: littleritmix@gmail.com
+2026-03-25T18:34:50.370+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.AuthService       : [AUTH] Login attempt — email=littleritmix@gmail.com
+2026-03-25T18:34:50.370+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:34:50.450+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.AuthService       : [PERF] BCrypt authenticate took 80ms
+2026-03-25T18:34:50.451+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-2] com.stylematch.service.AuthService       : [AUTH] Login SUCCESS: littleritmix@gmail.com, total=81ms
+2026-03-25T18:34:50.451+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-2] c.s.controller.AuthenticationController  : Login SUCCESS: littleritmix@gmail.com
+2026-03-25T18:35:12.362+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:35:12.436+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.controller.AnalysisController        : [PERF] POST /api/analysis/test — user=littleritmix@gmail.com
+2026-03-25T18:35:12.436+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.controller.AnalysisController        : Incoming TestAnalysisRequest: TestAnalysisRequest(answers=[TestAnswer(questionId=1, answer=A), TestAnswer(questionId=2, answer=B), TestAnswer(questionId=3, answer=B), TestAnswer(questionId=4, answer=B), TestAnswer(questionId=5, answer=C), TestAnswer(questionId=6, answer=B), TestAnswer(questionId=7, answer=B), TestAnswer(questionId=8, answer=B)], language=uk-UA)
+2026-03-25T18:35:12.436+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AnalysisService   : [PERF] analyzeTest start — user=littleritmix@gmail.com, answers=8
+2026-03-25T18:35:12.436+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AnalysisService   : Built answerMap for COLOR_TYPE: {1=A, 2=B, 3=B, 4=B, 5=C, 6=B, 7=B, 8=B}
+2026-03-25T18:35:12.436+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AIService         : API Key is 'demo', returning mock AI result for COLOR_TYPE
+2026-03-25T18:35:12.437+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AIService         : MOCK AI [COLOR_TYPE] processing for user littleritmix@gmail.com. Answers: [TestAnswer(questionId=1, answer=A), TestAnswer(questionId=2, answer=B), TestAnswer(questionId=3, answer=B), TestAnswer(questionId=4, answer=B), TestAnswer(questionId=5, answer=C), TestAnswer(questionId=6, answer=B), TestAnswer(questionId=7, answer=B), TestAnswer(questionId=8, answer=B)]
+Hibernate: 
+    insert 
+    into
+        analysis_results
+        (chroma, color_type, contrast_level, created_at, depth, input_type, raw_data, undertone, user_id, id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        analysis_answers
+        (analysis_id, answer_value, question_id, id) 
+    values
+        (?, ?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        test_results
+        (created_at, metadata, result, summary, test_type, user_id) 
+    values
+        (?, ?, ?, ?, ?, ?)
+2026-03-25T18:35:12.459+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AnalysisService   : [PERF] Analysis completed for user=littleritmix@gmail.com (Total time: 23ms)
+2026-03-25T18:35:12.464+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.controller.AnalysisController        : [PERF] POST /api/analysis/test total=28ms
+2026-03-25T18:35:15.703+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-9] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:35:15.711+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-9] c.stylematch.controller.UserController   : GET /api/users/me called by littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:35:15.719+01:00 DEBUG 7405 --- [StyleMatch] [io-8080-exec-10] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:35:15.722+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-1] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:35:15.726+01:00  INFO 7405 --- [StyleMatch] [io-8080-exec-10] c.stylematch.controller.UserController   : GET /api/users/me called by littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        tr1_0.id,
+        tr1_0.created_at,
+        tr1_0.metadata,
+        tr1_0.result,
+        tr1_0.summary,
+        tr1_0.test_type,
+        tr1_0.user_id 
+    from
+        test_results tr1_0 
+    where
+        tr1_0.user_id=? 
+    order by
+        tr1_0.created_at desc
+2026-03-25T18:35:15.736+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+Hibernate: 
+    select
+        tr1_0.id,
+        tr1_0.created_at,
+        tr1_0.metadata,
+        tr1_0.result,
+        tr1_0.summary,
+        tr1_0.test_type,
+        tr1_0.user_id 
+    from
+        test_results tr1_0 
+    where
+        tr1_0.user_id=? 
+    order by
+        tr1_0.created_at desc
+2026-03-25T18:40:07.582+01:00 ERROR 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.exception.GlobalExceptionHandler     : Unhandled exception occurred
+
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource health/ping.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.39.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:101) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at com.stylematch.security.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:39) ~[classes/:na]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:243) ~[spring-webmvc-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:238) ~[spring-security-config-6.4.4.jar:6.4.4]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:362) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:278) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.5.jar:6.2.5]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.39.jar:10.1.39]
+	at java.base/java.lang.Thread.run(Thread.java:1516) ~[na:na]
+
+2026-03-25T18:40:46.032+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-4] c.s.controller.AuthenticationController  : Login attempt: littleritmix@gmail.com
+2026-03-25T18:40:46.033+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.AuthService       : [AUTH] Login attempt — email=littleritmix@gmail.com
+2026-03-25T18:40:46.034+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:40:46.138+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.AuthService       : [PERF] BCrypt authenticate took 105ms
+2026-03-25T18:40:46.139+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-4] com.stylematch.service.AuthService       : [AUTH] Login SUCCESS: littleritmix@gmail.com, total=106ms
+2026-03-25T18:40:46.139+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-4] c.s.controller.AuthenticationController  : Login SUCCESS: littleritmix@gmail.com
+2026-03-25T18:47:52.161+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:47:52.181+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.controller.AuthenticationController  : Login attempt: littleritmix@gmail.com
+2026-03-25T18:47:52.182+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AuthService       : [AUTH] Login attempt — email=littleritmix@gmail.com
+2026-03-25T18:47:52.182+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:47:52.273+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AuthService       : [PERF] BCrypt authenticate took 91ms
+2026-03-25T18:47:52.274+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] com.stylematch.service.AuthService       : [AUTH] Login SUCCESS: littleritmix@gmail.com, total=92ms
+2026-03-25T18:47:52.274+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-3] c.s.controller.AuthenticationController  : Login SUCCESS: littleritmix@gmail.com
+2026-03-25T18:50:00.184+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-7] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:50:00.204+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-7] c.s.controller.AuthenticationController  : Login attempt: littleritmix@gmail.com
+2026-03-25T18:50:00.205+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-7] com.stylematch.service.AuthService       : [AUTH] Login attempt — email=littleritmix@gmail.com
+2026-03-25T18:50:00.205+01:00 DEBUG 7405 --- [StyleMatch] [nio-8080-exec-7] com.stylematch.service.UserService       : UserDetailsService: loading user by email: littleritmix@gmail.com
+Hibernate: 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.avatar,
+        u1_0.clothing_size,
+        u1_0.email,
+        u1_0.gender,
+        u1_0.height,
+        u1_0.name,
+        u1_0.password,
+        u1_0.preferred_language,
+        u1_0.role,
+        u1_0.weight 
+    from
+        users u1_0 
+    where
+        u1_0.email=?
+2026-03-25T18:50:00.291+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-7] com.stylematch.service.AuthService       : [PERF] BCrypt authenticate took 86ms
+2026-03-25T18:50:00.292+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-7] com.stylematch.service.AuthService       : [AUTH] Login SUCCESS: littleritmix@gmail.com, total=87ms
+2026-03-25T18:50:00.292+01:00  INFO 7405 --- [StyleMatch] [nio-8080-exec-7] c.s.controller.AuthenticationController  : Login SUCCESS: littleritmix@gmail.com
+2026-03-25T18:51:31.053+01:00  INFO 7405 --- [StyleMatch] [ionShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-03-25T18:51:31.059+01:00  INFO 7405 --- [StyleMatch] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-03-25T18:51:31.064+01:00  INFO 7405 --- [StyleMatch] [ionShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-03-25T18:51:31.067+01:00  INFO 7405 --- [StyleMatch] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-03-25T18:51:31.068+01:00  INFO 7405 --- [StyleMatch] [ionShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

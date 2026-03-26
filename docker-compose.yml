@@ -1,0 +1,52 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: stylematch-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: railway
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    volumes:
+      - stylematch-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d password"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: .
+    container_name: stylematch-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=postgres
+      - SPRING_DATASOURCE_USERNAME=stylematch
+      - SPRING_DATASOURCE_PASSWORD=stylematch
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - stylematch-network
+
+  frontend:
+    build: 
+      context: ./frontend
+      args:
+        - VITE_API_URL=/api
+    container_name: stylematch-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    networks:
+      - stylematch-network
+
+networks:
+  stylematch-network:
+    driver: bridge
+
+volumes:
+  stylematch-db-data:

@@ -1,0 +1,366 @@
+{
+  "profile": {
+    "title": "내 프로필 ✨",
+    "user": "사용자",
+    "bodyShape": "체형",
+    "colorHistory": "컬러 히스토리",
+    "results": "결과",
+    "noResults": "결과가 없습니다",
+    "stats": {
+      "memberSince": "회원 가입일",
+      "tests": "테스트 횟수"
+    },
+    "avatarUpload": "아바타 업로드",
+    "avatarOptions": "아바타 옵션",
+    "uploadOwn": "또는 직접 사진 업로드",
+    "clothingSize": "의류 사이즈",
+    "selectSize": "사이즈 선택",
+    "saveProfile": "프로필 저장",
+    "sizes": {
+      "XXS": "XXS",
+      "XS": "XS",
+      "S": "S",
+      "M": "M",
+      "L": "L",
+      "XL": "XL",
+      "XXL": "XXL",
+      "XXXL": "XXXL"
+    }
+  },
+  "nav": {
+    "profile": "프로필",
+    "logout": "로그아웃",
+    "styleTest": "스타일 테스트",
+    "bodyShape": "체형",
+    "login": "로그인",
+    "signUpLink": "가입하기"
+  },
+  "auth": {
+    "signInTitle": "로그인",
+    "createAccountTitle": "계정 생성",
+    "email": "이메일",
+    "password": "비밀번호",
+    "forgotPassword": "비밀번호를 잊으셨나요?",
+    "signInBtn": "로그인 ✨",
+    "signUpBtn": "가입하기",
+    "noAccount": "계정이 없으신가요?",
+    "hasAccount": "이미 계정이 있으신가요?",
+    "forgotTitle": "비밀번호를 잊으셨나요?",
+    "forgotSubtitle": "이메일을 입력하시면 비밀번호 재설정 링크를 보내드립니다",
+    "sendReset": "링크 보내기 ✨",
+    "forgotSuccess": "재설정 링크가 전송되었습니다! 이메일을 확인해주세요.",
+    "backToLogin": "로그인으로 돌아가기",
+    "resetTitle": "비밀번호 재설정",
+    "resetToken": "재설정 토큰",
+    "newPassword": "새 비밀번호",
+    "resetBtn": "비밀번호 업데이트 ✨"
+  },
+  "test": {
+    "result": {
+      "title": "당신의 스타일 아이덴티티"
+    },
+    "questions": {
+      "1": {
+        "text": "당신의 타고난 피부 톤을 가장 잘 설명하는 것은 무엇입니까?",
+        "answers": {
+          "A": "밝은 / 포슬린",
+          "B": "중간 / 내추럴",
+          "C": "어두운 / 리치"
+        }
+      },
+      "2": {
+        "text": "당신의 타고난 머리 색깔(또는 어린 시절의 색깔)은 무엇입니까?",
+        "answers": {
+          "A": "밝은 금발 / 빨강",
+          "B": "애쉬 브라운 / 블랙",
+          "C": "골든 브라운 / 어번"
+        }
+      },
+      "3": {
+        "text": "당신의 타고난 눈 색깔은 무엇입니까?",
+        "answers": {
+          "A": "파란색 / 회색",
+          "B": "초록색 / 헤이즐",
+          "C": "갈색 / 블랙"
+        }
+      },
+      "4": {
+        "text": "어떤 주얼리 금속이 당신의 안색을 가장 잘 살려줍니까?",
+        "answers": {
+          "A": "화사한 골드",
+          "B": "차가운 실버 / 플래티넘",
+          "C": "부드러운 로즈 골드 / 둘 다"
+        }
+      },
+      "5": {
+        "text": "머리카락, 눈, 피부 사이의 대비는 어느 정도입니까?",
+        "answers": {
+          "A": "낮음 (부드럽고 섬세함)",
+          "B": "중간 (균형 잡힘)",
+          "C": "높음 (선명하고 드라마틱함)"
+        }
+      },
+      "6": {
+        "text": "피부가 햇빛에 보통 어떻게 반응합니까?",
+        "answers": {
+          "A": "쉽게 화상을 입음 / 분홍색으로 변함",
+          "B": "쉽게 탐 / 황금색으로 변함"
+        }
+      },
+      "7": {
+        "text": "손목 안쪽 혈관이 어떤 색으로 보입니까?",
+        "answers": {
+          "A": "파란색 / 보라색",
+          "B": "초록색 / 올리브색",
+          "C": "혼합 / 중립"
+        }
+      },
+      "8": {
+        "text": "화장기 없는 입술의 자연스러운 톤은 무엇입니까?",
+        "answers": {
+          "A": "쿨 핑크 / 모브",
+          "B": "웜 피치 / 코랄"
+        }
+      }
+    }
+  },
+  "bodyShape": {
+    "hourglass": "모래시계형",
+    "pear": "배형",
+    "apple": "사과형",
+    "rectangle": "직사각형형",
+    "inverted_triangle": "역삼각형형",
+    "widestPartQuestion": "거울을 보았을 때 몸의 어느 부분이 가장 넓어 보이나요?",
+    "waistlineDescription": "당신의 허리 라인을 어떻게 설명하시겠습니까?",
+    "hipCurveQuestion": "어깨와 비교했을 때 골반/힙은 어떤가요?",
+    "shoulderLineQuestion": "당신의 어깨 라인을 어떻게 설명하시겠습니까?",
+    "bustRelativeQuestion": "체격에 비해 가슴 크기는 어떤 편인가요?",
+    "weightDistQuestion": "살이 찔 때 주로 어느 부위부터 찌거나 어디에 몰려 있나요?",
+    "overallFrameQuestion": "전반적인 골격 체격은 어떤가요?",
+    "shoulders": "어깨",
+    "bust": "가슴",
+    "waist": "허리 (복부)",
+    "hips": "골반/힙",
+    "equal": "전체적으로 균형 잡힘",
+    "veryDefined": "매우 뚜렷함 (곡선이 큼)",
+    "slightlyDefined": "완만하게 뚜렷함",
+    "straightAthletic": "일자형 또는 스포티함",
+    "wideFull": "넓거나 통통함",
+    "highWaist": "높은 허리 라인",
+    "roundedFull": "둥글고 볼륨 있음",
+    "straightSlim": "일자형이고 마름",
+    "widerThanShoulders": "어깨보다 확연히 넓음",
+    "narrowerThanShoulders": "어깨보다 확연히 좁음",
+    "average": "평균적인 비율",
+    "broadStrong": "넓고 탄탄함",
+    "squarePiercing": "각지고 뚜렷함",
+    "softSloped": "부드럽고 처진 형",
+    "petiteNarrow": "작고 좁음",
+    "smallBust": "작은 편",
+    "mediumBust": "보통",
+    "largeBust": "큰 편",
+    "gainHips": "골반과 허벅지",
+    "gainMiddle": "복부/배 주위",
+    "gainEvenly": "전체적으로 고르게",
+    "gainTop": "어깨와 팔 주위",
+    "framePetite": "작고 왜소함",
+    "frameAverage": "보통/평균",
+    "frameAthletic": "키가 크거나 건장함",
+    "calculatingSilhouette": "실루엣 계산 중...",
+    "analysisFailed": "체형 분석에 실패했습니다. 다시 시도해 주세요.",
+    "topRecommendations": "스타일링 추천",
+    "viewProfileBtn": "마이 프로필 보기",
+    "retakeTestBtn": "테스트 다시 하기 ✨",
+    "analysisTitle": "체형 분석",
+    "stepLabel": "단계",
+    "stepOf": "중"
+  },
+  "result": {
+    "colorType": "퍼스널 컬러 타입",
+    "season": "계절",
+    "undertone": "언더톤",
+    "contrast": "대비",
+    "seasons": {
+      "WINTER": "겨울",
+      "SUMMER": "여름",
+      "SPRING": "봄",
+      "AUTUMN": "가을",
+      "Deep Winter": "딥 윈터",
+      "Cool Winter": "쿨 윈터",
+      "Bright Winter": "브라이트 윈터",
+      "Light Summer": "라이트 서머",
+      "Cool Summer": "쿨 서머",
+      "Soft Summer": "소프트 서머",
+      "Light Spring": "라이트 스프링",
+      "Warm Spring": "웜 스프링",
+      "Bright Spring": "브라이트 스프링",
+      "Deep Autumn": "딥 오텀",
+      "Warm Autumn": "웜 오텀",
+      "Soft Autumn": "소프트 오텀"
+    },
+    "result": {
+      "undertone": "언더톤",
+      "contrast": "대비",
+      "depth": "깊이",
+      "chroma": "채도",
+      "yourPalette": "베스트 컬러",
+      "signaturePalette": "대표 팔레트",
+      "recommendedPalette": "추천 팔레트",
+      "styleAdvice": "AI 스타일 조언",
+      "aiStylingAdvice": "AI 스타일 조언",
+      "personalAdvice": "AI 스타일 조언",
+      "noAdvice": "조언을 불러올 수 없습니다.",
+      "aiOffline": "AI 스타일 조언이 현재 오프라인 상태입니다. 기본 결과가 저장되었습니다! 전체 맞춤형 권장 사항을 보려면 나중에 다시 확인해 주세요.",
+      "aiSummaryFallback": "AI 분석을 사용할 수 없지만 기본 결과는 저장되었습니다. 전체 권장 사항을 보려면 나중에 다시 시도해 주세요."
+    },
+    "undertones": {
+      "COOL": "쿨",
+      "WARM": "웜",
+      "NEUTRAL": "내추럴",
+      "Cool": "쿨",
+      "Warm": "웜",
+      "Neutral": "내추럴"
+    },
+    "contrastLevels": {
+      "LOW": "낮음",
+      "MEDIUM": "중간",
+      "HIGH": "높음",
+      "Low": "낮음",
+      "Medium": "중간",
+      "High": "높음"
+    },
+    "depths": {
+      "LIGHT": "밝음",
+      "MEDIUM": "중간",
+      "DEEP": "어두움"
+    },
+    "chromas": {
+      "CLEAR": "선명함",
+      "SOFT": "부드러움"
+    },
+    "viewProfile": "프로필로 이동",
+    "retake": "다시 하기",
+    "retakeBtn": "다시 하기 ✨"
+  },
+  "bodyTypes": {
+    "HOURGLASS": "모래시계형",
+    "PEAR": "배형",
+    "APPLE": "사과형",
+    "RECTANGLE": "직사각형형",
+    "INVERTED_TRIANGLE": "역삼각형형"
+  },
+  "colorTypes": {
+    "WINTER": "겨울",
+    "SUMMER": "여름",
+    "SPRING": "봄",
+    "AUTUMN": "가을",
+    "DEEP_WINTER": "딥 윈터",
+    "COOL_WINTER": "쿨 윈터",
+    "BRIGHT_WINTER": "브라이트 윈터",
+    "LIGHT_SUMMER": "라이트 서머",
+    "COOL_SUMMER": "쿨 서머",
+    "SOFT_SUMMER": "소프트 서머",
+    "LIGHT_SPRING": "라이트 스프링",
+    "WARM_SPRING": "웜 스프링",
+    "BRIGHT_SPRING": "브라이트 스프링",
+    "DEEP_AUTUMN": "딥 오텀",
+    "WARM_AUTUMN": "웜 오텀",
+    "SOFT_AUTUMN": "소프트 오텀"
+  },
+  "analysis": {
+    "colorType": "퍼스널 컬러",
+    "colorTypeTitle": "퍼스널 컬러",
+    "bodyShape": "체형",
+    "personalAdvice": "AI 스타일 조언",
+    "yourPalette": "추천 팔레트",
+    "heroTitle": "당신의 스타일 DNA를 발견하세요",
+    "heroSub": "완벽한 룩을 위한 AI 분석",
+    "photoScan": "포토 스캔",
+    "question": "질문",
+    "of": "중",
+    "analyzing": "분석 중...",
+    "reveal": "결과 확인",
+    "viewProfile": "결과 확인",
+    "viewProfileBtn": "프로필 보기",
+    "next": "다음"
+  },
+  "common": {
+    "delete": "삭제",
+    "cancel": "취소",
+    "save": "저장",
+    "na": "없음"
+  },
+  "errors": {
+    "generic": "문제가 발생했습니다. 다시 시도해 주세요."
+  },
+  "loading": "로딩 중...",
+  "retry": "다시 시도",
+  "not Loaded": "프로필을 불러오지 못했습니다",
+  "edit Profile": "프로필 수정",
+  "settings": "설정",
+  "delete Account": "계정 삭제",
+  "age": "나이",
+  "gender": "성별",
+  "height": "신장",
+  "weight": "체중",
+  "female": "여성",
+  "male": "남성",
+  "other": "기타",
+  "select": "선택",
+  "tips": {
+    "silverJewelry": "실버와 플래티넘 주얼리는 당신의 쿨한 언더톤을 아름답게 돋보이게 합니다.",
+    "goldJewelry": "골드와 브라스 주얼리는 당신의 따뜻한 광채와 완벽하게 어우러집니다.",
+    "berryTones": "풍부한 베리 톤과 주얼 톤은 당신을 강렬하고 화려하게 만들어 줍니다.",
+    "earthTones": "올리브, 러스트, 머스터드와 같은 어스 톤은 당신의 깊이감과 조화롭게 어울립니다.",
+    "crispWhite": "깨끗한 화이트와 대조되는 블랙은 당신에게 아주 잘 어울립니다.",
+    "creamyBeige": "따뜻한 크림색과 부드러운 베이지는 순백색보다 훨씬 더 잘 어울립니다.",
+    "charcoalGrey": "차콜과 깊은 네이비는 당신에게 가장 세련된 중성색입니다.",
+    "warmTerracotta": "따뜻한 테라코타와 번트 오렌지는 당신의 이목구비를 더욱 뚜렷하게 해줍니다.",
+    "winter": {
+      "contrast": "드라마틱하고 패셔너블한 룩을 위해 고대비 조합을 활용해 보세요.",
+      "jewels": "에메랄드, 사파이어, 루비는 당신에게 가장 힘을 주는 컬러입니다.",
+      "icy": "차갑고 서리가 내린 듯한 파스텔 컬러를 포인트로 활용해 보세요."
+    },
+    "summer": {
+      "muted": "선명하거나 형광빛이 도는 컬러보다 부드럽고 차분한 컬러가 훨씬 더 잘 어울립니다.",
+      "pastels": "라벤더, 더스티 로즈와 같은 시원하고 파우더리한 파스텔이 자연스럽게 어울립니다.",
+      "silver": "액세서리는 무광 실버나 매트한 퓨터를 추천합니다."
+    },
+    "spring": {
+      "warm": "피치, 코랄과 같이 맑고 따뜻한 컬러는 당신의 생기를 북돋아 줍니다.",
+      "clear": "탁하거나 너무 차분한 컬러는 피하고, 팔레트를 신선하고 밝게 유지하세요.",
+      "gold": "옐로우 골드 주얼리는 당신의 피부에 완벽한 온기를 더해줍니다."
+    },
+    "autumn": {
+      "earthy": "풍부한 어스톤(Earthy colors)은 당신의 가장 좋은 친구입니다. 포레스트 그린과 황토색을 생각해 보세요.",
+      "rich": "밝은 파스텔 톤보다는 깊고 채도가 높은 따뜻한 톤을 선택하세요.",
+      "gold": "앤틱 골드와 구리 장신구는 당신의 피부에 경이로울 정도로 잘 어울립니다."
+    },
+    "hourglass": {
+      "tops": "허리 라인을 강조하기 위한 V닉 상의와 랩 스타일.",
+      "bottoms": "하이웨이스트 팬츠와 펜슬 스커트.",
+      "dresses": "랩 드레스와 핏앤플레어(Fit-and-flare) 실루엣."
+    },
+    "pear": {
+      "tops": "어깨와 골반의 균형을 맞추기 위한 보트넥과 포인트 소매.",
+      "bottoms": "어두운 색상의 A라인 스커트와 와이드 레그 팬츠.",
+      "dresses": "엠파이어 웨이스트와 A라인 드레스가 가장 잘 어울립니다."
+    },
+    "apple": {
+      "tops": "엠파이어 웨이스트 상의와 V넥 튜닉이 매우 잘 어울립니다.",
+      "bottoms": "복부의 균형을 맞추기 위한 스트레이트 레그 또는 부츠컷 팬츠.",
+      "dresses": "시프트 드레스와 엠파이어 웨이스트 실루엣이 멋지게 어울립니다."
+    },
+    "rectangle": {
+      "tops": "곡선의 착시를 만들기 위한 러플 상의와 페플럼 스타일.",
+      "bottoms": "카고 팬츠와 볼륨감이 추가된 스커트.",
+      "dresses": "컷아웃 드레스와 벨트로 라인을 살린 스타일."
+    },
+    "inverted_triangle": {
+      "tops": "어깨를 시각적으로 좁아 보이게 하는 홀터넥과 V넥.",
+      "bottoms": "하체에 볼륨을 더해주는 와이드 레그 팬츠와 플리츠 스커트.",
+      "dresses": "A라인과 핏앤플레어 드레스가 당신에게 완벽합니다."
+    }
+  },
+  "clear": "지우기"
+}

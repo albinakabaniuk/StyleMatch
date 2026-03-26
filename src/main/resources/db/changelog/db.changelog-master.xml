@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <include file="db/changelog/001-create-schema.sql"/>
+    <include file="db/changelog/002-create-users-schema.sql"/>
+    <include file="db/changelog/003-create-analysis-schema.sql"/>
+    <include file="db/changelog/004-add-preferred-language.sql"/>
+    <include file="db/changelog/005-rename-question-key-to-id.sql"/>
+    <include file="db/changelog/006-create-password-reset-tokens.sql"/>
+    <include file="db/changelog/007-add-user-profile-fields.sql"/>
+    <include file="db/changelog/008-create-test-results-schema.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/009-migrate-body-shape-enum.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/010-refine-test-results.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/changeset/011-add-user-gender.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/changeset/012-add-analysis-depth-chroma.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/013-add-test-result-summary.sql" relativeToChangelogFile="false"/>
+    <include file="db/changelog/014-add-avatar-and-clothing-size.sql" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

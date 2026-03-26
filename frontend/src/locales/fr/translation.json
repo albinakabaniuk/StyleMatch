@@ -1,0 +1,366 @@
+{
+  "profile": {
+    "title": "Votre Profil ✨",
+    "user": "Utilisateur",
+    "bodyShape": "Morphologie",
+    "colorHistory": "Historique des couleurs",
+    "results": "Résultats",
+    "noResults": "Aucun résultat pour le moment",
+    "stats": {
+      "memberSince": "Membre depuis",
+      "tests": "Tests effectués"
+    },
+    "avatarUpload": "Télécharger un avatar",
+    "avatarOptions": "Options d'avatar",
+    "uploadOwn": "Ou téléchargez votre propre photo",
+    "clothingSize": "Taille de vêtement",
+    "selectSize": "Choisir la taille",
+    "saveProfile": "Enregistrer le profil",
+    "sizes": {
+      "XXS": "XXS",
+      "XS": "XS",
+      "S": "S",
+      "M": "M",
+      "L": "L",
+      "XL": "XL",
+      "XXL": "XXL",
+      "XXXL": "XXXL"
+    }
+  },
+  "nav": {
+    "profile": "Profil",
+    "logout": "Déconnexion",
+    "styleTest": "Test de Style",
+    "bodyShape": "Morphologie",
+    "login": "Connexion",
+    "signUpLink": "S'inscrire"
+  },
+  "auth": {
+    "signInTitle": "S'identifier",
+    "createAccountTitle": "Créer un compte",
+    "email": "Email",
+    "password": "Mot de passe",
+    "forgotPassword": "Mot de passe oublié ?",
+    "signInBtn": "Se connecter ✨",
+    "signUpBtn": "S'inscrire",
+    "noAccount": "Pas de compte ?",
+    "hasAccount": "Déjà un compte ?",
+    "forgotTitle": "Mot de passe oublié",
+    "forgotSubtitle": "Entrez votre email pour recevoir un lien de réinitialisation",
+    "sendReset": "Envoyer le lien ✨",
+    "forgotSuccess": "Lien envoyé ! Veuillez vérifier votre boîte mail.",
+    "backToLogin": "Retour à l'identification",
+    "resetTitle": "Réinitialiser le mot de passe",
+    "resetToken": "Jeton de réinitialisation",
+    "newPassword": "Nouveau mot de passe",
+    "resetBtn": "Mettre à jour le mot de passe ✨"
+  },
+  "test": {
+    "result": {
+      "title": "Votre Identité de Style"
+    },
+    "questions": {
+      "1": {
+        "text": "Qu'est-ce qui décrit le mieux votre teint naturel ?",
+        "answers": {
+          "A": "Clair / Porcelaine",
+          "B": "Moyen / Neutre",
+          "C": "Foncé / Riche"
+        }
+      },
+      "2": {
+        "text": "Quelle est votre couleur de cheveux naturelle (ou celle de votre enfance)?",
+        "answers": {
+          "A": "Blond clair / Roux",
+          "B": "Châtain cendré / Noir",
+          "C": "Châtain doré / Auburn"
+        }
+      },
+      "3": {
+        "text": "Quelle est votre couleur d'yeux naturelle ?",
+        "answers": {
+          "A": "Bleu / Gris",
+          "B": "Vert / Noisette",
+          "C": "Marron / Noir"
+        }
+      },
+      "4": {
+        "text": "Quel métal de bijou met le mieux en valeur votre teint ?",
+        "answers": {
+          "A": "Or éclatant",
+          "B": "Argent glacé / Platine",
+          "C": "Or rose doux / Les deux"
+        }
+      },
+      "5": {
+        "text": "Quel est le niveau de contraste entre vos cheveux, vos yeux et votre peau ?",
+        "answers": {
+          "A": "Faible (Doux & Délicat)",
+          "B": "Moyen (Équilibré)",
+          "C": "Élevé (Saisissant & Dramatique)"
+        }
+      },
+      "6": {
+        "text": "Comment votre peau réagit-elle normalement au soleil ?",
+        "answers": {
+          "A": "Brûle facilement / Devient rose",
+          "B": "Bronze facilement / Devient dorée"
+        }
+      },
+      "7": {
+        "text": "De quelle couleur apparaissent les veines de votre poignet ?",
+        "answers": {
+          "A": "Bleu / Violet",
+          "B": "Vert / Olive",
+          "C": "Mixte / Neutre"
+        }
+      },
+      "8": {
+        "text": "Quel est le ton naturel de vos lèvres sans produit ?",
+        "answers": {
+          "A": "Rose froid / Mauve",
+          "B": "Pêche chaud / Corail"
+        }
+      }
+    }
+  },
+  "bodyShape": {
+    "hourglass": "Sablier",
+    "pear": "Poire",
+    "apple": "Pomme",
+    "rectangle": "Rectangle",
+    "inverted_triangle": "Triangle inversé",
+    "widestPartQuestion": "Quelle partie de votre corps semble la plus large lorsque vous vous regardez dans le miroir ?",
+    "waistlineDescription": "Comment décririez-vous votre taille ?",
+    "hipCurveQuestion": "Comment vos hanches apparaissent-elles par rapport à vos épaules ?",
+    "shoulderLineQuestion": "Comment décririez-vous votre ligne d'épaules ?",
+    "bustRelativeQuestion": "Comment décririez-vous la taille de votre poitrine par rapport à votre stature ?",
+    "weightDistQuestion": "Où avez-vous tendance à prendre du poids en premier ou à en porter le plus ?",
+    "overallFrameQuestion": "Comment décririez-vous votre structure osseuse globale ?",
+    "shoulders": "Épaules",
+    "bust": "Poitrine",
+    "waist": "Taille (Milieu du corps)",
+    "hips": "Hanches",
+    "equal": "Elles semblent équilibrées/égales",
+    "veryDefined": "Très marquée (courbe vers l'intérieur)",
+    "slightlyDefined": "Légèrement marquée",
+    "straightAthletic": "Droite ou athlétique",
+    "wideFull": "Large ou pleine",
+    "highWaist": "Taille haute",
+    "roundedFull": "Arrondies et pleines",
+    "straightSlim": "Droites et minces",
+    "widerThanShoulders": "Notablement plus larges que les épaules",
+    "narrowerThanShoulders": "Notablement plus étroites que les épaules",
+    "average": "Proportions moyennes",
+    "broadStrong": "Larges et fortes",
+    "squarePiercing": "Carrées et marquées",
+    "softSloped": "Douces et tombantes",
+    "petiteNarrow": "Petites et étroites",
+    "smallBust": "Petite",
+    "mediumBust": "Moyenne",
+    "largeBust": "Grande",
+    "gainHips": "Au niveau des hanches et des cuisses",
+    "gainMiddle": "Au niveau du ventre/milieu du corps",
+    "gainEvenly": "Uniformément partout",
+    "gainTop": "Au niveau des épaules et des bras",
+    "framePetite": "Petite et étroite",
+    "frameAverage": "Moyenne/Standard",
+    "frameAthletic": "Grande ou athlétique",
+    "calculatingSilhouette": "Analyse de votre silhouette...",
+    "analysisFailed": "L'analyse de la morphologie a échoué. Veuillez réessayer.",
+    "topRecommendations": "Recommandations de style",
+    "viewProfileBtn": "Voir mon profil",
+    "retakeTestBtn": "Refaire le test ✨",
+    "analysisTitle": "Analyse Morpho",
+    "stepLabel": "Étape",
+    "stepOf": "sur"
+  },
+  "result": {
+    "colorType": "Type Saisonnier",
+    "season": "Saison",
+    "undertone": "Sous-ton",
+    "contrast": "Contraste",
+    "seasons": {
+      "WINTER": "Hiver",
+      "SUMMER": "Été",
+      "SPRING": "Printemps",
+      "AUTUMN": "Automne",
+      "Deep Winter": "Hiver Profond",
+      "Cool Winter": "Hiver Froid",
+      "Bright Winter": "Hiver Éclatant",
+      "Light Summer": "Été Clair",
+      "Cool Summer": "Été Froid",
+      "Soft Summer": "Été Doux",
+      "Light Spring": "Printemps Clair",
+      "Warm Spring": "Printemps Chaud",
+      "Bright Spring": "Printemps Éclatant",
+      "Deep Autumn": "Automne Profond",
+      "Warm Autumn": "Automne Chaud",
+      "Soft Autumn": "Automne Doux"
+    },
+    "result": {
+      "undertone": "Sous-ton",
+      "contrast": "Contraste",
+      "depth": "Profondeur",
+      "chroma": "Chroma",
+      "yourPalette": "Vos meilleures couleurs",
+      "signaturePalette": "Votre palette signature",
+      "recommendedPalette": "Palette recommandée",
+      "styleAdvice": "Conseils Style IA",
+      "aiStylingAdvice": "Conseils de Style IA",
+      "personalAdvice": "Conseils de Style IA",
+      "noAdvice": "Aucun conseil disponible.",
+      "aiOffline": "Les conseils de style IA sont actuellement hors ligne. Vos résultats de base sont enregistrés! Revenez plus tard pour des recommandations personnalisées complètes.",
+      "aiSummaryFallback": "L'analyse IA n'était pas disponible, mais vos résultats de base ont été enregistrés. Veuillez réessayer plus tard pour des recommandations complètes."
+    },
+    "undertones": {
+      "COOL": "Froid",
+      "WARM": "Chaud",
+      "NEUTRAL": "Neutre",
+      "Cool": "Froid",
+      "Warm": "Chaud",
+      "Neutral": "Neutre"
+    },
+    "contrastLevels": {
+      "LOW": "Bas",
+      "MEDIUM": "Moyen",
+      "HIGH": "Haut",
+      "Low": "Bas",
+      "Medium": "Moyen",
+      "High": "Haut"
+    },
+    "depths": {
+      "LIGHT": "Lumière",
+      "MEDIUM": "Moyen",
+      "DEEP": "Profond"
+    },
+    "chromas": {
+      "CLEAR": "Clair",
+      "SOFT": "Doux"
+    },
+    "viewProfile": "Vers le profil",
+    "retake": "Recommencer",
+    "retakeBtn": "Recommencer ✨"
+  },
+  "bodyTypes": {
+    "HOURGLASS": "Sablier",
+    "PEAR": "Poire",
+    "APPLE": "Pomme",
+    "RECTANGLE": "Rectangle",
+    "INVERTED_TRIANGLE": "Triangle inversé"
+  },
+  "colorTypes": {
+    "WINTER": "Hiver",
+    "SUMMER": "Été",
+    "SPRING": "Printemps",
+    "AUTUMN": "Automne",
+    "DEEP_WINTER": "Hiver Profond",
+    "COOL_WINTER": "Hiver Froid",
+    "BRIGHT_WINTER": "Hiver Éclatant",
+    "LIGHT_SUMMER": "Été Clair",
+    "COOL_SUMMER": "Été Froid",
+    "SOFT_SUMMER": "Été Doux",
+    "LIGHT_SPRING": "Printemps Clair",
+    "WARM_SPRING": "Printemps Chaud",
+    "BRIGHT_SPRING": "Printemps Éclatant",
+    "DEEP_AUTUMN": "Automne Profond",
+    "WARM_AUTUMN": "Automne Chaud",
+    "SOFT_AUTUMN": "Automne Doux"
+  },
+  "analysis": {
+    "colorType": "Type de couleur",
+    "colorTypeTitle": "Type de couleur",
+    "bodyShape": "Morphologie",
+    "personalAdvice": "Conseils de style IA",
+    "yourPalette": "Palette recommandée",
+    "heroTitle": "Découvrez votre ADN Style",
+    "heroSub": "Analyse IA pour votre look parfait",
+    "photoScan": "Scan Photo",
+    "question": "Question",
+    "of": "sur",
+    "analyzing": "Analyse en cours...",
+    "reveal": "Voir les résultats",
+    "viewProfile": "Voir les résultats",
+    "viewProfileBtn": "Voir le profil",
+    "next": "Suivant"
+  },
+  "common": {
+    "delete": "Supprimer",
+    "cancel": "Annuler",
+    "save": "Enregistrer",
+    "na": "N/D"
+  },
+  "errors": {
+    "generic": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "loading": "Chargement...",
+  "retry": "Réessayer",
+  "not Loaded": "Profil non chargé",
+  "edit Profile": "Modifier le profil",
+  "settings": "Paramètres",
+  "delete Account": "Supprimer le compte",
+  "age": "Âge",
+  "gender": "Genre",
+  "height": "Taille",
+  "weight": "Poids",
+  "female": "Femme",
+  "male": "Homme",
+  "other": "Autre",
+  "select": "Sélectionner",
+  "tips": {
+    "silverJewelry": "Les bijoux en argent et en platine rehausseront magnifiquement votre teint froid.",
+    "goldJewelry": "Les bijoux en or et en laiton compléteront parfaitement votre éclat chaud.",
+    "berryTones": "Les tons de baies et de joyaux vous donnent une apparence saisissante et royale.",
+    "earthTones": "Les tons terreux comme l'olive, la rouille et la moutarde s'harmonisent avec votre profondeur.",
+    "crispWhite": "Le blanc éclatant et les noirs contrastés vous vont à ravir.",
+    "creamyBeige": "Les crèmes chauds et les beiges doux sont bien plus flatteurs que le blanc pur.",
+    "charcoalGrey": "Le gris anthracite et le bleu marine profond sont vos neutres sophistiqués parfaits.",
+    "warmTerracotta": "La terre cuite chaude et l'orange brûlé feront ressortir vos traits.",
+    "winter": {
+      "contrast": "Misez sur des combinaisons contrastées pour un look dramatique et haute couture.",
+      "jewels": "L'émeraude, le saphir et le rubis sont vos couleurs de prédilection.",
+      "icy": "Intégrez des pastels glacés et givrés comme accents frappants."
+    },
+    "summer": {
+      "muted": "Les couleurs douces et feutrées sont bien plus flatteuses que les couleurs vives ou néon.",
+      "pastels": "Les pastels froids et poudrés comme la lavande et le vieux rose paraissent naturels.",
+      "silver": "Privilégiez l'argent brossé ou l'étain mat pour vos accessoires."
+    },
+    "spring": {
+      "warm": "Les couleurs claires et chaudes comme la pêche et le corail font ressortir votre vitalité.",
+      "clear": "Évitez les couleurs ternes ou trop mates ; gardez votre palette fraîche et lumineuse.",
+      "gold": "Les bijoux en or jaune apportent la dose parfaite de chaleur à votre peau."
+    },
+    "autumn": {
+      "earthy": "Les couleurs terreuses riches sont vos meilleures amies — pensez au vert forêt et à l'ocre.",
+      "rich": "Optez pour des tons chauds profonds et saturés plutôt que pour des pastels clairs.",
+      "gold": "L'or antique et les bijoux en cuivre sont phénoménaux sur votre peau."
+    },
+    "hourglass": {
+      "tops": "Hauts à col en V et styles cache-cœur pour souligner votre taille.",
+      "bottoms": "Pantalons à taille haute et jupes crayon.",
+      "dresses": "Robes cache-cœur et silhouettes évasées (fit-and-flare)."
+    },
+    "pear": {
+      "tops": "Cols bateau et manches travaillées pour équilibrer vos épaules avec vos hanches.",
+      "bottoms": "Jupes trapèze et pantalons larges dans des couleurs plus sombres.",
+      "dresses": "Les robes taille empire et trapèze sont celles qui vous vont le mieux."
+    },
+    "apple": {
+      "tops": "Les hauts taille empire et les tuniques à col en V sont très flatteurs.",
+      "bottoms": "Pantalons droits ou bootcut pour équilibrer le milieu du corps.",
+      "dresses": "Les robes droites et les silhouettes taille empire vous vont à ravir."
+    },
+    "rectangle": {
+      "tops": "Hauts à volants et styles à basque (peplum) pour créer l'illusion de courbes.",
+      "bottoms": "Pantalons cargo et jupes avec du volume ajouté.",
+      "dresses": "Robes ajourées (cut-out) et styles avec des ceintures marquées."
+    },
+    "inverted_triangle": {
+      "tops": "Cols licou (halter) et cols en V pour rétrécir visuellement vos épaules.",
+      "bottoms": "Pantalons larges et jupes plissées pour ajouter du volume au bas du corps.",
+      "dresses": "Les robes trapèze et évasées sont parfaites pour vous."
+    }
+  },
+  "clear": "Effacer"
+}

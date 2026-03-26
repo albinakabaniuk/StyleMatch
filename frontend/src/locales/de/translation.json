@@ -1,0 +1,366 @@
+{
+  "profile": {
+    "title": "Dein Profil ✨",
+    "user": "Benutzer",
+    "bodyShape": "Körperform",
+    "colorHistory": "Farbverlauf",
+    "results": "Ergebnisse",
+    "noResults": "Noch keine Ergebnisse",
+    "stats": {
+      "memberSince": "Mitglied seit",
+      "tests": "Tests gemacht"
+    },
+    "avatarUpload": "Avatar hochladen",
+    "avatarOptions": "Avatar-Optionen",
+    "uploadOwn": "Oder laden Sie Ihr eigenes Foto hoch",
+    "clothingSize": "Kleidergröße",
+    "selectSize": "Größe wählen",
+    "saveProfile": "Profil speichern",
+    "sizes": {
+      "XXS": "XXS",
+      "XS": "XS",
+      "S": "S",
+      "M": "M",
+      "L": "L",
+      "XL": "XL",
+      "XXL": "XXL",
+      "XXXL": "XXXL"
+    }
+  },
+  "nav": {
+    "profile": "Profil",
+    "logout": "Abmelden",
+    "styleTest": "Stil-Test",
+    "bodyShape": "Körperform",
+    "login": "Einloggen",
+    "signUpLink": "Registrieren"
+  },
+  "auth": {
+    "signInTitle": "Anmelden",
+    "createAccountTitle": "Konto erstellen",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "forgotPassword": "Passwort vergessen?",
+    "signInBtn": "Anmelden ✨",
+    "signUpBtn": "Registrieren",
+    "noAccount": "Noch kein Konto?",
+    "hasAccount": "Bereits ein Konto?",
+    "forgotTitle": "Passwort vergessen",
+    "forgotSubtitle": "Geben Sie Ihre E-Mail-Adresse ein, um einen Reset-Link zu erhalten",
+    "sendReset": "Reset-Link senden ✨",
+    "forgotSuccess": "Reset-Link gesendet! Bitte überprüfen Sie Ihren Posteingang.",
+    "backToLogin": "Zurück zum Login",
+    "resetTitle": "Passwort zurücksetzen",
+    "resetToken": "Reset-Token",
+    "newPassword": "Neues Passwort",
+    "resetBtn": "Passwort aktualisieren ✨"
+  },
+  "test": {
+    "result": {
+      "title": "Deine Style-Identität"
+    },
+    "questions": {
+      "1": {
+        "text": "Was beschreibt deinen natürlichen Hautton am besten?",
+        "answers": {
+          "A": "Hell / Porzellan",
+          "B": "Mittel / Neutral",
+          "C": "Dunkel / Tief"
+        }
+      },
+      "2": {
+        "text": "Was ist deine natürliche Haarfarbe (oder Farbe in der Kindheit)?",
+        "answers": {
+          "A": "Hellblond / Rot",
+          "B": "Aschbraun / Schwarz",
+          "C": "Goldbraun / Kastanie"
+        }
+      },
+      "3": {
+        "text": "Was ist deine natürliche Augenfarbe?",
+        "answers": {
+          "A": "Blau / Grau",
+          "B": "Grün / Haselnuss",
+          "C": "Braun / Schwarz"
+        }
+      },
+      "4": {
+        "text": "Welches Schmuckmetall unterstreicht deinen Teint am besten?",
+        "answers": {
+          "A": "Sonniges Gold",
+          "B": "Eisiges Silber / Platin",
+          "C": "Zartes Roségold / Beides"
+        }
+      },
+      "5": {
+        "text": "Wie hoch ist der Kontrast zwischen Haaren, Augen und Haut?",
+        "answers": {
+          "A": "Niedrig (Sanft & Dezent)",
+          "B": "Mittel (Ausgewogen)",
+          "C": "Hoch (Markant & Dramatisch)"
+        }
+      },
+      "6": {
+        "text": "Wie reagiert deine Haut normalerweise auf die Sonne?",
+        "answers": {
+          "A": "Brennt leicht / Wird rosa",
+          "B": "Bräunt leicht / Wird golden"
+        }
+      },
+      "7": {
+        "text": "Welche Farbe haben die Venen an deinem Handgelenk?",
+        "answers": {
+          "A": "Blau / Lila",
+          "B": "Grün / Oliv",
+          "C": "Neutral / Gemischt"
+        }
+      },
+      "8": {
+        "text": "Was ist der natürliche Ton deiner Lippen ohne Lippenstift?",
+        "answers": {
+          "A": "Kühles Rosa / Malve",
+          "B": "Warmes Pfirsich / Koralle"
+        }
+      }
+    }
+  },
+  "bodyShape": {
+    "hourglass": "Sanduhr",
+    "pear": "Birne",
+    "apple": "Apfel",
+    "rectangle": "Rechteck",
+    "inverted_triangle": "Umgekehrtes Dreieck",
+    "widestPartQuestion": "Welcher Teil Ihres Körpers sieht am breitesten aus, wenn Sie in den Spiegel schauen?",
+    "waistlineDescription": "Wie würden Sie Ihre Taillenlinie beschreiben?",
+    "hipCurveQuestion": "Wie sehen Ihre Hüften im Verhältnis zu Ihren Schultern aus?",
+    "shoulderLineQuestion": "Wie würden Sie Ihre Schulterlinie beschreiben?",
+    "bustRelativeQuestion": "Wie würden Sie Ihre Oberweite im Verhältnis zu Ihrem Körperbau beschreiben?",
+    "weightDistQuestion": "Wo nehmen Sie tendenziell zuerst zu oder tragen das meiste Gewicht?",
+    "overallFrameQuestion": "Wie würden Sie Ihren gesamten Knochenbau beschreiben?",
+    "shoulders": "Schultern",
+    "bust": "Brust",
+    "waist": "Taille (Körpermitte)",
+    "hips": "Hüften",
+    "equal": "Sie sehen ausgewogen/gleich aus",
+    "veryDefined": "Sehr ausgeprägt (Kurve nach innen)",
+    "slightlyDefined": "Leicht ausgeprägt",
+    "straightAthletic": "Gerade oder athletisch",
+    "wideFull": "Breit oder voll",
+    "highWaist": "Hohe Taillenlinie",
+    "roundedFull": "Rund und voll",
+    "straightSlim": "Gerade und schlank",
+    "widerThanShoulders": "Auffallend breiter als die Schultern",
+    "narrowerThanShoulders": "Auffallend schmaler als die Schultern",
+    "average": "Durchschnittliche Proportionen",
+    "broadStrong": "Breit und kräftig",
+    "squarePiercing": "Quadratisch und markant",
+    "softSloped": "Weich und abfallend",
+    "petiteNarrow": "Zierlich und schmal",
+    "smallBust": "Klein",
+    "mediumBust": "Mittel",
+    "largeBust": "Groß",
+    "gainHips": "An Hüften und Oberschenkeln",
+    "gainMiddle": "In der Körpermitte/am Bauch",
+    "gainEvenly": "Gleichmäßig am ganzen Körper",
+    "gainTop": "An Schultern und Armen",
+    "framePetite": "Zierlich und schmal",
+    "frameAverage": "Durchschnittlich/Mittel",
+    "frameAthletic": "Groß oder athletisch",
+    "calculatingSilhouette": "Analyse Ihrer Silhouette...",
+    "analysisFailed": "Körperformanalyse fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "topRecommendations": "Styling-Empfehlungen",
+    "viewProfileBtn": "Mein Profil anzeigen",
+    "retakeTestBtn": "Test wiederholen ✨",
+    "analysisTitle": "Körperanalyse",
+    "stepLabel": "Schritt",
+    "stepOf": "von"
+  },
+  "result": {
+    "colorType": "Saisonaler Typ",
+    "season": "Saison",
+    "undertone": "Unterton",
+    "contrast": "Kontrast",
+    "seasons": {
+      "WINTER": "Winter",
+      "SUMMER": "Sommer",
+      "SPRING": "Frühling",
+      "AUTUMN": "Herbst",
+      "Deep Winter": "Dunkler Winter",
+      "Cool Winter": "Kühler Winter",
+      "Bright Winter": "Clear Winter",
+      "Light Summer": "Heller Sommer",
+      "Cool Summer": "Kühler Sommer",
+      "Soft Summer": "Softer Sommer",
+      "Light Spring": "Heller Frühling",
+      "Warm Spring": "Warmer Frühling",
+      "Bright Spring": "Clear Spring",
+      "Deep Autumn": "Dunkler Herbst",
+      "Warm Autumn": "Warmer Herbst",
+      "Soft Autumn": "Softer Herbst"
+    },
+    "result": {
+      "undertone": "Unterton",
+      "contrast": "Kontrast",
+      "depth": "Tiefe",
+      "chroma": "Klarheit",
+      "yourPalette": "Deine Palette",
+      "signaturePalette": "Deine Signature-Palette",
+      "recommendedPalette": "Empfohlene Palette",
+      "styleAdvice": "AI-Beratung",
+      "aiStylingAdvice": "AI-Stilberatung",
+      "personalAdvice": "AI-Stilberatung",
+      "noAdvice": "Keine Beratung verfügbar.",
+      "aiOffline": "Die AI-Stilberatung ist derzeit offline. Deine Basisergebnisse sind gespeichert! Schau später wieder vorbei, um vollständige personalisierte Empfehlungen zu erhalten.",
+      "aiSummaryFallback": "Die AI-Analyse war nicht verfügbar, aber deine Basisergebnisse wurden gespeichert. Bitte versuche es später für vollständige Empfehlungen."
+    },
+    "undertones": {
+      "COOL": "Kühl",
+      "WARM": "Warm",
+      "NEUTRAL": "Neutral",
+      "Cool": "Kühl",
+      "Warm": "Warm",
+      "Neutral": "Neutral"
+    },
+    "contrastLevels": {
+      "LOW": "Niedrig",
+      "MEDIUM": "Mittel",
+      "HIGH": "Hoch",
+      "Low": "Niedrig",
+      "Medium": "Mittel",
+      "High": "Hoch"
+    },
+    "depths": {
+      "LIGHT": "Hell",
+      "MEDIUM": "Mittel",
+      "DEEP": "Tief"
+    },
+    "chromas": {
+      "CLEAR": "Klar",
+      "SOFT": "Sanft"
+    },
+    "viewProfile": "Zum Profil",
+    "retake": "Wiederholen",
+    "retakeBtn": "Wiederholen ✨"
+  },
+  "bodyTypes": {
+    "HOURGLASS": "Sanduhr",
+    "PEAR": "Birne",
+    "APPLE": "Apfel",
+    "RECTANGLE": "Rechteck",
+    "INVERTED_TRIANGLE": "Umgekehrtes Dreieck"
+  },
+  "colorTypes": {
+    "WINTER": "Winter",
+    "SUMMER": "Sommer",
+    "SPRING": "Frühling",
+    "AUTUMN": "Herbst",
+    "DEEP_WINTER": "Dunkler Winter",
+    "COOL_WINTER": "Kühler Winter",
+    "BRIGHT_WINTER": "Clear Winter",
+    "LIGHT_SUMMER": "Heller Sommer",
+    "COOL_SUMMER": "Kühler Sommer",
+    "SOFT_SUMMER": "Softer Sommer",
+    "LIGHT_SPRING": "Heller Frühling",
+    "WARM_SPRING": "Warmer Frühling",
+    "BRIGHT_SPRING": "Clear Spring",
+    "DEEP_AUTUMN": "Dunkler Herbst",
+    "WARM_AUTUMN": "Warmer Herbst",
+    "SOFT_AUTUMN": "Softer Herbst"
+  },
+  "analysis": {
+    "colorType": "Farbtyp",
+    "colorTypeTitle": "Farbtyp",
+    "bodyShape": "Körperform",
+    "personalAdvice": "KI-Stylingberatung",
+    "yourPalette": "Empfohlene Palette",
+    "heroTitle": "Entdecke deine Style-DNA",
+    "heroSub": "KI-Analyse für deinen perfekten Look",
+    "photoScan": "Foto-Scan",
+    "question": "Frage",
+    "of": "von",
+    "analyzing": "Analysiere...",
+    "reveal": "Ergebnisse zeigen",
+    "viewProfile": "Ergebnisse zeigen",
+    "viewProfileBtn": "Profil ansehen",
+    "next": "Weiter"
+  },
+  "common": {
+    "delete": "Löschen",
+    "cancel": "Abbrechen",
+    "save": "Speichern",
+    "na": "N/V"
+  },
+  "errors": {
+    "generic": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+  },
+  "loading": "Laden...",
+  "retry": "Wiederholen",
+  "not Loaded": "Profil nicht geladen",
+  "edit Profile": "Profil bearbeiten",
+  "settings": "Einstellungen",
+  "delete Account": "Konto löschen",
+  "age": "Alter",
+  "gender": "Geschlecht",
+  "height": "Größe",
+  "weight": "Gewicht",
+  "female": "Weiblich",
+  "male": "Männlich",
+  "other": "Andere",
+  "select": "Wählen",
+  "tips": {
+    "silverJewelry": "Silber- und Platinschmuck unterstreichen Ihren kühlen Unterton wunderschön.",
+    "goldJewelry": "Gold- und Messingschmuck ergänzen Ihren warmen Glanz perfekt.",
+    "berryTones": "Satte Beeren- und Juwelentöne verleihen Ihnen eine beeindruckende, königliche Ausstrahlung.",
+    "earthTones": "Erdtöne wie Oliv, Rost und Senf harmonieren perfekt mit Ihrer Farbtiefe.",
+    "crispWhite": "Klares Weiß und kontrastreiches Schwarz stehen Ihnen hervorragend.",
+    "creamyBeige": "Warmes Creme und sanftes Beige schmeicheln Ihnen viel mehr als reinweiß.",
+    "charcoalGrey": "Anthrazit und tiefes Navy sind Ihre perfekten, anspruchsvollen Neutraltöne.",
+    "warmTerracotta": "Warmes Terrakotta und gebranntes Orange lassen Ihre Züge strahlen.",
+    "winter": {
+      "contrast": "Setzen Sie auf kontrastreiche Kombinationen für einen dramatischen Fashion-Look.",
+      "jewels": "Smaragd, Saphir und Rubin sind Ihre Power-Farben.",
+      "icy": "Nutzen Sie eisige, frostige Pastelltöne als markante Akzente."
+    },
+    "summer": {
+      "muted": "Sanfte, gedämpfte Farben schmeicheln Ihnen mehr als knallige oder Neon-Farben.",
+      "pastels": "Kühle, pudrige Pastelltöne wie Lavendel und Altrosa wirken mühelos elegant.",
+      "silver": "Wählen Sie gebürstetes Silber oder mattes Zinn für Ihre Accessoires."
+    },
+    "spring": {
+      "warm": "Klare, warme Farben wie Pfirsich und Koralle bringen Ihre Vitalität zum Ausdruck.",
+      "clear": "Vermeiden Sie trübe oder zu matte Farben; halten Sie Ihre Palette frisch und hell.",
+      "gold": "Gelbgold verleiht Ihrer Haut genau die richtige Menge an Wärme."
+    },
+    "autumn": {
+      "earthy": "Satte Erdfarben sind Ihre besten Freunde — denken Sie an Waldgrün und Ocker.",
+      "rich": "Wählen Sie tiefe, gesättigte warme Töne statt heller Pastellfarben.",
+      "gold": "Antikgold und Kupferschmuck sehen phänomenal auf Ihrer Haut aus."
+    },
+    "hourglass": {
+      "tops": "V-Ausschnitt-Oberteile und Wickelstile, um Ihre Taille zu betonen.",
+      "bottoms": "Hoch taillierte Hosen und Bleistiftröcke.",
+      "dresses": "Wickelkleider und Fit-and-Flare-Silhouetten."
+    },
+    "pear": {
+      "tops": "U-Boot-Ausschnitte und Statement-Ärmel, um Ihre Schultern mit Ihren Hüften auszugleichen.",
+      "bottoms": "A-Linien-Röcke und weit geschnittene Hosen in dunkleren Farben.",
+      "dresses": "Empire-Taille und A-Linien-Kleider stehen Ihnen am besten."
+    },
+    "apple": {
+      "tops": "Empire-Taille-Oberteile und Tuniken mit V-Ausschnitt sind sehr schmeichelhaft.",
+      "bottoms": "Gerade geschnittene oder Bootcut-Hosen, um Ihre Körpermitte auszugleichen.",
+      "dresses": "Einfache Etuikleider und Empire-Silhouetten sehen toll aus."
+    },
+    "rectangle": {
+      "tops": "Oberteile mit Rüschen und Schößchen-Styles, um die Illusion von Kurven zu erzeugen.",
+      "bottoms": "Cargohosen und Röcke mit zusätzlichem Volumen.",
+      "dresses": "Cut-Out-Kleider und Stile mit betonten Gürteln."
+    },
+    "inverted_triangle": {
+      "tops": "Halterneck- und V-Ausschnitte, um Ihre Schultern optisch zu schmaler wirken zu lassen.",
+      "bottoms": "Weite Hosen und Faltenröcke, um Ihrem Unterkörper Volumen zu verleihen.",
+      "dresses": "A-Linien- und Fit-and-Flare-Kleider sind perfekt für Sie."
+    }
+  },
+  "clear": "Löschen"
+}

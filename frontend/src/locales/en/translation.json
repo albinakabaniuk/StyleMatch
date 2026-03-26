@@ -1,0 +1,364 @@
+{
+  "profile": {
+    "title": "Your Profile ✨",
+    "user": "User",
+    "bodyShape": "Body Shape",
+    "colorHistory": "Color History",
+    "results": "Results",
+    "noResults": "No results yet",
+    "stats": {
+      "memberSince": "Member Since",
+      "tests": "Tests Taken"
+    },
+    "avatarUpload": "Upload Avatar",
+    "avatarOptions": "Avatar Options",
+    "uploadOwn": "Or upload your own photo",
+    "clothingSize": "Clothing Size",
+    "selectSize": "Select Size",
+    "saveProfile": "Save Profile",
+    "sizes": {
+      "XXS": "XXS",
+      "XS": "XS",
+      "S": "S",
+      "M": "M",
+      "L": "L",
+      "XL": "XL",
+      "XXL": "XXL",
+      "XXXL": "XXXL"
+    }
+  },
+  "nav": {
+    "profile": "Profile",
+    "logout": "Logout",
+    "styleTest": "Style Test",
+    "bodyShape": "Body Shape",
+    "login": "Login",
+    "signUpLink": "Sign up"
+  },
+  "auth": {
+    "signInTitle": "Sign In",
+    "createAccountTitle": "Create Account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "signInBtn": "Sign In ✨",
+    "signUpBtn": "Sign Up",
+    "noAccount": "Don’t have an account?",
+    "hasAccount": "Already have an account?",
+    "forgotTitle": "Forgot Password",
+    "forgotSubtitle": "Enter your email to receive a reset link",
+    "emailLabel": "Email Address",
+    "sendReset": "Send Reset Link ✨",
+    "forgotSuccess": "Reset link sent! Please check your email inbox.",
+    "backToLogin": "Back to Sign In",
+    "resetTitle": "Reset Password",
+    "resetToken": "Reset Token",
+    "newPassword": "New Password",
+    "resetBtn": "Update Password ✨"
+  },
+  "test": {
+    "result": {
+      "title": "Your Style Identity"
+    },
+    "questions": {
+      "1": {
+        "text": "What describes your natural skin tone best?",
+        "answers": {
+          "A": "Fair / Porcelain",
+          "B": "Medium / Neutral",
+          "C": "Deep / Rich"
+        }
+      },
+      "2": {
+        "text": "What is your natural hair color (or childhood color)?",
+        "answers": {
+          "A": "Light Blonde / Red",
+          "B": "Ashy Brown / Black",
+          "C": "Golden Brown / Auburn"
+        }
+      },
+      "3": {
+        "text": "What is your natural eye color?",
+        "answers": {
+          "A": "Blue / Gray",
+          "B": "Green / Hazel",
+          "C": "Brown / Black"
+        }
+      },
+      "4": {
+        "text": "Which jewelry metal naturally enhances your complexion?",
+        "answers": {
+          "A": "Sun-kissed Gold",
+          "B": "Icy Silver / Platinum",
+          "C": "Soft Rose Gold / Both"
+        }
+      },
+      "5": {
+        "text": "How much contrast is there between your hair, eyes, and skin?",
+        "answers": {
+          "A": "Low (Soft & Delicate)",
+          "B": "Medium (Balanced)",
+          "C": "High (Striking & Dramatic)"
+        }
+      },
+      "6": {
+        "text": "How does your skin typically react to sun exposure?",
+        "answers": {
+          "A": "Burns easily / Turns pink",
+          "B": "Tans easily / Turns golden"
+        }
+      },
+      "7": {
+        "text": "What color do the veins on your inner wrist appear?",
+        "answers": {
+          "A": "Blue / Purple",
+          "B": "Green / Olive",
+          "C": "Mixed / Neutral"
+        }
+      },
+      "8": {
+        "text": "What is the natural tone of your lips without product?",
+        "answers": {
+          "A": "Cool Pink / Mauve",
+          "B": "Warm Peach / Coral"
+        }
+      }
+    }
+  },
+  "bodyShape": {
+    "hourglass": "Hourglass",
+    "pear": "Pear",
+    "apple": "Apple",
+    "rectangle": "Rectangle",
+    "inverted_triangle": "Inverted Triangle",
+    "widestPartQuestion": "Which part of your body looks the widest when you look in the mirror?",
+    "waistlineDescription": "How would you describe your waistline?",
+    "hipCurveQuestion": "How do your hips look relative to your shoulders?",
+    "shoulderLineQuestion": "How would you describe your shoulder line?",
+    "bustRelativeQuestion": "How would you describe your bust size relative to your frame?",
+    "weightDistQuestion": "Where do you tend to gain weight first or carry most of it?",
+    "overallFrameQuestion": "How would you describe your overall skeletal frame?",
+    "shoulders": "Shoulders",
+    "bust": "Bust",
+    "waist": "Waist (Midsection)",
+    "hips": "Hips",
+    "equal": "They look balanced/equal",
+    "veryDefined": "Very defined (inward curve)",
+    "slightlyDefined": "Slightly defined",
+    "straightAthletic": "Straight or Athletic",
+    "wideFull": "Wide or Full",
+    "highWaist": "High waistline",
+    "roundedFull": "Rounded and Full",
+    "straightSlim": "Straight and Slim",
+    "widerThanShoulders": "Noticably wider than shoulders",
+    "narrowerThanShoulders": "Noticably narrower than shoulders",
+    "average": "Average proportions",
+    "broadStrong": "Broad and strong",
+    "squarePiercing": "Square and sharp",
+    "softSloped": "Soft and sloped",
+    "petiteNarrow": "Petite and narrow",
+    "smallBust": "Small",
+    "mediumBust": "Medium",
+    "largeBust": "Large",
+    "gainHips": "In my hips and thighs",
+    "gainMiddle": "In my midsection/stomach",
+    "gainEvenly": "Evenly all over",
+    "gainTop": "In my shoulders and arms",
+    "framePetite": "Petite and narrow",
+    "frameAverage": "Average/Medium",
+    "frameAthletic": "Tall or Athletic",
+    "calculatingSilhouette": "Analyzing your silhouette...",
+    "analysisFailed": "Body shape analysis failed. Please try again.",
+    "topRecommendations": "Styling Recommendations",
+    "viewProfileBtn": "View My Profile",
+    "retakeTestBtn": "Retake Test ✨",
+    "analysisTitle": "Body Analysis",
+    "stepLabel": "Step",
+    "stepOf": "of"
+  },
+  "result": {
+    "colorType": "Seasonal Type",
+    "season": "Season",
+    "undertone": "Undertone",
+    "contrast": "Contrast",
+    "seasons": {
+      "WINTER": "Winter",
+      "SUMMER": "Summer",
+      "SPRING": "Spring",
+      "AUTUMN": "Autumn",
+      "Deep Winter": "Deep Winter",
+      "Cool Winter": "Cool Winter",
+      "Bright Winter": "Bright Winter",
+      "Light Summer": "Light Summer",
+      "Cool Summer": "Cool Summer",
+      "Soft Summer": "Soft Summer",
+      "Light Spring": "Light Spring",
+      "Warm Spring": "Warm Spring",
+      "Bright Spring": "Bright Spring",
+      "Deep Autumn": "Deep Autumn",
+      "Warm Autumn": "Warm Autumn",
+      "Soft Autumn": "Soft Autumn"
+    },
+    "result": {
+      "undertone": "Undertone",
+      "contrast": "Contrast",
+      "depth": "Depth",
+      "chroma": "Chroma",
+      "yourPalette": "Your Best Colors",
+      "signaturePalette": "Your Signature Palette",
+      "recommendedPalette": "Recommended Palette",
+      "styleAdvice": "AI Style Advice",
+      "aiStylingAdvice": "AI Styling Advice",
+      "personalAdvice": "AI Styling Advice",
+      "noAdvice": "No specific advice available.",
+      "aiOffline": "AI styling advice is currently offline. Your base results are saved! Please check back later for full personalized recommendations.",
+      "aiSummaryFallback": "AI Analysis was unavailable, but your base results are saved. Please try again later for full recommendations."
+    },
+    "undertones": {
+      "COOL": "Cool",
+      "WARM": "Warm",
+      "NEUTRAL": "Neutral",
+      "Cool": "Cool",
+      "Warm": "Warm",
+      "Neutral": "Neutral"
+    },
+    "contrastLevels": {
+      "LOW": "Low",
+      "MEDIUM": "Medium",
+      "HIGH": "High",
+      "Low": "Low",
+      "Medium": "Medium",
+      "High": "High"
+    },
+    "depths": {
+      "LIGHT": "Light",
+      "MEDIUM": "Medium",
+      "DEEP": "Deep"
+    },
+    "chromas": {
+      "CLEAR": "Clear",
+      "SOFT": "Soft"
+    },
+    "viewProfile": "Go to Profile",
+    "retake": "Try Again",
+    "retakeBtn": "Try Again ✨"
+  },
+  "bodyTypes": {
+    "HOURGLASS": "Hourglass",
+    "PEAR": "Pear",
+    "APPLE": "Apple",
+    "RECTANGLE": "Rectangle",
+    "INVERTED_TRIANGLE": "Inverted Triangle"
+  },
+  "colorTypes": {
+    "WINTER": "Winter",
+    "SUMMER": "Summer",
+    "SPRING": "Spring",
+    "AUTUMN": "Autumn",
+    "DEEP_WINTER": "Deep Winter",
+    "COOL_WINTER": "Cool Winter",
+    "BRIGHT_WINTER": "Bright Winter",
+    "LIGHT_SUMMER": "Light Summer",
+    "COOL_SUMMER": "Cool Summer",
+    "SOFT_SUMMER": "Soft Summer",
+    "LIGHT_SPRING": "Light Spring",
+    "WARM_SPRING": "Warm Spring",
+    "BRIGHT_SPRING": "Bright Spring",
+    "DEEP_AUTUMN": "Deep Autumn",
+    "WARM_AUTUMN": "Warm Autumn",
+    "SOFT_AUTUMN": "Soft Autumn"
+  },
+  "analysis": {
+    "colorType": "Color Type",
+    "bodyShape": "Body Shape",
+    "personalAdvice": "AI Styling Advice",
+    "yourPalette": "Recommended Palette",
+    "heroTitle": "Discover Your Style DNA",
+    "heroSub": "AI-powered analysis for your perfect look",
+    "photoScan": "Photo Scan",
+    "question": "Question",
+    "of": "of",
+    "analyzing": "Analyzing...",
+    "reveal": "Reveal Results",
+    "next": "Next"
+  },
+  "common": {
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "na": "N/A"
+  },
+  "errors": {
+    "generic": "Something went wrong. Please try again."
+  },
+  "loading": "Loading...",
+  "retry": "Retry",
+  "not Loaded": "Profile not loaded",
+  "edit Profile": "Edit Profile",
+  "settings": "Settings",
+  "delete Account": "Delete Account",
+  "age": "Age",
+  "gender": "Gender",
+  "height": "Height",
+  "weight": "Weight",
+  "female": "Female",
+  "male": "Male",
+  "other": "Other",
+  "select": "Select",
+  "tips": {
+    "silverJewelry": "Silver and platinum jewelry will enhance your cool undertone beautifully.",
+    "goldJewelry": "Gold and brass jewelry will perfectly complement your warm glow.",
+    "berryTones": "Rich berry and jewel tones give you a striking, royal appearance.",
+    "earthTones": "Earthy tones like olive, rust, and mustard harmoniously match your depth.",
+    "crispWhite": "Crisp white and high-contrast blacks look stunning on you.",
+    "creamyBeige": "Warm creams and soft beiges are much more flattering than pure white.",
+    "charcoalGrey": "Charcoal and deep navy are your perfect sophisticated neutrals.",
+    "warmTerracotta": "Warm terracotta and burnt orange will make your features pop.",
+    "winter": {
+      "contrast": "Lean into high contrast combinations for a dramatic, high-fashion look.",
+      "jewels": "Emerald, sapphire, and ruby are your power colors.",
+      "icy": "Incorporate icy, frosted pastels as striking accents."
+    },
+    "summer": {
+      "muted": "Soft, muted colors are much more flattering than bright or neon ones.",
+      "pastels": "Cool, powdery pastels like lavender and dusty rose look effortless.",
+      "silver": "Stick to brushed silver or matte pewter for your accessories."
+    },
+    "spring": {
+      "warm": "Clear, warm colors like peach and coral bring out your natural vitality.",
+      "clear": "Avoid muddy or overly muted colors; keep your palette fresh and bright.",
+      "gold": "Yellow gold jewelry adds the perfect amount of warmth to your skin."
+    },
+    "autumn": {
+      "earthy": "Rich, earthy colors are your best friend—think forest green and ochre.",
+      "rich": "Go for deep, saturated warm tones rather than light pastels.",
+      "gold": "Antique gold and copper jewelry look phenomenal against your skin."
+    },
+    "hourglass": {
+      "tops": "V-neck tops and wrap styles to highlight your waist.",
+      "bottoms": "High-waisted trousers and pencil skirts.",
+      "dresses": "Wrap dresses and fit-and-flare silhouettes."
+    },
+    "pear": {
+      "tops": "Boat necks and statement sleeves to balance your shoulders with your hips.",
+      "bottoms": "A-line skirts and wide-leg trousers in darker colors.",
+      "dresses": "Empire waist and A-line dresses look best on you."
+    },
+    "apple": {
+      "tops": "Empire waist tops and tunics with V-necks are very flattering.",
+      "bottoms": "Straight-leg or bootcut trousers to balance your midsection.",
+      "dresses": "Shift dresses and empire waist silhouettes look great."
+    },
+    "rectangle": {
+      "tops": "Ruffled tops and peplum styles to create the illusion of curves.",
+      "bottoms": "Cargo pants and skirts with added volume.",
+      "dresses": "Cut-out dresses and styles with defined belts."
+    },
+    "inverted_triangle": {
+      "tops": "Halter necks and V-necks to visually narrow your shoulders.",
+      "bottoms": "Wide-leg pants and pleated skirts to add volume to your lower body.",
+      "dresses": "A-line and fit-and-flare dresses are perfect for you."
+    }
+  },
+  "clear": "Clear"
+}
