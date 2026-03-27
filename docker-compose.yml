@@ -11,10 +11,12 @@ services:
     volumes:
       - stylematch-db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres -d password"]
+      test: ["CMD-SHELL", "pg_isready -U postgres -d railway"]
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - stylematch-network
 
   backend:
     build: .
@@ -22,9 +24,11 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_HOST=postgres
-      - SPRING_DATASOURCE_USERNAME=stylematch
-      - SPRING_DATASOURCE_PASSWORD=stylematch
+      - DATABASE_HOST=postgres
+      - DATABASE_NAME=railway
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=password
+      - SPRING_PROFILES_ACTIVE=docker
     depends_on:
       postgres:
         condition: service_healthy
