@@ -2,7 +2,7 @@
 
 -- changeset albinakabaniuk:1
 CREATE TABLE customers (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     color_type VARCHAR(50) NOT NULL,

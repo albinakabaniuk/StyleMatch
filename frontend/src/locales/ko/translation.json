@@ -291,7 +291,9 @@
     "na": "없음"
   },
   "errors": {
-    "generic": "문제가 발생했습니다. 다시 시도해 주세요."
+    "generic": "문제가 발생했습니다. 다시 시도해 주세요.",
+    "invalidCredentials": "이메일 또는 비밀번호가 잘못되었습니다",
+    "registrationFailed": "회원가입에 실패했습니다. 다시 시도해 주세요."
   },
   "loading": "로딩 중...",
   "retry": "다시 시도",

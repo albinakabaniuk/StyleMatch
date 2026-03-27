@@ -2,7 +2,7 @@
 
 -- changeset albinakabaniuk:3
 CREATE TABLE analysis_results (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     user_id UUID NOT NULL,
     input_type VARCHAR(50) NOT NULL,
     color_type VARCHAR(50),
@@ -14,7 +14,7 @@ CREATE TABLE analysis_results (
 );
 
 CREATE TABLE analysis_answers (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     analysis_id UUID NOT NULL,
     question_key VARCHAR(255) NOT NULL,
     answer_value VARCHAR(255) NOT NULL,

@@ -1,7 +1,7 @@
 -- liquibase formatted sql
 -- changeset albinakabaniuk:6
 CREATE TABLE password_reset_tokens (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     token VARCHAR(255) NOT NULL UNIQUE,
     user_id UUID NOT NULL,
     expires_at TIMESTAMP WITHOUT TIME ZONE NOT NULL,

@@ -291,7 +291,9 @@
     "na": "N/V"
   },
   "errors": {
-    "generic": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut."
+    "generic": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",
+    "invalidCredentials": "Ungültige E-Mail-Adresse oder Passwort",
+    "registrationFailed": "Registrierung fehlgeschlagen. Bitte versuchen Sie es erneut."
   },
   "loading": "Laden...",
   "retry": "Wiederholen",
