@@ -62,7 +62,7 @@ public class AnalysisService {
         log.info("Built answerMap for COLOR_TYPE: {}", answerMap);
 
         // Call AI Service with isolation
-        String lang = request.getLanguage() != null ? request.getLanguage() : user.getPreferredLanguage();
+        String lang = request.getLanguage() != null ? request.getLanguage() : (user != null ? user.getPreferredLanguage() : "en");
         if (lang == null) lang = "en";
         
         AIAnalysisResult aiResult;
@@ -191,7 +191,7 @@ public class AnalysisService {
         long start = System.currentTimeMillis();
         log.info("[PERF] analyzePhoto start — file={}, user={}, lang={}", file.getOriginalFilename(), user != null ? user.getEmail() : "anonymous", language);
 
-        String lang = language != null ? language : user.getPreferredLanguage();
+        String lang = language != null ? language : (user != null ? user.getPreferredLanguage() : "en");
         if (lang == null) lang = "en";
 
         // Call AI Service (Ideally with vision, but for now we follow the same hardened JSON prompt)
