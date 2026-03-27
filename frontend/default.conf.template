@@ -1,5 +1,6 @@
 server {
     listen ${PORT};
+    client_max_body_size 20M;
     
     # Required for resolving dynamic proxy_pass URLs (Google DNS)
     resolver 8.8.8.8 valid=30s;
