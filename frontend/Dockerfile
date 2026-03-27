@@ -18,7 +18,7 @@ COPY default.conf.template /etc/nginx/templates/default.conf.template
 
 # Default env vars (will be overridden by Railway)
 ENV PORT=80
-ENV BACKEND_URL=https://stylematchapplication-production.up.railway.app
+ENV BACKEND_URL=http://backend:8080
 
 EXPOSE 80
 
