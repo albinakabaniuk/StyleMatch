@@ -291,7 +291,9 @@
     "na": "N/D"
   },
   "errors": {
-    "generic": "Une erreur est survenue. Veuillez réessayer."
+    "generic": "Une erreur est survenue. Veuillez réessayer.",
+    "invalidCredentials": "Email ou mot de passe invalide",
+    "registrationFailed": "Échec de l'inscription. Veuillez réessayer."
   },
   "loading": "Chargement...",
   "retry": "Réessayer",

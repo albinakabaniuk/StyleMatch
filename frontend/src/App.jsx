@@ -12,7 +12,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('token');
-  if (!token) return <Navigate to="/register" replace />;
+  if (!token) return <Navigate to="/login" replace />;
   return children;
 };
 

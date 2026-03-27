@@ -291,7 +291,9 @@
     "na": "N/D"
   },
   "errors": {
-    "generic": "Algo salió mal. Por favor, inténtalo de nuevo."
+    "generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
+    "invalidCredentials": "Correo electrónico o contraseña no válidos",
+    "registrationFailed": "Error al registrarse. Por favor, inténtelo de nuevo."
   },
   "loading": "Cargando...",
   "retry": "Reintentar",

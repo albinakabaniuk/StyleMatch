@@ -17,8 +17,16 @@ const LanguageSwitcher = ({ value, style, buttonStyle, onLanguageChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
-    const currentLang = LANGUAGES.find(l => l.code === (value || i18n.language)) || LANGUAGES[0];
-    const displayLang = LANGUAGES.find(l => l.code === i18n.language) || LANGUAGES[0];
+    const getLanguage = () => {
+        const lang = value || i18n.language || 'en';
+        // Handle cases like 'uk-UA' by taking the first part
+        const baseLang = lang.split('-')[0];
+        return LANGUAGES.find(l => l.code === lang) || 
+               LANGUAGES.find(l => l.code === baseLang) || 
+               LANGUAGES[0];
+    };
+
+    const currentLang = getLanguage();
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -105,38 +113,41 @@ const LanguageSwitcher = ({ value, style, buttonStyle, onLanguageChange }) => {
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 38, 255, 0.2)',
                 padding: '8px'
             }}>
-                {LANGUAGES.map((lang) => (
-                    <div
-                        key={lang.code}
-                        onClick={() => handleLanguageChange(lang.code)}
-                        style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '12px',
-                            padding: '10px 14px',
-                            borderRadius: '10px',
-                            cursor: 'pointer',
-                            transition: 'all 0.2s ease',
-                            color: i18n.language === lang.code ? '#ff007f' : '#fff',
-                            background: i18n.language === lang.code ? 'rgba(255, 0, 127, 0.1)' : 'transparent',
-                        }}
-                        onMouseEnter={e => {
-                            if (i18n.language !== lang.code) {
-                                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                            }
-                        }}
-                        onMouseLeave={e => {
-                            if (i18n.language !== lang.code) {
-                                e.currentTarget.style.background = 'transparent';
-                            }
-                        }}
-                    >
-                        <span style={{ fontSize: '1.1rem' }}>{lang.flag}</span>
-                        <span style={{ fontSize: '0.9rem', fontWeight: i18n.language === lang.code ? '700' : '400' }}>
-                            {lang.name}
-                        </span>
-                    </div>
-                ))}
+                {LANGUAGES.map((lang) => {
+                    const isActive = i18n.language === lang.code || i18n.language?.startsWith(`${lang.code}-`);
+                    return (
+                        <div
+                            key={lang.code}
+                            onClick={() => handleLanguageChange(lang.code)}
+                            style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '12px',
+                                padding: '10px 14px',
+                                borderRadius: '10px',
+                                cursor: 'pointer',
+                                transition: 'all 0.2s ease',
+                                color: isActive ? '#ff007f' : '#fff',
+                                background: isActive ? 'rgba(255, 0, 127, 0.1)' : 'transparent',
+                            }}
+                            onMouseEnter={e => {
+                                if (!isActive) {
+                                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                                }
+                            }}
+                            onMouseLeave={e => {
+                                if (!isActive) {
+                                    e.currentTarget.style.background = 'transparent';
+                                }
+                            }}
+                        >
+                            <span style={{ fontSize: '1.1rem' }}>{lang.flag}</span>
+                            <span style={{ fontSize: '0.9rem', fontWeight: isActive ? '700' : '400' }}>
+                                {lang.name}
+                            </span>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
