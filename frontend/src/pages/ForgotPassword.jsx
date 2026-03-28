@@ -33,7 +33,7 @@ const ForgotPassword = () => {
                 <LanguageSwitcher />
             </div>
 
-            <div className="bratz-card" style={{ maxWidth: '440px' }}>
+            <div className="bratz-card mobile-padding-sm" style={{ maxWidth: '440px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '28px' }}>
                     <div style={{ fontSize: '3rem', marginBottom: '8px' }}>🔐</div>
                     <h2 className="brand-font" style={{ fontSize: '1.8rem', marginBottom: '8px' }}>
