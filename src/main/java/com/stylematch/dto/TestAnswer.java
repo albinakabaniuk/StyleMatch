@@ -3,10 +3,8 @@ package com.stylematch.dto;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.ToString;
 
 @Schema(description = "Represents an individual answer to a style questionnaire")
-@ToString
 public class TestAnswer {
 
     public TestAnswer() {}
@@ -44,4 +42,9 @@ public class TestAnswer {
     public void setQuestionId(Integer questionId) { this.questionId = questionId; }
     public String getAnswer() { return answer; }
     public void setAnswer(String answer) { this.answer = answer; }
+
+    @Override
+    public String toString() {
+        return "TestAnswer(questionId=" + questionId + ", answer=" + answer + ")";
+    }
 }
