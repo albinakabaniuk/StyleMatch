@@ -18,7 +18,7 @@ const Login = () => {
         setLoading(true);
         const normalizedEmail = email.toLowerCase().trim();
         try {
-            const response = await api.post('/auth/login', { email: normalizedEmail, password });
+            const response = await api.post('/api/auth/login', { email: normalizedEmail, password });
             localStorage.setItem('token', response.data.token);
             navigate('/analysis');
         } catch (err) {
