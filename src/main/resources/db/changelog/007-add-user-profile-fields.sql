@@ -1,6 +1,7 @@
 -- liquibase formatted sql
 
 -- changeset albinakabaniuk:7
+-- validCheckSum: 9:23213c035ded90ec727fa26840bf4e91
 ALTER TABLE users ADD COLUMN name VARCHAR(255);
 ALTER TABLE users ADD COLUMN age INTEGER;
 ALTER TABLE users ADD COLUMN weight DOUBLE PRECISION;
