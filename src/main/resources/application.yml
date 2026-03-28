@@ -6,7 +6,7 @@ spring:
   application:
     name: StyleMatch
   datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:${DATABASE_URL:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:railway}}}
+    url: ${SPRING_DATASOURCE_URL:jdbc:${DATABASE_URL:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:postgres}}}
     username: ${SPRING_DATASOURCE_USERNAME:${DATABASE_USER:postgres}}
     password: ${SPRING_DATASOURCE_PASSWORD:${DATABASE_PASSWORD:password}}
     driver-class-name: org.postgresql.Driver
