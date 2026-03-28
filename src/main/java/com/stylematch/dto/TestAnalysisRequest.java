@@ -4,10 +4,8 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotEmpty;
 import java.util.List;
-import lombok.ToString;
 
 @Schema(description = "Request payload for test-based style analysis")
-@ToString
 public class TestAnalysisRequest {
 
     public TestAnalysisRequest() {}
@@ -45,4 +43,9 @@ public class TestAnalysisRequest {
     public void setAnswers(List<TestAnswer> answers) { this.answers = answers; }
     public String getLanguage() { return language; }
     public void setLanguage(String language) { this.language = language; }
+
+    @Override
+    public String toString() {
+        return "TestAnalysisRequest(answers=" + answers + ", language=" + language + ")";
+    }
 }
