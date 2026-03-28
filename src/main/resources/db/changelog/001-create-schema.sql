@@ -1,6 +1,7 @@
 -- liquibase formatted sql
 
 -- changeset albinakabaniuk:1
+-- validCheckSum: 9:0700d3e1b44d10a5b59f564362156903
 CREATE TABLE customers (
     id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     name VARCHAR(255) NOT NULL,

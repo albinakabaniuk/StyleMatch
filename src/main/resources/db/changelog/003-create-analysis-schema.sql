@@ -1,6 +1,7 @@
 -- liquibase formatted sql
 
 -- changeset albinakabaniuk:3
+-- validCheckSum: 9:9565edc5a9b1eb23b2ffcd410ad0e0ef
 CREATE TABLE analysis_results (
     id UUID DEFAULT ${uuid_function} PRIMARY KEY,
     user_id UUID NOT NULL,
