@@ -70,8 +70,17 @@ public class SecurityConfig {
                                 "/*.css",
                                 "/*.png",
                                 "/*.ico",
-                                "/*.svg")
+                                "/*.svg",
+                                "/login",
+                                "/register",
+                                "/forgot-password",
+                                "/reset-password",
+                                "/profile",
+                                "/analysis",
+                                "/results",
+                                "/survey")
                         .permitAll()
+                        .requestMatchers("/api/test-results/**").authenticated()
                         .requestMatchers("/api/analysis/**").authenticated()
                         .requestMatchers("/api/users/me").authenticated()
                         .requestMatchers("/api/users/**").authenticated()

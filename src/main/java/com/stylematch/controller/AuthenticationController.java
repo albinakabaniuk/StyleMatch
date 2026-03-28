@@ -5,6 +5,7 @@ import com.stylematch.domain.User;
 import com.stylematch.dto.AuthRequest;
 import com.stylematch.dto.AuthResponse;
 import com.stylematch.dto.ForgotPasswordRequest;
+import com.stylematch.dto.MessageResponse;
 import com.stylematch.dto.RegisterRequest;
 import com.stylematch.dto.ResetPasswordRequest;
 import com.stylematch.dto.ChangePasswordRequest;
@@ -59,7 +60,7 @@ public class AuthenticationController {
             return ResponseEntity.ok(response);
         } catch (IllegalArgumentException e) {
             log.warn("Registration rejected — email already exists: {}", request.getEmail());
-            return ResponseEntity.status(HttpStatus.CONFLICT).body("Email is already registered.");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(new MessageResponse("Email is already registered."));
         }
     }
 
@@ -73,26 +74,26 @@ public class AuthenticationController {
             return ResponseEntity.ok(response);
         } catch (UsernameNotFoundException e) {
             log.warn("Login FAILED — user not found: {}", request.getEmail());
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new MessageResponse("Invalid email or password."));
         } catch (BadCredentialsException e) {
             log.warn("Login FAILED — bad credentials for: {} (BCrypt match returned false)", request.getEmail());
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new MessageResponse("Invalid email or password."));
         } catch (DisabledException e) {
             log.warn("Login FAILED — account disabled: {}", request.getEmail());
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Account is disabled.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new MessageResponse("Account is disabled."));
         } catch (Exception e) {
             log.error("Login FAILED — unexpected error for: {} — {}", request.getEmail(), e.getMessage());
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid email or password.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new MessageResponse("Invalid email or password."));
         }
     }
 
     @Operation(summary = "Request a password reset token — token is logged to server console")
     @PostMapping("/forgot-password")
-    public ResponseEntity<String> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+    public ResponseEntity<MessageResponse> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
         User user = userRepository.findByEmail(request.getEmail()).orElse(null);
         if (user == null) {
             log.info("Forgot-password: email not found (not disclosed to client): {}", request.getEmail());
-            return ResponseEntity.ok("If this email is registered, a reset token has been generated.");
+            return ResponseEntity.ok(new MessageResponse("If this email is registered, a reset token has been generated."));
         }
 
         String token = UUID.randomUUID().toString();
@@ -106,22 +107,22 @@ public class AuthenticationController {
         // ===== COPY THIS TOKEN FROM LOGS TO USE IN RESET FORM =====
         log.info("=== PASSWORD RESET TOKEN for [{}] === TOKEN: [{}] ===", request.getEmail(), token);
 
-        return ResponseEntity.ok("If this email is registered, a reset token has been generated.");
+        return ResponseEntity.ok(new MessageResponse("If this email is registered, a reset token has been generated."));
     }
 
     @Operation(summary = "Reset password using a valid token")
     @PostMapping("/reset-password")
-    public ResponseEntity<String> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
+    public ResponseEntity<MessageResponse> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
         PasswordResetToken resetToken = passwordResetTokenRepository
                 .findByToken(request.getToken()).orElse(null);
 
         if (resetToken == null || resetToken.isUsed()) {
             log.warn("Password reset REJECTED — invalid or already-used token");
-            return ResponseEntity.badRequest().body("Invalid or already used token.");
+            return ResponseEntity.badRequest().body(new MessageResponse("Invalid or already used token."));
         }
         if (resetToken.getExpiresAt().isBefore(LocalDateTime.now())) {
             log.warn("Password reset REJECTED — expired token for user: {}", resetToken.getUser().getEmail());
-            return ResponseEntity.badRequest().body("Token has expired. Request a new one.");
+            return ResponseEntity.badRequest().body(new MessageResponse("Token has expired. Request a new one."));
         }
 
         User user = resetToken.getUser();
@@ -137,7 +138,7 @@ public class AuthenticationController {
         resetToken.setUsed(true);
         passwordResetTokenRepository.save(resetToken);
 
-        return ResponseEntity.ok("Password reset successfully. You can now log in.");
+        return ResponseEntity.ok(new MessageResponse("Password reset successfully. You can now log in."));
     }
 
     @Operation(summary = "Change password for authenticated user")
