@@ -9,9 +9,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 @Tag(name = "Root", description = "Root diagnostic endpoints")
 public class RootController {
 
+/*
     @Operation(summary = "Root diagnostic endpoint", description = "Identifies the backend service.")
     @GetMapping("/")
     public String root() {
         return "StyleMatch Backend API is Running. Please visit the Frontend application URL to use the app.";
     }
+    */
 }

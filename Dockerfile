@@ -13,7 +13,7 @@ WORKDIR /app
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
 # 2. Copy the built frontend from the previous stage
-COPY --from=frontend-builder /app/frontend/dist ./frontend/dist
+COPY --from=frontend-builder /app/frontend/dist ./src/main/resources/static
 # 3. Copy backend source and build
 COPY src ./src
 RUN mvn clean package -DskipTests
