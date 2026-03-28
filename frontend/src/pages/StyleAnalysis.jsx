@@ -33,7 +33,7 @@ const StyleAnalysis = () => {
                 <img
                     src={heroBanner}
                     alt="Style DNA"
-                    style={{ width: '100%', height: 'clamp(160px, 30vh, 260px)', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                    style={{ width: '100%', height: 'clamp(180px, 40vh, 400px)', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                 />
                 <div style={{
                     position: 'absolute', inset: 0,
