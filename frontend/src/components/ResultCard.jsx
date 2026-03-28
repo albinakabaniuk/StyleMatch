@@ -122,11 +122,11 @@ const ResultCard = ({ result, onReset }) => {
     const season = result?.season || metadata?.season || config.name.split(' ')[1] || '—';
 
     return (
-        <div className="bratz-card" style={{
+        <div className="bratz-card mobile-padding-sm" style={{
             maxWidth: '800px',
             margin: '0 auto',
             animation: 'fadeInUp 0.8s cubic-bezier(0.22, 1, 0.36, 1)',
-            padding: '2rem',
+            padding: 'clamp(1.25rem, 5vw, 2.5rem)',
         }}>
             {/* Header section */}
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
@@ -143,8 +143,8 @@ const ResultCard = ({ result, onReset }) => {
                     />
                  </div>
 
-                <h1 className="brand-font" style={{
-                    fontSize: '3.5rem',
+                <h1 className="brand-font mobile-h1" style={{
+                    fontSize: 'clamp(2.2rem, 10vw, 3.5rem)',
                     marginTop: '1.5rem',
                     marginBottom: '0.5rem',
                     background: 'linear-gradient(135deg, #fff 0%, #ff9ed2 50%, #c084fc 100%)',
@@ -185,10 +185,10 @@ const ResultCard = ({ result, onReset }) => {
                 <h3 className="brand-font" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '1.5rem', textAlign: 'center' }}>
                     {t('result.signaturePalette', 'Your Signature Palette')}
                 </h3>
-                <div style={{ display: 'flex', gap: '8px', height: '110px' }}>
+                <div style={{ display: 'flex', gap: '8px', height: 'clamp(80px, 15vh, 110px)', flexWrap: 'wrap' }}>
                     {(palette || []).map((color, i) => (
                         <div key={i} className="shine-effect color-swatch" style={{
-                            flex: 1, backgroundColor: color, borderRadius: '12px',
+                            flex: 1, minWidth: '35px', backgroundColor: color, borderRadius: '12px',
                             boxShadow: '0 8px 30px rgba(0,0,0,0.4)', transition: 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                             cursor: 'pointer', zIndex: 1, position: 'relative', overflow: 'hidden',
                             display: 'flex', alignItems: 'flex-end', justifyContent: 'center', paddingBottom: '10px'
@@ -252,11 +252,11 @@ const ResultCard = ({ result, onReset }) => {
             </div>
 
             {/* Actions */}
-            <div style={{ display: 'flex', gap: '1.5rem' }}>
-                <button className="bratz-btn primary" onClick={() => window.location.href = '/profile'} style={{ flex: 1 }}>
+            <div className="mobile-stack" style={{ display: 'flex', gap: '1.5rem' }}>
+                <button className="bratz-btn primary" onClick={() => window.location.href = '/profile'} style={{ flex: 1, width: '100%' }}>
                     {t('bodyShape.viewProfileBtn', 'View Profile')}
                 </button>
-                <button className="bratz-btn secondary" onClick={onReset} style={{ flex: 1 }}>
+                <button className="bratz-btn secondary" onClick={onReset} style={{ flex: 1, width: '100%' }}>
                     {t('bodyShape.retakeTestBtn', 'Try Again ✨')}
                 </button>
             </div>
