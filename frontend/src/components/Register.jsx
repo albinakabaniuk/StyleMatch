@@ -17,7 +17,7 @@ const Register = () => {
         setError('');
         setLoading(true);
         try {
-            const response = await api.post('/api/auth/register', { email, password });
+            const response = await api.post('auth/register', { email, password });
             localStorage.setItem('token', response.data.token);
             navigate('/analysis');
         } catch (err) {
