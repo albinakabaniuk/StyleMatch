@@ -17,17 +17,18 @@ const Header = () => {
             display: 'flex', 
             justifyContent: 'space-between', 
             alignItems: 'center', 
-            padding: '1.5rem 2rem',
-            marginBottom: '2rem',
+            padding: '1rem var(--page-padding)',
+            marginBottom: '1.5rem',
             width: '100%',
             maxWidth: '1200px',
-            margin: '0 auto 2rem'
+            margin: '0 auto 1.5rem'
         }}>
             <span 
+                className="mobile-center"
                 onClick={() => navigate('/analysis')}
                 style={{
                     fontFamily: "'Playfair Display', serif",
-                    fontSize: '1.6rem',
+                    fontSize: 'clamp(1.2rem, 4vw, 1.8rem)',
                     background: 'linear-gradient(135deg,#ff007f,#b026ff)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
@@ -38,16 +39,17 @@ const Header = () => {
                 StyleMatch ✨
             </span>
 
-            <div style={{ 
+            <div className="mobile-center" style={{ 
                 display: 'flex', 
                 alignItems: 'center', 
-                gap: '12px', 
-                flexWrap: 'nowrap',
+                gap: '8px', 
+                flexWrap: 'wrap',
                 padding: '4px 0'
             }}>
                 <LanguageSwitcher />
                 
                 <button
+                    className="mobile-text-sm"
                     onClick={() => navigate('/analysis')}
                     style={{
                         background: 'rgba(255,255,255,0.08)',

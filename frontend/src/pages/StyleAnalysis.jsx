@@ -23,9 +23,9 @@ const StyleAnalysis = () => {
 
             {/* ── Hero Section ── */}
             <div style={{
-                borderRadius: '28px',
+                borderRadius: 'var(--radius-card)',
                 overflow: 'hidden',
-                marginBottom: '36px',
+                marginBottom: 'clamp(1.5rem, 5vw, 2.5rem)',
                 position: 'relative',
                 boxShadow: '0 30px 80px rgba(176,38,255,0.35)',
                 border: '1.5px solid rgba(255,0,127,0.25)',
@@ -33,7 +33,7 @@ const StyleAnalysis = () => {
                 <img
                     src={heroBanner}
                     alt="Style DNA"
-                    style={{ width: '100%', height: '260px', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+                    style={{ width: '100%', height: 'clamp(160px, 30vh, 260px)', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
                 />
                 <div style={{
                     position: 'absolute', inset: 0,
@@ -45,9 +45,9 @@ const StyleAnalysis = () => {
                     gap: '10px',
                     padding: '24px',
                 }}>
-                    <h1 style={{
+                    <h1 className="mobile-h1" style={{
                         fontFamily: "'Playfair Display', serif",
-                        fontSize: '2.4rem',
+                        fontSize: 'clamp(1.8rem, 6vw, 2.6rem)',
                         fontWeight: 900,
                         textAlign: 'center',
                         margin: 0,
@@ -147,19 +147,19 @@ const StyleAnalysis = () => {
 
                     {/* Photo Scan Card */}
                     <div 
-                        className="bratz-card neon-border"
+                        className="bratz-card neon-border mobile-padding-sm"
                         style={{ cursor: 'pointer', textAlign: 'center', transition: 'transform 0.3s', gridColumn: '1 / -1' }}
                         onClick={() => { setView('photo'); setActiveTab('photo'); }}
                         onMouseEnter={(e) => e.currentTarget.style.transform = 'translateY(-10px)'}
                         onMouseLeave={(e) => e.currentTarget.style.transform = 'translateY(0)'}
                     >
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
-                             <div style={{ fontSize: '4rem' }}>📸</div>
-                             <div style={{ textAlign: 'left', flex: 1, minWidth: '200px' }}>
-                                <h2 className="brand-font" style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>{t('analysis.photoScan')}</h2>
-                                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem' }}>{t('photoScanSubtitle', 'Upload a selfie for instant AI-powered seasonal analysis.')}</p>
+                        <div className="mobile-stack" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', flexWrap: 'wrap' }}>
+                             <div style={{ fontSize: 'min(4rem, 15vw)' }}>📸</div>
+                             <div className="mobile-center" style={{ textAlign: 'left', flex: 1, minWidth: '200px' }}>
+                                <h2 className="brand-font" style={{ fontSize: 'clamp(1.4rem, 5vw, 1.8rem)', marginBottom: '0.5rem' }}>{t('analysis.photoScan')}</h2>
+                                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '0.95rem' }}>{t('photoScanSubtitle', 'Upload a selfie for instant AI-powered seasonal analysis.')}</p>
                              </div>
-                             <button className="bratz-btn" style={{ minWidth: '200px' }}>{t('tryPhotoScan', 'Try Photo Scan ✨')}</button>
+                             <button className="bratz-btn" style={{ minWidth: '200px', width: '100%' }}>{t('tryPhotoScan', 'Try Photo Scan ✨')}</button>
                         </div>
                     </div>
                 </div>
