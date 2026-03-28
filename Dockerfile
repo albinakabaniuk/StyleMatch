@@ -7,7 +7,7 @@ COPY frontend/ ./
 RUN npm run build
 
 # Stage 2: Backend Build
-FROM maven:3.9.6-eclipse-temurin-21 AS backend-builder
+FROM maven:3.9.6-eclipse-temurin-17 AS backend-builder
 WORKDIR /app
 # 1. Cache Maven dependencies
 COPY pom.xml .
@@ -20,7 +20,7 @@ COPY --from=frontend-builder /app/frontend/dist ./src/main/resources/static
 RUN mvn clean package -DskipTests
 
 # Stage 3: Runtime
-FROM eclipse-temurin:21-jre-jammy
+FROM eclipse-temurin:17-jre-jammy
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 COPY --from=backend-builder /app/target/*.jar app.jar
