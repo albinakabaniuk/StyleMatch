@@ -32,8 +32,8 @@
 
 .style-test-container {
     background: rgba(20, 5, 40, 0.85);
-    backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     border: 1.5px solid rgba(255, 0, 127, 0.2);
     border-radius: 28px;
     padding: 40px;
