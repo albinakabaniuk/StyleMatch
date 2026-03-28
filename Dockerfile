@@ -12,10 +12,11 @@ WORKDIR /app
 # 1. Cache Maven dependencies
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
-# 2. Copy the built frontend from the previous stage
-COPY --from=frontend-builder /app/frontend/dist ./src/main/resources/static
-# 3. Copy backend source and build
+# 2. Copy backend source
 COPY src ./src
+# 3. Copy the built frontend from the previous stage AFTER src to ensure it survives
+COPY --from=frontend-builder /app/frontend/dist ./src/main/resources/static
+# 4. Build backend
 RUN mvn clean package -DskipTests
 
 # Stage 3: Runtime
