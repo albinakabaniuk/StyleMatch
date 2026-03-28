@@ -386,7 +386,8 @@ h4 {
 /* ─── Style Test ─── */
 .style-test-container {
   background: var(--bg-card);
-  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
   border: 1.5px solid var(--border-glow);
   border-radius: 24px;
   padding: 40px;
