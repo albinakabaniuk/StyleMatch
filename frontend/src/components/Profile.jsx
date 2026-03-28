@@ -344,10 +344,10 @@ const Profile = () => {
         <div className="analysis-container">
             <Header />
 
-            <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '2rem', alignItems: 'start' }}>
+            <div className="mobile-stack" style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '2rem', alignItems: 'start' }}>
 
                 {/* ── Left Column: User Info ── */}
-                <div style={{ position: 'sticky', top: '2rem' }}>
+                <div className="mobile-no-sticky" style={{ position: 'sticky', top: '2rem' }}>
                     <div className="bratz-card glass-card" style={{ padding: '2rem', marginBottom: '1.5rem' }}>
                         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                             <div style={{
