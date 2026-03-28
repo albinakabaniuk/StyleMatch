@@ -5,7 +5,6 @@ import com.stylematch.domain.User;
 import com.stylematch.dto.AuthRequest;
 import com.stylematch.dto.AuthResponse;
 import com.stylematch.dto.RegisterRequest;
-import com.stylematch.repository.UserRepository;
 import com.stylematch.security.JwtUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,16 +23,14 @@ public class AuthService {
 
     private static final Logger log = LoggerFactory.getLogger(AuthService.class);
 
-    private final UserRepository userRepository;
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;
     private final JwtUtil jwtUtil;
     private final AuthenticationManager authenticationManager;
 
-    public AuthService(UserRepository userRepository, UserService userService,
+    public AuthService(UserService userService,
                       PasswordEncoder passwordEncoder, JwtUtil jwtUtil,
                       AuthenticationManager authenticationManager) {
-        this.userRepository = userRepository;
         this.userService = userService;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtil = jwtUtil;

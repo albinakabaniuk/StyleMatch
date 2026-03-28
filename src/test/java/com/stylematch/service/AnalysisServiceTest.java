@@ -5,7 +5,6 @@ import com.stylematch.dto.AIAnalysisResult;
 import com.stylematch.dto.AnalysisResponse;
 import com.stylematch.dto.TestAnalysisRequest;
 import com.stylematch.dto.TestAnswer;
-import com.stylematch.repository.AnalysisAnswerRepository;
 import com.stylematch.repository.AnalysisResultRepository;
 import com.stylematch.repository.TestResultRepository;
 import com.stylematch.domain.TestResult;
@@ -34,8 +33,6 @@ class AnalysisServiceTest {
     @Mock
     private TestResultRepository testResultRepository;
 
-    @Mock
-    private AnalysisAnswerRepository answerRepository;
 
     private AnalysisService analysisService;
     private ManualAIService manualAiService;
@@ -59,7 +56,6 @@ class AnalysisServiceTest {
     void setUp() {
         manualAiService = new ManualAIService();
         analysisService = new AnalysisService(
-            answerRepository,
             analysisResultRepository,
             testResultRepository,
             manualAiService,

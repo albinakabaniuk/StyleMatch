@@ -6,8 +6,6 @@ import com.stylematch.dto.AIAnalysisResult;
 import com.stylematch.dto.AnalysisResponse;
 import com.stylematch.dto.TestAnalysisRequest;
 import com.stylematch.dto.TestAnswer;
-import com.stylematch.dto.TestResultRequest;
-import com.stylematch.repository.AnalysisAnswerRepository;
 import com.stylematch.repository.AnalysisResultRepository;
 import com.stylematch.repository.TestResultRepository;
 import org.slf4j.Logger;
@@ -27,18 +25,15 @@ public class AnalysisService {
 
     private static final Logger log = LoggerFactory.getLogger(AnalysisService.class);
 
-    private final AnalysisAnswerRepository answerRepository;
     private final AnalysisResultRepository analysisResultRepository;
     private final TestResultRepository testResultRepository;
     private final AIService aiService;
     private final ObjectMapper objectMapper;
 
-    public AnalysisService(AnalysisAnswerRepository answerRepository, 
-                           AnalysisResultRepository analysisResultRepository, 
+    public AnalysisService(AnalysisResultRepository analysisResultRepository, 
                            TestResultRepository testResultRepository, 
                            AIService aiService,
                            ObjectMapper objectMapper) {
-        this.answerRepository = answerRepository;
         this.analysisResultRepository = analysisResultRepository;
         this.testResultRepository = testResultRepository;
         this.aiService = aiService;
