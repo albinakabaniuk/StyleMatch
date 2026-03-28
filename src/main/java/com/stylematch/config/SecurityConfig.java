@@ -49,8 +49,10 @@ public class SecurityConfig {
                                 "/api/auth/forgot-password",
                                 "/api/auth/reset-password",
                                 // Swagger UI
+                                "/api-docs",
                                 "/api-docs/**",
                                 "/api-docs.yaml",
+                                "/v3/api-docs",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
                                 "/swagger-ui.html",
