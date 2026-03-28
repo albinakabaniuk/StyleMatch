@@ -448,7 +448,4 @@ public class AIService {
         }
     }
 
-    private String getTranslated(String lang, String en, String uk) {
-        return "uk".equalsIgnoreCase(lang) ? uk : en;
-    }
 }

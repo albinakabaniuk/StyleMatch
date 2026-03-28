@@ -14,7 +14,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.stream.Collectors;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -117,7 +116,6 @@ public class BodyShapeAnalysisService {
 
         // Simple heuristic based on common patterns
         long aCount = answers.stream().filter(a -> "A".equalsIgnoreCase(a.getAnswer())).count(); // Shoulders/Broad
-        long bCount = answers.stream().filter(a -> "B".equalsIgnoreCase(a.getAnswer())).count(); // Bust/Square
         long dCount = answers.stream().filter(a -> "D".equalsIgnoreCase(a.getAnswer())).count(); // Hips/Narrow
 
         if (aCount >= 2 && dCount >= 2) return BodyShape.HOURGLASS;

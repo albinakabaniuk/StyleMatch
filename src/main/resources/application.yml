@@ -33,6 +33,9 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
+app:
+  openai:
+    api-key: ${OPENAI_API_KEY:demo}
 
 logging:
   level:
