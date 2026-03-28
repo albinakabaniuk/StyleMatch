@@ -20,8 +20,9 @@ const Register = () => {
             const response = await api.post('/auth/register', { email, password });
             localStorage.setItem('token', response.data.token);
             navigate('/analysis');
-        } catch {
-            setError(t('errors.registrationFailed'));
+        } catch (err) {
+            const msg = err.response?.data?.message || err.message || t('errors.registrationFailed');
+            setError(msg);
         } finally {
             setLoading(false);
         }

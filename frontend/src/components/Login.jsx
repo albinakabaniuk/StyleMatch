@@ -21,8 +21,9 @@ const Login = () => {
             const response = await api.post('/auth/login', { email: normalizedEmail, password });
             localStorage.setItem('token', response.data.token);
             navigate('/analysis');
-        } catch {
-            setError(t('errors.invalidCredentials'));
+        } catch (err) {
+            const msg = err.response?.data?.message || err.message || t('errors.invalidCredentials');
+            setError(msg);
         } finally {
             setLoading(false);
         }
