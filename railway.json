@@ -7,7 +7,7 @@
   "deploy": {
     "numReplicas": 1,
     "sleepApplication": false,
-    "healthcheckPath": "/api-docs",
-    "healthcheckTimeout": 100
+    "healthcheckPath": "/ping",
+    "healthcheckTimeout": 120
   }
 }
