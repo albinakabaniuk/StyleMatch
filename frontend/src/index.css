@@ -29,6 +29,15 @@
   /* Responsive Spacing */
   --page-padding: clamp(1rem, 5vw, 2rem);
   --section-gap: clamp(2rem, 8vw, 4rem);
+
+  /* Safe Area Insets (Modern Mobile) */
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+
+  /* Premium Device Constants */
+  --glass-blur: 24px;
 }
 
 /* ─── Reset ─── */
@@ -103,6 +112,41 @@ body::after {
   100% { opacity: 0.6; transform: translateY(-30px); }
 }
 
+/* ─── Background Glow Effects ─── */
+.bg-glow {
+  position: fixed;
+  width: 60vmax;
+  height: 60vmax;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.bg-glow-1 {
+  background: radial-gradient(circle, var(--bratz-pink) 0%, transparent 70%);
+  top: -20%;
+  left: -10%;
+  animation: glowMove1 20s infinite alternate ease-in-out;
+}
+
+.bg-glow-2 {
+  background: radial-gradient(circle, var(--bratz-purple) 0%, transparent 70%);
+  bottom: -10%;
+  right: -10%;
+  animation: glowMove2 25s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(15%, 15%) scale(1.2); }
+}
+
+@keyframes glowMove2 {
+  0% { transform: translate(0, 0) scale(1.2); }
+  100% { transform: translate(-15%, -15%) scale(1); }
+}
+
 /* ─── Typography ─── */
 h1,
 h2,
@@ -125,6 +169,10 @@ h4 {
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+  padding-left: var(--safe-left);
+  padding-right: var(--safe-right);
 }
 
 /* ─── Auth Container ─── */
@@ -167,8 +215,8 @@ h4 {
 /* ─── Card ─── */
 .bratz-card {
   background: rgba(20, 5, 40, 0.75);
-  backdrop-filter: blur(28px) saturate(180%);
   -webkit-backdrop-filter: blur(28px) saturate(180%);
+  backdrop-filter: blur(28px) saturate(180%);
   border: 1.5px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-card);
   padding: 44px 40px;
@@ -363,10 +411,15 @@ h4 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 0;
-  margin-bottom: 32px;
+  padding: clamp(1rem, 3vh, 1.5rem) var(--page-padding);
+  margin-bottom: 2rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto clamp(1rem, 4vh, 2rem);
+  position: relative;
+  z-index: 10;
 }
 
 @media (max-width: 600px) {
@@ -580,6 +633,7 @@ h4 {
 /* Glassmorphism Refinements */
 .glass-card {
   background: rgba(255, 255, 255, 0.03) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
   backdrop-filter: blur(12px) !important;
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37) !important;
@@ -603,4 +657,63 @@ h4 {
 
 .neon-border:hover::after {
   opacity: 0.6;
+}
+/* ─── Premium Device Optimizations (iPhone 16/17 Pro Max, S24/S25 Ultra) ─── */
+
+/* 1. Tall Screen Optimization (Aspect Ratio > 2:1) */
+@media screen and (min-height: 820px) {
+  :root {
+    --section-gap: clamp(3rem, 12vh, 6rem);
+  }
+  
+  .analysis-container {
+    padding-top: calc(var(--safe-top) + 2rem);
+    padding-bottom: calc(var(--safe-bottom) + 3rem);
+  }
+
+  .bratz-card {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .question-text {
+    margin-bottom: 3rem;
+  }
+  
+  .bratz-nav {
+    padding: 1rem 0 2rem;
+  }
+}
+
+/* 2. Ultra-High Density Optimization (DPR >= 3) */
+@media screen and (-webkit-min-device-pixel-ratio: 3), screen and (min-resolution: 3dppx) {
+  .bratz-card {
+    border-width: 1px; /* Sharper line on high PPI */
+    -webkit-backdrop-filter: blur(32px) saturate(200%);
+    backdrop-filter: blur(32px) saturate(200%);
+    box-shadow: 
+      0 40px 100px rgba(0, 0, 0, 0.7),
+      0 0 0 0.5px rgba(255, 255, 255, 0.1),
+      var(--shadow-pink);
+  }
+  
+  .brand-font {
+    filter: drop-shadow(0 4px 15px rgba(255, 0, 127, 0.4));
+  }
+}
+
+/* 3. Reachability Optimizations (Tall Screens) */
+@media screen and (min-height: 850px) and (max-width: 500px) {
+  .submit-button, .bratz-btn {
+    padding: 18px 32px; /* Larger hit targets for easy thumb access */
+    font-size: 1.05rem;
+  }
+  
+  .tabs-container {
+    margin-bottom: 3.5rem;
+  }
+  
+  .bratz-nav {
+    margin-bottom: 3rem;
+  }
 }

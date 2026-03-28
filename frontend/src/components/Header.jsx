@@ -13,16 +13,7 @@ const Header = () => {
     };
 
     return (
-        <div className="bratz-nav" style={{ 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center', 
-            padding: '1rem var(--page-padding)',
-            marginBottom: '1.5rem',
-            width: '100%',
-            maxWidth: '1200px',
-            margin: '0 auto 1.5rem'
-        }}>
+        <div className="bratz-nav">
             <span 
                 className="mobile-center"
                 onClick={() => navigate('/analysis')}
