@@ -133,10 +133,10 @@ const BodyShapeTest = () => {
     return (
       <div className="analysis-container">
         <Header />
-        <div className="container" style={{ padding: '2rem', display: 'flex', justifyContent: 'center' }}>
-          <div className="bratz-card" style={{ maxWidth: 800, width: '100%', textAlign: 'center', padding: '3rem' }}>
-            <h2 className="brand-font" style={{ 
-              fontSize: '3.5rem', 
+        <div className="container mobile-padding-sm" style={{ padding: '2rem', display: 'flex', justifyContent: 'center' }}>
+          <div className="bratz-card mobile-padding-sm" style={{ maxWidth: 800, width: '100%', textAlign: 'center', padding: 'clamp(1.5rem, 5vw, 3rem)' }}>
+            <h2 className="brand-font mobile-h1" style={{ 
+              fontSize: 'clamp(2rem, 8vw, 3.5rem)', 
               marginBottom: '1rem', 
               color: 'var(--bratz-pink)', 
               filter: 'drop-shadow(0 10px 20px rgba(255,0,127,0.3))',
@@ -176,11 +176,11 @@ const BodyShapeTest = () => {
               </ul>
             </div>
 
-            <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
-              <button className="bratz-btn primary" onClick={() => navigate('/profile')} style={{ flex: 1 }}>
+            <div className="mobile-stack" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center' }}>
+              <button className="bratz-btn primary" onClick={() => navigate('/profile')} style={{ flex: 1, width: '100%' }}>
                   {t('bodyShape.viewProfileBtn')}
               </button>
-              <button className="bratz-btn secondary" onClick={() => { setResult(null); setStep(0); setAnswers([]); }} style={{ flex: 1 }}>
+              <button className="bratz-btn secondary" onClick={() => { setResult(null); setStep(0); setAnswers([]); }} style={{ flex: 1, width: '100%' }}>
                   {t('bodyShape.retakeTestBtn')}
               </button>
             </div>
@@ -195,9 +195,9 @@ const BodyShapeTest = () => {
   return (
     <div className="analysis-container">
       <Header />
-      <div className="container" style={{ padding: '2rem', display: 'flex', justifyContent: 'center', minHeight: '80vh', alignItems: 'center' }}>
-        <div className="bratz-card" style={{ maxWidth: 600, width: '100%' }}>
-          <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+      <div className="container mobile-padding-sm" style={{ padding: '1rem', display: 'flex', justifyContent: 'center', minHeight: '80vh', alignItems: 'center' }}>
+        <div className="bratz-card mobile-padding-sm" style={{ maxWidth: 600, width: '100%', padding: 'clamp(1rem, 4vw, 2.5rem)' }}>
+          <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <span className="brand-font" style={{ fontSize: '1.2rem', color: 'var(--bratz-pink)' }}>{t('bodyShape.analysisTitle')}</span>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{t('bodyShape.stepLabel')} {step + 1} {t('bodyShape.stepOf')} {QUESTIONS.length}</span>
           </div>
