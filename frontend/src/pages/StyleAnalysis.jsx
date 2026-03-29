@@ -173,9 +173,11 @@ const StyleAnalysis = () => {
             <div style={{
                 textAlign: 'center',
                 padding: '32px 0 16px',
-                fontSize: '1.5rem',
-                letterSpacing: '10px',
+                fontSize: 'clamp(1rem, 5vw, 1.5rem)',
+                letterSpacing: 'clamp(4px, 2vw, 10px)',
                 opacity: 0.35,
+                whiteSpace: 'nowrap',
+                overflow: 'hidden'
             }}>
                 👠 💄 💅 🌸 ✨ 💫 👛 🎀
             </div>
