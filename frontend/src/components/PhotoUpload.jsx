@@ -72,7 +72,10 @@ const PhotoUpload = () => {
                     {error && <p className="error-message">{error}</p>}
                 </>
             ) : (
-                <ResultCard result={result} onReset={() => { setResult(null); setFile(null); setPreview(null); }} />
+                <ResultCard 
+                    result={{ ...result, uploadedPhoto: preview }} 
+                    onReset={() => { setResult(null); setFile(null); setPreview(null); }} 
+                />
             )}
         </div>
     );
