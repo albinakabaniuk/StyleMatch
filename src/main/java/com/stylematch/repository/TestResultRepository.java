@@ -13,4 +13,5 @@ public interface TestResultRepository extends JpaRepository<TestResult, Long> {
     List<TestResult> findByUserAndTestTypeOrderByCreatedAtDesc(User user, String testType);
     java.util.Optional<TestResult> findByIdAndUser(Long id, User user);
     void deleteByUser(User user);
+    void deleteByUserAndTestType(User user, String testType);
 }

@@ -4,7 +4,7 @@ export const getProfile = () => api.get("users/me");
 export const getResults = () => api.get("test-results");
 export const updateProfile = (data) => api.put("users/me", data);
 export const deleteResult = (id) => api.delete(`test-results/${id}`);
-export const deleteAllResults = (userId) => api.delete(`test-results/user/${userId}`);
+export const deleteResultsByType = (type) => api.delete(`test-results/type/${type}`);
 
 export const deleteAccount = () => api.delete("users/me");
 export const updateLanguage = (language) => api.put("users/language", { language });
@@ -14,7 +14,7 @@ const userService = {
     getResults,
     updateProfile,
     deleteResult,
-    deleteAllResults,
+    deleteResultsByType,
     deleteAccount,
     updateLanguage
 };

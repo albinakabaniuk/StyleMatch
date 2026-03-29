@@ -38,15 +38,10 @@ public class TestResultController {
         return ResponseEntity.noContent().build();
     }
 
-    @Operation(summary = "Delete all test results for a specific user ID")
-    @DeleteMapping("/user/{userId}")
-    public ResponseEntity<Void> deleteAllResultsByUser(@AuthenticationPrincipal User user, @PathVariable java.util.UUID userId) {
-        // Simple security check: user can only delete their own data unless they are an admin
-        // (Assuming User ID is UUID based on previous findings)
-        if (!user.getId().equals(userId)) {
-             return ResponseEntity.status(403).build();
-        }
-        testResultService.deleteAllResults(user);
+    @Operation(summary = "Delete all test results for a specific test category (e.g. COLOR_TYPE)")
+    @DeleteMapping("/type/{testType}")
+    public ResponseEntity<Void> deleteResultsByType(@AuthenticationPrincipal User user, @PathVariable String testType) {
+        testResultService.deleteResultsByType(user, testType);
         return ResponseEntity.noContent().build();
     }
 

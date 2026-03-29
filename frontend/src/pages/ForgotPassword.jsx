@@ -55,7 +55,12 @@ const ForgotPassword = () => {
                         color: '#86efac',
                         fontSize: '0.88rem',
                         lineHeight: 1.5,
-                    }}>{t('auth.forgotSuccess')}</div>
+                    }}>
+                        {t('auth.forgotSuccess', 'If this email is registered, a reset token has been generated.')}
+                        <div style={{ marginTop: '8px', fontSize: '0.75rem', opacity: 0.8 }}>
+                            Tip: For development, the token is also displayed in the backend console logs.
+                        </div>
+                    </div>
                 )}
                 {errorMsg && (
                     <div className="error-message">

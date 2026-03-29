@@ -29,10 +29,12 @@ public class EmailServiceImpl implements EmailService {
             MimeMessage message = mailSender.createMimeMessage();
             MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
 
-            helper.setFrom(fromEmail);
+            helper.setFrom("StyleMatch <" + fromEmail + ">");
             helper.setTo(to);
             helper.setSubject("StyleMatch: Reset Your Password ✨");
 
+            log.info("Attempting to send password reset email to: {}", to);
+            // ... (htmlContent generation omitted for brevity in instruction, keeping same as before)
             String htmlContent = "<html><body style='font-family: Arial, sans-serif; color: #333;'>"
                     + "<div style='max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 12px;'>"
                     + "<h2 style='color: #c084fc; text-align: center;'>StyleMatch</h2>"
@@ -48,12 +50,12 @@ public class EmailServiceImpl implements EmailService {
             helper.setText(htmlContent, true);
 
             mailSender.send(message);
-            log.info("Password reset email sent successfully to: {}", to);
+            log.info("SUCCESS: Password reset email sent to: {}", to);
         } catch (MessagingException e) {
-            log.error("Failed to send password reset email to {}: {}", to, e.getMessage());
-            // We don't throw here to avoid disclosing email existence vs failure to the client
+            log.error("SMTP FAILURE: Failed to send reset email to {}. Error: {}", to, e.getMessage());
+            log.error("TIP: Ensure SPRING_MAIL_HOST and SPRING_MAIL_PASSWORD are set correctly in your environment.");
         } catch (Exception e) {
-            log.error("Unexpected error while sending email to {}: {}", to, e.getMessage());
+            log.error("UNEXPECTED EMAIL ERROR for {}: {}", to, e.getMessage());
         }
     }
 }

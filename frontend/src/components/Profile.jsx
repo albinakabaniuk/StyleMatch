@@ -301,24 +301,28 @@ const Profile = () => {
         }
     };
 
-    const handleDeleteClick = (id) => {
-        setResultToDelete(id);
+    const handleDeleteClick = (idOrType) => {
+        setResultToDelete(idOrType);
         setShowResultDeleteModal(true);
     };
 
     const handleConfirmResultDelete = async () => {
-        const idToDelete = resultToDelete;
+        const target = resultToDelete;
         setShowResultDeleteModal(false);
         try {
-            if (idToDelete) {
-                setColorResults(prev => prev.filter(r => r.id !== idToDelete));
-                setBodyShapeResults(prev => prev.filter(r => r.id !== idToDelete));
-                await userService.deleteResult(idToDelete);
-            } else {
-                const userId = profile?.id;
-                setColorResults([]);
-                setBodyShapeResults([]);
-                await userService.deleteAllResults(userId);
+            if (typeof target === 'number' || (typeof target === 'string' && !isNaN(target))) {
+                // Delete a single specific result ID
+                setColorResults(prev => prev.filter(r => r.id !== target));
+                setBodyShapeResults(prev => prev.filter(r => r.id !== target));
+                await userService.deleteResult(target);
+            } else if (target) {
+                // target is a Type string (e.g. 'COLOR_TYPE')
+                if (target === 'COLOR_TYPE') {
+                    setColorResults([]);
+                } else if (target === 'BODY_SHAPE') {
+                    setBodyShapeResults([]);
+                }
+                await userService.deleteResultsByType(target);
             }
         } catch (err) {
             console.error("Delete Error:", err);
@@ -496,7 +500,7 @@ const Profile = () => {
                             {colorResults.length > 0 && (
                                 <button
                                     className="bratz-btn ghost xsmall"
-                                    onClick={() => handleDeleteClick(null)}
+                                    onClick={() => handleDeleteClick('COLOR_TYPE')}
                                 >
                                     {t('clear', 'Clear')}
                                 </button>
@@ -525,7 +529,7 @@ const Profile = () => {
                             {bodyShapeResults.length > 0 && (
                                 <button
                                     className="bratz-btn ghost xsmall"
-                                    onClick={() => handleDeleteClick(null)}
+                                    onClick={() => handleDeleteClick('BODY_SHAPE')}
                                 >
                                     {t('clear', 'Clear')}
                                 </button>

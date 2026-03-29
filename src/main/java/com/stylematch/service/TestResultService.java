@@ -84,6 +84,20 @@ public class TestResultService {
         log.info("Deleted all test results for user: {}", user.getEmail());
     }
 
+    @Transactional
+    public void deleteResultsByType(User user, String type) {
+        if ("COLOR_TYPE".equals(type)) {
+            // Bulk delete all color-related results
+            testResultRepository.deleteByUserAndTestType(user, "COLOR_TYPE");
+            testResultRepository.deleteByUserAndTestType(user, "PHOTO_ANALYSIS");
+            testResultRepository.deleteByUserAndTestType(user, "COLOR");
+            testResultRepository.deleteByUserAndTestType(user, "COLOR_TEST");
+        } else {
+            testResultRepository.deleteByUserAndTestType(user, type);
+        }
+        log.info("Deleted {} test results for user: {}", type, user.getEmail());
+    }
+
     private TestResultResponse mapToResponse(TestResult entity) {
         return TestResultResponse.builder()
                 .id(entity.getId())
