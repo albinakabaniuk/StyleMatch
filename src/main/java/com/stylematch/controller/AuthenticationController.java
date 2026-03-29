@@ -9,6 +9,7 @@ import com.stylematch.dto.MessageResponse;
 import com.stylematch.dto.RegisterRequest;
 import com.stylematch.dto.ResetPasswordRequest;
 import com.stylematch.dto.ChangePasswordRequest;
+import com.stylematch.dto.PasswordResetResponse;
 import com.stylematch.repository.PasswordResetTokenRepository;
 import com.stylematch.repository.UserRepository;
 import com.stylematch.service.AuthService;
@@ -90,13 +91,15 @@ public class AuthenticationController {
         }
     }
 
-    @Operation(summary = "Request a password reset token — token is logged to server console")
+    @Operation(summary = "Request a password reset token — token is disclosed in response for testing")
     @PostMapping("/forgot-password")
-    public ResponseEntity<MessageResponse> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
+    public ResponseEntity<PasswordResetResponse> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
         User user = userRepository.findByEmail(request.getEmail()).orElse(null);
         if (user == null) {
             log.info("Forgot-password: email not found (not disclosed to client): {}", request.getEmail());
-            return ResponseEntity.ok(new MessageResponse("If this email is registered, a reset token has been generated."));
+            return ResponseEntity.ok(PasswordResetResponse.builder()
+                .message("If this email is registered, a reset token has been generated.")
+                .build());
         }
 
         String token = UUID.randomUUID().toString();
@@ -107,13 +110,16 @@ public class AuthenticationController {
                 .build();
         passwordResetTokenRepository.save(resetToken);
 
-        // Send Reset Email
+        // Send Reset Email (Background)
         emailService.sendPasswordResetEmail(user.getEmail(), token);
 
-        // ===== ALSO LOG FOR DEVELOPMENT PURPOSES =====
+        // ===== FEEDBACK FOR DEVELOPMENT =====
         log.info("=== PASSWORD RESET TOKEN for [{}] === TOKEN: [{}] ===", request.getEmail(), token);
 
-        return ResponseEntity.ok(new MessageResponse("If this email is registered, a reset token has been generated."));
+        return ResponseEntity.ok(PasswordResetResponse.builder()
+            .message("Token generated successfully.")
+            .token(token)
+            .build());
     }
 
     @Operation(summary = "Reset password using a valid token")

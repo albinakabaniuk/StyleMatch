@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import api from '../api';
 import LanguageSwitcher from '../components/LanguageSwitcher';
 
 const ResetPassword = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
-    const [token, setToken] = useState('');
+    const location = useLocation();
+
+    // Parse token from URL if present
+    const queryToken = new URLSearchParams(location.search).get('token') || '';
+
+    const [token, setToken] = useState(queryToken);
     const [newPassword, setNewPassword] = useState('');
     const [errorMsg, setErrorMsg] = useState('');
     const [success, setSuccess] = useState(false);
