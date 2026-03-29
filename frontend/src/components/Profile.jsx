@@ -343,7 +343,16 @@ const Profile = () => {
         );
     }
 
-    const isUrlAvatar = (avatar) => avatar && (avatar.startsWith('/') || avatar.startsWith('data:') || avatar.startsWith('http'));
+    const isUrlAvatar = (avatar) => {
+        if (!avatar) return false;
+        // Check for common URL/path prefixes or file extensions
+        return avatar.startsWith('/') || 
+               avatar.startsWith('data:') || 
+               avatar.startsWith('http') || 
+               avatar.includes('.png') || 
+               avatar.includes('.jpg') || 
+               avatar.includes('.webp');
+    };
 
     return (
         <div className="analysis-container">
@@ -359,7 +368,7 @@ const Profile = () => {
                                 width: '100px',
                                 height: '100px',
                                 background: isUrlAvatar(profile?.avatar) 
-                                    ? `url("${profile.avatar}") center/cover` 
+                                    ? `url("${profile.avatar.startsWith('/') || profile.avatar.startsWith('http') || profile.avatar.startsWith('data:') ? '' : '/'}${profile.avatar}") center/cover` 
                                     : 'linear-gradient(135deg, #ff007f, #7000ff)',
                                 borderRadius: '50%',
                                 margin: '0 auto 1rem',
@@ -369,10 +378,11 @@ const Profile = () => {
                                 fontSize: profile?.avatar && !isUrlAvatar(profile.avatar) 
                                     ? '3.5rem' 
                                     : (profile?.avatar ? '0' : '3rem'),
-                                border: '4px solid rgba(255,255,255,0.1)',
-                                boxShadow: '0 10px 30px rgba(255,0,127,0.3)',
+                                border: '4px solid rgba(255,255,255,0.15)',
+                                boxShadow: '0 10px 40px rgba(255,0,127,0.4)',
                                 overflow: 'hidden',
-                                color: '#fff'
+                                color: '#fff',
+                                position: 'relative'
                             }}>
                                 {profile?.avatar && !isUrlAvatar(profile.avatar) 
                                     ? profile.avatar 
@@ -406,8 +416,17 @@ const Profile = () => {
 
                         <button
                             className="bratz-btn ghost"
-                            style={{ width: '100%', marginBottom: '1rem' }}
-                            onClick={() => setShowEditModal(true)}
+                            style={{ 
+                                width: '100%', 
+                                marginBottom: '1rem',
+                                position: 'relative',
+                                zIndex: 10,
+                                transform: 'translateZ(0)' // Force composite layer to fix potential hover/click issues
+                            }}
+                            onClick={() => {
+                                console.log("Edit Profile clicked!");
+                                setShowEditModal(true);
+                            }}
                         >
                             {t('edit Profile', 'Edit Profile')}
                         </button>
