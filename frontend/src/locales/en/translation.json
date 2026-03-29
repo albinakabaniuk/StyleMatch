@@ -49,7 +49,7 @@
     "forgotSubtitle": "Enter your email to receive a reset link",
     "emailLabel": "Email Address",
     "sendReset": "Send Reset Link ✨",
-    "forgotSuccess": "Reset link sent! Please check your email inbox.",
+    "forgotSuccess": "Link sent! Please check your mailbox.",
     "backToLogin": "Back to Sign In",
     "resetTitle": "Reset Password",
     "resetToken": "Reset Token",

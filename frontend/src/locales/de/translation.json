@@ -48,7 +48,7 @@
     "forgotTitle": "Passwort vergessen",
     "forgotSubtitle": "Geben Sie Ihre E-Mail-Adresse ein, um einen Reset-Link zu erhalten",
     "sendReset": "Reset-Link senden ✨",
-    "forgotSuccess": "Reset-Link gesendet! Bitte überprüfen Sie Ihren Posteingang.",
+    "forgotSuccess": "Link gesendet! Bitte überprüfen Sie Ihr Postfach.",
     "backToLogin": "Zurück zum Login",
     "resetTitle": "Passwort zurücksetzen",
     "resetToken": "Reset-Token",

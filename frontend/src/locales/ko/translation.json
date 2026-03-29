@@ -48,7 +48,7 @@
     "forgotTitle": "비밀번호를 잊으셨나요?",
     "forgotSubtitle": "이메일을 입력하시면 비밀번호 재설정 링크를 보내드립니다",
     "sendReset": "링크 보내기 ✨",
-    "forgotSuccess": "재설정 링크가 전송되었습니다! 이메일을 확인해주세요.",
+    "forgotSuccess": "링크가 전송되었습니다! 우편함을 확인해 주세요.",
     "backToLogin": "로그인으로 돌아가기",
     "resetTitle": "비밀번호 재설정",
     "resetToken": "재설정 토큰",
