@@ -7,21 +7,21 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 const ForgotPassword = () => {
     const { t } = useTranslation();
     const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [error, setError] = useState('');
+    const [success, setSuccess] = useState(false);
+    const [errorMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setMessage('');
-        setError('');
+        setSuccess(false);
+        setErrorMsg('');
         const normalizedEmail = email.toLowerCase().trim();
         try {
             await api.post('auth/forgot-password', { email: normalizedEmail });
-            setMessage(t('auth.forgotSuccess'));
+            setSuccess(true);
         } catch (err) {
-            setError(err.response?.data?.message || err.message || t('errors.generic'));
+            setErrorMsg(err.response?.data?.message || err.message || 'GENERIC_ERROR');
         } finally {
             setLoading(false);
         }
@@ -45,7 +45,7 @@ const ForgotPassword = () => {
                     </p>
                 </div>
 
-                {message && (
+                {success && (
                     <div style={{
                         background: 'rgba(34,197,94,0.15)',
                         border: '1px solid rgba(34,197,94,0.3)',
@@ -55,9 +55,13 @@ const ForgotPassword = () => {
                         color: '#86efac',
                         fontSize: '0.88rem',
                         lineHeight: 1.5,
-                    }}>{message}</div>
+                    }}>{t('auth.forgotSuccess')}</div>
                 )}
-                {error && <div className="error-message">{error}</div>}
+                {errorMsg && (
+                    <div className="error-message">
+                        {errorMsg === 'GENERIC_ERROR' ? t('errors.generic') : errorMsg}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
