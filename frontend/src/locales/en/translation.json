@@ -35,7 +35,8 @@
     "styleTest": "Style Test",
     "bodyShape": "Body Shape",
     "login": "Login",
-    "signUpLink": "Sign up"
+    "signUpLink": "Sign up",
+    "backToHome": "Back to Home"
   },
   "auth": {
     "signInTitle": "Sign In",
@@ -55,8 +56,11 @@
     "backToLogin": "Back to Sign In",
     "resetTitle": "Reset Password",
     "resetToken": "Reset Token",
+    "resetTokenPlaceholder": "Paste the token from your email",
     "newPassword": "New Password",
-    "resetBtn": "Update Password ✨"
+    "resetBtn": "Update Password ✨",
+    "resetting": "Resetting...",
+    "resetSuccess": "Password updated! Redirecting to login..."
   },
   "test": {
     "result": {
@@ -295,7 +299,16 @@
     "analyzing": "Analyzing...",
     "reveal": "Reveal Results",
     "next": "Next",
-    "back": "Back"
+    "back": "Back",
+    "photoScanTitle": "Upload Your Best Selfie! 📸",
+    "photoScanSub": "Let our AI analyze your gorgeous features.",
+    "noImage": "No Image Selected",
+    "chooseFile": "Choose File 📂",
+    "analyzeBtn": "Analyze Photo ✨",
+    "errorSize": "Photo is too large! Please select a file smaller than 15MB.",
+    "errorNoPhoto": "Please select a photo first!",
+    "errorFail": "Failed to analyze photo. Please try again.",
+    "retake": "Scan Another Photo"
   },
   "common": {
     "delete": "Delete",

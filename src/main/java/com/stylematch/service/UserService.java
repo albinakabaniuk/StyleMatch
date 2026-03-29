@@ -1,9 +1,12 @@
 package com.stylematch.service;
 
+import com.stylematch.domain.PasswordResetToken;
 import com.stylematch.domain.User;
 import com.stylematch.dto.UpdateUserProfileRequest;
 import com.stylematch.dto.UserProfileResponse;
 import com.stylematch.repository.UserRepository;
+import java.time.LocalDateTime;
+import java.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,18 +16,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.UUID;
-
 @Service
 public class UserService implements UserDetailsService {
 
     private static final Logger log = LoggerFactory.getLogger(UserService.class);
     private final UserRepository userRepository;
+    private final com.stylematch.repository.PasswordResetTokenRepository passwordResetTokenRepository;
     private final PasswordEncoder passwordEncoder;
-    private final EmailService emailService;
+    private final com.stylematch.service.EmailService emailService;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, EmailService emailService) {
+    public UserService(UserRepository userRepository, 
+                       com.stylematch.repository.PasswordResetTokenRepository passwordResetTokenRepository,
+                       PasswordEncoder passwordEncoder,
+                       com.stylematch.service.EmailService emailService) {
         this.userRepository = userRepository;
+        this.passwordResetTokenRepository = passwordResetTokenRepository;
         this.passwordEncoder = passwordEncoder;
         this.emailService = emailService;
     }
@@ -124,5 +130,61 @@ public class UserService implements UserDetailsService {
     public void deleteUserAccount(UUID userId) {
         userRepository.deleteById(userId);
         log.info("User account deleted: {}", userId);
+    }
+
+    @Transactional
+    public void createPasswordResetToken(String email) {
+        String normalizedEmail = email.toLowerCase().trim();
+        userRepository.findByEmail(normalizedEmail).ifPresentOrElse(user -> {
+            String token = UUID.randomUUID().toString();
+            PasswordResetToken resetToken = PasswordResetToken.builder()
+                    .token(token)
+                    .user(user)
+                    .expiresAt(LocalDateTime.now().plusHours(1))
+                    .used(false)
+                    .build();
+            passwordResetTokenRepository.save(resetToken);
+            log.info("Successfully generated reset token for user: {}. Token sent via email.", normalizedEmail);
+            
+            try {
+                emailService.sendPasswordResetEmail(user.getEmail(), token);
+                log.info("Reset email successfully triggered for: {}", normalizedEmail);
+            } catch (Exception e) {
+                log.error("FAILED to send reset email to: {} — {}", normalizedEmail, e.getMessage());
+                // In production, you might want to retry or alert admins, but here we log it
+            }
+        }, () -> log.warn("Forgot-password: user with email {} NOT FOUND (request ignored for security).", normalizedEmail));
+    }
+
+    @Transactional
+    public void resetPassword(String token, String newPassword) {
+        PasswordResetToken resetToken = passwordResetTokenRepository.findByToken(token)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid password reset token."));
+
+        if (resetToken.isUsed()) {
+            log.warn("Password reset attempt with USED token for user: {}", resetToken.getUser().getEmail());
+            throw new IllegalArgumentException("This token has already been used.");
+        }
+
+        if (resetToken.getExpiresAt().isBefore(LocalDateTime.now())) {
+            log.warn("Password reset attempt with EXPIRED token for user: {}", resetToken.getUser().getEmail());
+            throw new IllegalArgumentException("This token has expired.");
+        }
+
+        User user = resetToken.getUser();
+        user.setPassword(passwordEncoder.encode(newPassword));
+        userRepository.save(user);
+
+        resetToken.setUsed(true);
+        passwordResetTokenRepository.save(resetToken);
+        log.info("Password successfully reset and token invalidated for user: {}", user.getEmail());
+        
+        // Notify user via email (Security requirement from main)
+        try {
+            emailService.sendPasswordChangedNotification(user.getEmail());
+            log.info("Password change notification successfully triggered for: {}", user.getEmail());
+        } catch (Exception e) {
+            log.error("FAILED to send change notification to: {} — {}", user.getEmail(), e.getMessage());
+        }
     }
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import { analyzeTestAnswers } from '../services/analysisService';
 import ResultCard from './ResultCard';
 import ImageOptionCard from './ImageOptionCard';
@@ -88,6 +89,7 @@ const StyleTestForm = () => {
     const [answers, setAnswers] = useState({});
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState(null);
+    const navigate = useNavigate();
 
     // Build questions from i18n — answers count matches QUESTION_OPTIONS
     const questions = QUESTION_IDS.map((id) => ({
@@ -154,9 +156,17 @@ const StyleTestForm = () => {
             <div className="progress-bar-bg">
                 <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }} />
             </div>
-            <p className="step-counter">
-                {t('analysis.question')} {currentStep + 1} {t('analysis.of')} {questions.length}
-            </p>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
+                <button 
+                    onClick={() => navigate('/')}
+                    style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}
+                >
+                    🏠 {t('nav.backToHome')}
+                </button>
+                <p className="step-counter" style={{ margin: 0 }}>
+                    {t('analysis.question')} {currentStep + 1} {t('analysis.of')} {questions.length}
+                </p>
+            </div>
 
             {/* Question text */}
             <h2 className="question-text">{currentQ.text}</h2>

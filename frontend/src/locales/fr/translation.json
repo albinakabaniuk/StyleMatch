@@ -35,7 +35,8 @@
     "styleTest": "Test de Style",
     "bodyShape": "Morphologie",
     "login": "Connexion",
-    "signUpLink": "S'inscrire"
+    "signUpLink": "S'inscrire",
+    "backToHome": "Retour à l'accueil"
   },
   "auth": {
     "signInTitle": "S'identifier",
@@ -55,7 +56,10 @@
     "resetTitle": "Réinitialiser le mot de passe",
     "resetToken": "Jeton de réinitialisation",
     "newPassword": "Nouveau mot de passe",
-    "resetBtn": "Mettre à jour le mot de passe ✨"
+    "resetBtn": "Mettre à jour le mot de passe ✨",
+    "resetTokenPlaceholder": "Collez le jeton reçu par e-mail",
+    "resetting": "Réinitialisation...",
+    "resetSuccess": "Mot de passe mis à jour ! Redirection vers la connexion..."
   },
   "test": {
     "result": {
@@ -297,7 +301,16 @@
     "viewProfile": "Voir les résultats",
     "viewProfileBtn": "Voir le profil",
     "next": "Suivant",
-    "back": "Retour"
+    "back": "Retour",
+    "photoScanTitle": "Téléchargez votre meilleur selfie ! 📸",
+    "photoScanSub": "Laissez notre IA analyser vos superbes traits.",
+    "noImage": "Aucune image sélectionnée",
+    "chooseFile": "Choisir un fichier 📂",
+    "analyzeBtn": "Analyser la photo ✨",
+    "errorSize": "La photo est trop grande ! Veuillez sélectionner un fichier de moins de 15 Mo.",
+    "errorNoPhoto": "Veuillez d'abord sélectionner une photo !",
+    "errorFail": "Échec de l'analyse de la photo. Veuillez réessayer.",
+    "retake": "Scanner une autre photo"
   },
   "common": {
     "delete": "Supprimer",

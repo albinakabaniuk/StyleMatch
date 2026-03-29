@@ -35,7 +35,8 @@
     "styleTest": "Test de Estilo",
     "bodyShape": "Tipo de Cuerpo",
     "login": "Ingresar",
-    "signUpLink": "Registrarse"
+    "signUpLink": "Registrarse",
+    "backToHome": "Volver al inicio"
   },
   "auth": {
     "signInTitle": "Iniciar sesión",
@@ -55,7 +56,10 @@
     "resetTitle": "Restablecer contraseña",
     "resetToken": "Token de recuperación",
     "newPassword": "Nueva contraseña",
-    "resetBtn": "Actualizar contraseña ✨"
+    "resetBtn": "Actualizar contraseña ✨",
+    "resetTokenPlaceholder": "Pega el token de tu correo",
+    "resetting": "Restableciendo...",
+    "resetSuccess": "¡Contraseña actualizada! Redirigiendo al inicio de sesión..."
   },
   "test": {
     "result": {
@@ -297,7 +301,16 @@
     "viewProfile": "Ver Resultados",
     "viewProfileBtn": "Ver Perfil",
     "next": "Siguiente",
-    "back": "Atrás"
+    "back": "Atrás",
+    "photoScanTitle": "¡Sube tu mejor selfie! 📸",
+    "photoScanSub": "Deja que nuestra IA analice tus rasgos.",
+    "noImage": "Ninguna imagen seleccionada",
+    "chooseFile": "Elegir archivo 📂",
+    "analyzeBtn": "Analizar Foto ✨",
+    "errorSize": "¡La foto es demasiado grande! Selecciona un archivo de menos de 15MB.",
+    "errorNoPhoto": "¡Por favor, selecciona una foto primero!",
+    "errorFail": "Error al analizar la foto. Por favor, inténtalo de nuevo.",
+    "retake": "Escanear otra foto"
   },
   "common": {
     "delete": "Eliminar",

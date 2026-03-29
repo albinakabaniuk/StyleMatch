@@ -35,7 +35,8 @@
     "styleTest": "스타일 테스트",
     "bodyShape": "체형",
     "login": "로그인",
-    "signUpLink": "가입하기"
+    "signUpLink": "가입하기",
+    "backToHome": "홈으로 돌아가기"
   },
   "auth": {
     "signInTitle": "로그인",
@@ -55,7 +56,10 @@
     "resetTitle": "비밀번호 재설정",
     "resetToken": "재설정 토큰",
     "newPassword": "새 비밀번호",
-    "resetBtn": "비밀번호 업데이트 ✨"
+    "resetBtn": "비밀번호 업데이트 ✨",
+    "resetTokenPlaceholder": "이메일에서 받은 토큰을 붙여넣으세요",
+    "resetting": "재설정 중...",
+    "resetSuccess": "비밀번호가 업데이트되었습니다! 로그인으로 이동 중..."
   },
   "test": {
     "result": {
@@ -297,7 +301,16 @@
     "viewProfile": "결과 확인",
     "viewProfileBtn": "프로필 보기",
     "next": "다음",
-    "back": "뒤로"
+    "back": "뒤로",
+    "photoScanTitle": "최고의 셀카를 업로드하세요! 📸",
+    "photoScanSub": "우리 AI가 당신의 멋진 특징을 분석하도록 하세요.",
+    "noImage": "선택된 이미지 없음",
+    "chooseFile": "파일 선택 📂",
+    "analyzeBtn": "사진 분석 ✨",
+    "errorSize": "사진이 너무 큽니다! 15MB보다 작은 파일을 선택해 주세요.",
+    "errorNoPhoto": "먼저 사진을 선택해 주세요!",
+    "errorFail": "사진 분석에 실패했습니다. 다시 시도해 주세요.",
+    "retake": "다른 사진 스캔하기"
   },
   "common": {
     "delete": "삭제",

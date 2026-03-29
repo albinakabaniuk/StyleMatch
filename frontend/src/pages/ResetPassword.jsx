@@ -43,7 +43,7 @@ const ResetPassword = () => {
             <div className="bratz-card mobile-padding-sm" style={{ maxWidth: '440px' }}>
                 <div style={{ textAlign: 'center', marginBottom: '28px' }}>
                     <div style={{ fontSize: '3rem', marginBottom: '8px' }}>🔑</div>
-                    <h2 className="brand-font" style={{ fontSize: '1.8rem' }}>{t('auth.resetTitle', 'Reset Password')}</h2>
+                    <h2 className="brand-font" style={{ fontSize: '1.8rem' }}>{t('auth.resetTitle')}</h2>
                 </div>
 
                 {success && (
@@ -66,18 +66,18 @@ const ResetPassword = () => {
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>{t('auth.resetToken', 'Reset Token')}</label>
+                        <label>{t('auth.resetToken')}</label>
                         <input
                             type="text"
                             className="form-input"
                             value={token}
                             onChange={e => setToken(e.target.value)}
-                            placeholder="Paste token from server logs"
+                            placeholder={t('auth.resetTokenPlaceholder')}
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <label>{t('auth.newPassword', 'New Password')}</label>
+                        <label>{t('auth.newPassword')}</label>
                         <input
                             type="password"
                             className="form-input"
@@ -89,12 +89,12 @@ const ResetPassword = () => {
                         />
                     </div>
                     <button type="submit" className="bratz-btn" disabled={loading} style={{ width: '100%' }}>
-                        {loading ? '⏳ Resetting...' : t('auth.resetBtn', 'Update password ✨')}
+                        {loading ? t('auth.resetting') : t('auth.resetBtn')}
                     </button>
                 </form>
 
                 <div className="toggle-auth" style={{ marginTop: '20px' }}>
-                    <Link to="/login" style={{ color: '#c084fc' }}>← {t('auth.backToLogin', 'Back to login')}</Link>
+                    <Link to="/login" style={{ color: '#c084fc' }}>← {t('auth.backToLogin')}</Link>
                 </div>
             </div>
         </div>

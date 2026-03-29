@@ -1,17 +1,7 @@
 package com.stylematch.controller;
 
-import com.stylematch.domain.PasswordResetToken;
 import com.stylematch.domain.User;
-import com.stylematch.dto.AuthRequest;
-import com.stylematch.dto.AuthResponse;
-import com.stylematch.dto.ForgotPasswordRequest;
-import com.stylematch.dto.MessageResponse;
-import com.stylematch.dto.RegisterRequest;
-import com.stylematch.dto.ResetPasswordRequest;
-import com.stylematch.dto.ChangePasswordRequest;
-import com.stylematch.dto.PasswordResetResponse;
-import com.stylematch.repository.PasswordResetTokenRepository;
-import com.stylematch.repository.UserRepository;
+import com.stylematch.dto.*;
 import com.stylematch.service.AuthService;
 import com.stylematch.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -21,13 +11,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -37,22 +23,11 @@ public class AuthenticationController {
     private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(AuthenticationController.class);
 
     private final AuthService authService;
-    private final UserRepository userRepository;
-    private final PasswordResetTokenRepository passwordResetTokenRepository;
-    private final PasswordEncoder passwordEncoder;
     private final UserService userService;
-    private final com.stylematch.service.EmailService emailService;
 
-    public AuthenticationController(AuthService authService, UserRepository userRepository,
-                                  PasswordResetTokenRepository passwordResetTokenRepository,
-                                  PasswordEncoder passwordEncoder, UserService userService,
-                                  com.stylematch.service.EmailService emailService) {
+    public AuthenticationController(AuthService authService, UserService userService) {
         this.authService = authService;
-        this.userRepository = userRepository;
-        this.passwordResetTokenRepository = passwordResetTokenRepository;
-        this.passwordEncoder = passwordEncoder;
         this.userService = userService;
-        this.emailService = emailService;
     }
 
     @Operation(summary = "Register a new user")
@@ -91,69 +66,27 @@ public class AuthenticationController {
         }
     }
 
-    @Operation(summary = "Request a password reset token — token is disclosed in response for testing")
+    @Operation(summary = "Request a password reset token")
     @PostMapping("/forgot-password")
     public ResponseEntity<PasswordResetResponse> forgotPassword(@Valid @RequestBody ForgotPasswordRequest request) {
-        User user = userRepository.findByEmail(request.getEmail()).orElse(null);
-        if (user == null) {
-            log.info("Forgot-password: email not found (not disclosed to client): {}", request.getEmail());
-            return ResponseEntity.ok(PasswordResetResponse.builder()
-                .message("If this email is registered, a reset token has been generated.")
-                .build());
-        }
-
-        String token = UUID.randomUUID().toString();
-        PasswordResetToken resetToken = PasswordResetToken.builder()
-                .token(token).user(user)
-                .expiresAt(LocalDateTime.now().plusHours(1))
-                .used(false)
-                .build();
-        passwordResetTokenRepository.save(resetToken);
-
-        // Send Reset Email (Background)
-        emailService.sendPasswordResetEmail(user.getEmail(), token);
-
-        // ===== FEEDBACK FOR DEVELOPMENT =====
-        log.info("=== PASSWORD RESET TOKEN for [{}] === TOKEN: [{}] ===", request.getEmail(), token);
+        log.info("Password reset requested for email: {}", request.getEmail());
+        userService.createPasswordResetToken(request.getEmail());
 
         return ResponseEntity.ok(PasswordResetResponse.builder()
-            .message("Token generated successfully.")
-            .token(token)
+            .message("If this email is registered, a reset link has been generated and sent.")
             .build());
     }
 
     @Operation(summary = "Reset password using a valid token")
     @PostMapping("/reset-password")
     public ResponseEntity<MessageResponse> resetPassword(@Valid @RequestBody ResetPasswordRequest request) {
-        PasswordResetToken resetToken = passwordResetTokenRepository
-                .findByToken(request.getToken()).orElse(null);
-
-        if (resetToken == null || resetToken.isUsed()) {
-            log.warn("Password reset REJECTED — invalid or already-used token");
-            return ResponseEntity.badRequest().body(new MessageResponse("Invalid or already used token."));
+        try {
+            userService.resetPassword(request.getToken(), request.getNewPassword());
+            return ResponseEntity.ok(new MessageResponse("Password reset successfully. You can now log in."));
+        } catch (IllegalArgumentException e) {
+            log.warn("Password reset REJECTED: {}", e.getMessage());
+            return ResponseEntity.badRequest().body(new MessageResponse(e.getMessage()));
         }
-        if (resetToken.getExpiresAt().isBefore(LocalDateTime.now())) {
-            log.warn("Password reset REJECTED — expired token for user: {}", resetToken.getUser().getEmail());
-            return ResponseEntity.badRequest().body(new MessageResponse("Token has expired. Request a new one."));
-        }
-
-        User user = resetToken.getUser();
-        // Encode ONCE — raw password → $2a$10$... — never re-encode an already encoded
-        // hash
-        String newHash = passwordEncoder.encode(request.getNewPassword());
-        log.info("Password reset SUCCESS for: {} | BCrypt prefix: {}", user.getEmail(),
-                newHash.substring(0, Math.min(7, newHash.length())));
-
-        user.setPassword(newHash);
-        userRepository.save(user);
-
-        resetToken.setUsed(true);
-        passwordResetTokenRepository.save(resetToken);
-
-        // Notify user via email
-        emailService.sendPasswordChangedNotification(user.getEmail());
-
-        return ResponseEntity.ok(new MessageResponse("Password reset successfully. You can now log in."));
     }
 
     @Operation(summary = "Change password for authenticated user")
@@ -169,13 +102,5 @@ public class AuthenticationController {
             log.warn("Password change FAILED: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
-    }
-
-    @Operation(summary = "Debug: List all registered emails")
-    @GetMapping("/debug/emails")
-    public ResponseEntity<java.util.List<String>> listEmails() {
-        return ResponseEntity.ok(userRepository.findAll().stream()
-                .map(User::getEmail)
-                .collect(java.util.stream.Collectors.toList()));
     }
 }
