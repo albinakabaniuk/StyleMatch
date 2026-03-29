@@ -206,18 +206,23 @@ public class AnalysisService {
             contrast = ContrastLevel.valueOf(aiResult.getContrastLevel());
         } catch (Exception e) {
             log.error("AI Photo Analysis failed for user {}: {}. Using fallbacks.", user != null ? user.getEmail() : "anonymous", e.getMessage());
-            colorType = ColorType.AUTUMN;
-            undertone = Undertone.WARM;
+            colorType = ColorType.SUMMER;
+            undertone = Undertone.COOL;
             contrast = ContrastLevel.MEDIUM;
+            String depth = "MEDIUM";
+            String chroma = "SOFT";
+            
             aiResult = AIAnalysisResult.builder()
                     .resultType(colorType.name())
                     .undertone(undertone.name())
                     .contrastLevel(contrast.name())
-                    .season("EARTHY_AUTUMN")
-                    .summary("Photo analysis fallback triggered.")
+                    .depth(depth)
+                    .chroma(chroma)
+                    .season("COOL_SUMMER")
+                    .summary("result.aiSummaryFallback")
                     .palette(getPaletteFallback(colorType))
-                    .recommendations(List.of("Try uploading a clearer photo."))
-                    .personalizedAdvice("Wear earthy tones that complement your warm autumn palette.")
+                    .recommendations(List.of("Tips: Try uploading a clearer photo in natural lighting."))
+                    .personalizedAdvice("result.aiOffline")
                     .build();
         }
 
@@ -260,6 +265,8 @@ public class AnalysisService {
                 .colorType(colorType)
                 .undertone(undertone)
                 .contrastLevel(contrast)
+                .depth(aiResult.getDepth())
+                .chroma(aiResult.getChroma())
                 .season(aiResult.getSeason() != null ? aiResult.getSeason() : colorType.name())
                 .message(aiResult.getSummary())
                 .palette(aiResult.getPalette() != null && !aiResult.getPalette().isEmpty() ? aiResult.getPalette() : getPaletteFallback(colorType))
