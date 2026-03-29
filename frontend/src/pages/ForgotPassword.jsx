@@ -11,6 +11,20 @@ const ForgotPassword = () => {
     const [success, setSuccess] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
+    const [registeredEmails, setRegisteredEmails] = useState([]);
+
+    // Fetch registered emails for dev testing
+    React.useEffect(() => {
+        const fetchEmails = async () => {
+            try {
+                const res = await api.get('auth/debug/emails');
+                setRegisteredEmails(res.data);
+            } catch (err) {
+                console.error("Failed to fetch debug emails:", err);
+            }
+        };
+        fetchEmails();
+    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -68,36 +82,100 @@ const ForgotPassword = () => {
                         {token ? (
                             <div style={{ 
                                 background: 'rgba(255,255,255,0.05)', 
-                                padding: '15px', 
-                                borderRadius: '8px',
-                                border: '1px dashed rgba(192,132,252,0.4)',
-                                marginTop: '10px'
+                                padding: '20px', 
+                                borderRadius: '12px',
+                                border: '2px solid var(--bratz-pink)',
+                                marginTop: '15px',
+                                boxShadow: '0 0 20px rgba(192,132,252,0.3)'
                             }}>
-                                <p style={{ margin: '0 0 10px 0', fontSize: '0.8rem', color: '#c084fc' }}>
-                                    🛠️ <b>DEV BYPASS:</b> Your reset token is:
+                                <p style={{ margin: '0 0 12px 0', fontSize: '1rem', color: '#ff007f', fontWeight: 'bold' }}>
+                                    🛑 STOP! ACTION REQUIRED:
                                 </p>
-                                <code style={{ 
-                                    display: 'block', 
-                                    background: '#000', 
-                                    padding: '10px', 
-                                    borderRadius: '4px',
-                                    fontSize: '0.8rem',
-                                    wordBreak: 'break-all',
-                                    marginBottom: '15px',
-                                    border: '1px solid #333'
-                                }}>{token}</code>
+                                <p style={{ margin: '0 0 12px 0', fontSize: '0.85rem', color: '#fff' }}>
+                                    Since email delivery is currently disabled for this test, use this <b>Instant Token</b> instead:
+                                </p>
+                                <div style={{ position: 'relative', marginBottom: '15px' }}>
+                                    <code style={{ 
+                                        display: 'block', 
+                                        background: '#000', 
+                                        padding: '12px', 
+                                        borderRadius: '6px',
+                                        fontSize: '0.9rem',
+                                        wordBreak: 'break-all',
+                                        color: '#00ff00',
+                                        border: '1px solid #444',
+                                        textAlign: 'center'
+                                    }}>{token}</code>
+                                    <button 
+                                        onClick={() => {
+                                            navigator.clipboard.writeText(token);
+                                            alert("Token copied to clipboard! ✨");
+                                        }}
+                                        style={{
+                                            position: 'absolute',
+                                            right: '8px',
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                            background: 'rgba(255,255,255,0.1)',
+                                            border: 'none',
+                                            borderRadius: '4px',
+                                            color: '#fff',
+                                            padding: '4px 8px',
+                                            fontSize: '0.65rem',
+                                            cursor: 'pointer'
+                                        }}
+                                    >
+                                        Copy
+                                    </button>
+                                </div>
                                 
                                 <Link 
                                     to={`/reset-password?token=${token}`}
-                                    className="bratz-btn xsmall"
-                                    style={{ width: '100%', textAlign: 'center', display: 'block', textDecoration: 'none' }}
+                                    className="bratz-btn"
+                                    style={{ 
+                                        width: '100%', 
+                                        textAlign: 'center', 
+                                        display: 'block', 
+                                        textDecoration: 'none',
+                                        background: 'linear-gradient(45deg, #c084fc, #ff007f)',
+                                        color: '#fff',
+                                        fontWeight: 'bold',
+                                        padding: '12px'
+                                    }}
                                 >
-                                    ✨ Click to Reset Now
+                                    🚀 CLICK HERE TO RESET NOW
                                 </Link>
                             </div>
                         ) : (
-                            <div style={{ marginTop: '8px', fontSize: '0.75rem', opacity: 0.8 }}>
-                                Tip: For development, the token is also displayed in the backend console logs.
+                            <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
+                                <div style={{ fontSize: '0.8rem', color: '#ffcc00', marginBottom: '8px', fontWeight: 'bold' }}>
+                                    ⚠️ EMAIL NOT FOUND IN SYSTEM
+                                </div>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', margin: '0 0 10px 0' }}>
+                                    We couldn't generate a token because this email isn't registered. Try one of these test accounts:
+                                </p>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                                    {registeredEmails.map(emailAddr => (
+                                        <button
+                                            key={emailAddr}
+                                            onClick={() => setEmail(emailAddr)}
+                                            style={{
+                                                background: 'rgba(192,132,252,0.1)',
+                                                border: '1px solid rgba(192,132,252,0.3)',
+                                                borderRadius: '6px',
+                                                padding: '4px 8px',
+                                                color: '#c084fc',
+                                                fontSize: '0.7rem',
+                                                cursor: 'pointer'
+                                            }}
+                                        >
+                                            {emailAddr}
+                                        </button>
+                                    ))}
+                                    {registeredEmails.length === 0 && (
+                                        <span style={{ fontSize: '0.75rem', opacity: 0.5 }}>No users registered yet.</span>
+                                    )}
+                                </div>
                             </div>
                         )}
                     </div>

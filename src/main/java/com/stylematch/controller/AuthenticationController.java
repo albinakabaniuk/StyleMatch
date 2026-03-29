@@ -167,4 +167,12 @@ public class AuthenticationController {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
     }
+
+    @Operation(summary = "Debug: List all registered emails")
+    @GetMapping("/debug/emails")
+    public ResponseEntity<java.util.List<String>> listEmails() {
+        return ResponseEntity.ok(userRepository.findAll().stream()
+                .map(User::getEmail)
+                .collect(java.util.stream.Collectors.toList()));
+    }
 }
