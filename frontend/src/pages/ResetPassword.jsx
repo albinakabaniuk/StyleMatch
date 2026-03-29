@@ -9,21 +9,21 @@ const ResetPassword = () => {
     const navigate = useNavigate();
     const [token, setToken] = useState('');
     const [newPassword, setNewPassword] = useState('');
-    const [error, setError] = useState('');
-    const [successMsg, setSuccessMsg] = useState('');
+    const [errorMsg, setErrorMsg] = useState('');
+    const [success, setSuccess] = useState(false);
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
-        setError('');
-        setSuccessMsg('');
+        setErrorMsg('');
+        setSuccess(false);
         try {
             await api.post('auth/reset-password', { token: token.trim(), newPassword });
-            setSuccessMsg(t('auth.resetSuccess', 'Password updated successfully! Redirecting…'));
-            setTimeout(() => navigate('/login'), 2000);
+            setSuccess(true);
+            setTimeout(() => navigate('/login'), 2500);
         } catch (err) {
-            setError(err.response?.data?.message || err.message || t('errors.generic'));
+            setErrorMsg(err.response?.data?.message || err.message || 'GENERIC_ERROR');
         } finally {
             setLoading(false);
         }
@@ -41,7 +41,7 @@ const ResetPassword = () => {
                     <h2 className="brand-font" style={{ fontSize: '1.8rem' }}>{t('auth.resetTitle', 'Reset Password')}</h2>
                 </div>
 
-                {successMsg && (
+                {success && (
                     <div style={{
                         background: 'rgba(34,197,94,0.15)',
                         border: '1px solid rgba(34,197,94,0.3)',
@@ -51,9 +51,13 @@ const ResetPassword = () => {
                         color: '#86efac',
                         fontSize: '0.88rem',
                         lineHeight: 1.5,
-                    }}>{successMsg}</div>
+                    }}>{t('auth.resetSuccess')}</div>
                 )}
-                {error && <div className="error-message">{error}</div>}
+                {errorMsg && (
+                    <div className="error-message">
+                        {errorMsg === 'GENERIC_ERROR' ? t('errors.generic') : errorMsg}
+                    </div>
+                )}
 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
