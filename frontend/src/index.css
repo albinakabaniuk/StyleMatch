@@ -50,7 +50,10 @@
 }
 
 html {
+  overflow-x: hidden;
+  overflow-y: overlay; /* Chrome/Safari */
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 body {
@@ -60,9 +63,9 @@ body {
   color: var(--text-primary);
   background: var(--bg-dark);
   min-height: 100vh;
-  overflow-x: hidden;
   position: relative;
   width: 100%;
+  margin: 0;
 }
 
 /* Animated gradient background */
@@ -175,7 +178,6 @@ h4 {
   padding-bottom: var(--safe-bottom);
   padding-left: var(--safe-left);
   padding-right: var(--safe-right);
-  overflow-x: hidden;
   width: 100%;
 }
 
@@ -670,7 +672,7 @@ h4 {
 .bratz-input {
   width: 100%;
   padding: 12px 16px;
-  background: rgba(255, 255, 255, 0.05);
+  background: #1a0b2e; /* Solid dark background for consistency */
   border: 1.5px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   color: #fff;
@@ -678,7 +680,15 @@ h4 {
   font-size: 0.95rem;
   transition: all 0.2s ease;
   outline: none;
+  -webkit-appearance: none; /* Modern look */
+  appearance: none;
 }
+
+.bratz-input option {
+  background-color: #1a0b2e;
+  color: #fff;
+}
+
 
 .bratz-input:focus {
   border-color: var(--bratz-pink);

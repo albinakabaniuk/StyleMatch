@@ -14,8 +14,13 @@ const PhotoUpload = () => {
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile) {
+            if (selectedFile.size > 15 * 1024 * 1024) {
+                setError('Photo is too large! Please select a file smaller than 15MB.');
+                return;
+            }
             setFile(selectedFile);
             setPreview(URL.createObjectURL(selectedFile));
+            setError('');
         }
     };
 

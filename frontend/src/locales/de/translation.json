@@ -265,7 +265,19 @@
     "BRIGHT_SPRING": "Clear Spring",
     "DEEP_AUTUMN": "Dunkler Herbst",
     "WARM_AUTUMN": "Warmer Herbst",
-    "SOFT_AUTUMN": "Softer Herbst"
+    "SOFT_AUTUMN": "Softer Herbst",
+    "COOL_COOL_SUMMER": "Kühler Sommer",
+    "COOL_LIGHT_SUMMER": "Heller Sommer",
+    "COOL_SOFT_SUMMER": "Softer Sommer",
+    "COOL_COOL_WINTER": "Kühler Winter",
+    "COOL_DEEP_WINTER": "Dunkler Winter",
+    "COOL_BRIGHT_WINTER": "Clear Winter",
+    "WARM_LIGHT_SPRING": "Heller Frühling",
+    "WARM_WARM_SPRING": "Warmer Frühling",
+    "WARM_BRIGHT_SPRING": "Clear Spring",
+    "WARM_SOFT_AUTUMN": "Softer Herbst",
+    "WARM_WARM_AUTUMN": "Warmer Herbst",
+    "WARM_DEEP_AUTUMN": "Dunkler Herbst"
   },
   "analysis": {
     "colorType": "Farbtyp",

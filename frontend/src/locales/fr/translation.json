@@ -265,7 +265,19 @@
     "BRIGHT_SPRING": "Printemps Éclatant",
     "DEEP_AUTUMN": "Automne Profond",
     "WARM_AUTUMN": "Automne Chaud",
-    "SOFT_AUTUMN": "Automne Doux"
+    "SOFT_AUTUMN": "Automne Doux",
+    "COOL_COOL_SUMMER": "Été Froid",
+    "COOL_LIGHT_SUMMER": "Été Clair",
+    "COOL_SOFT_SUMMER": "Été Doux",
+    "COOL_COOL_WINTER": "Hiver Froid",
+    "COOL_DEEP_WINTER": "Hiver Profond",
+    "COOL_BRIGHT_WINTER": "Hiver Éclatant",
+    "WARM_LIGHT_SPRING": "Printemps Clair",
+    "WARM_WARM_SPRING": "Printemps Chaud",
+    "WARM_BRIGHT_SPRING": "Printemps Éclatant",
+    "WARM_SOFT_AUTUMN": "Automne Doux",
+    "WARM_WARM_AUTUMN": "Automne Chaud",
+    "WARM_DEEP_AUTUMN": "Automne Profond"
   },
   "analysis": {
     "colorType": "Type de couleur",

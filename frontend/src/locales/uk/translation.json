@@ -265,7 +265,19 @@
     "BRIGHT_SPRING": "Яскрава Весна",
     "DEEP_AUTUMN": "Глибока Осінь",
     "WARM_AUTUMN": "Тепла Осінь",
-    "SOFT_AUTUMN": "М'яка Осінь"
+    "SOFT_AUTUMN": "М'яка Осінь",
+    "COOL_COOL_SUMMER": "Холодне Літо",
+    "COOL_LIGHT_SUMMER": "Світле Літо",
+    "COOL_SOFT_SUMMER": "М'яке Літо",
+    "COOL_COOL_WINTER": "Холодна Зима",
+    "COOL_DEEP_WINTER": "Глибока Зима",
+    "COOL_BRIGHT_WINTER": "Яскрава Зима",
+    "WARM_LIGHT_SPRING": "Світла Весна",
+    "WARM_WARM_SPRING": "Тепла Весна",
+    "WARM_BRIGHT_SPRING": "Яскрава Весна",
+    "WARM_SOFT_AUTUMN": "М'яка Осінь",
+    "WARM_WARM_AUTUMN": "Тепла Осінь",
+    "WARM_DEEP_AUTUMN": "Глибока Осінь"
   },
   "analysis": {
     "colorType": "Тип Кольору",

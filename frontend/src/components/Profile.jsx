@@ -192,6 +192,17 @@ const Profile = () => {
     const [resultToDelete, setResultToDelete] = useState(null);
 
     useEffect(() => {
+        if (showEditModal || showDeleteModal || showResultDeleteModal) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [showEditModal, showDeleteModal, showResultDeleteModal]);
+
+    useEffect(() => {
         fetchData();
     }, []);
 

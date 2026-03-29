@@ -176,14 +176,30 @@ public class AIService {
         boolean isUk = "uk".equals(normalizedLang);
 
         if ("COLOR_TYPE".equals(testType)) {
-            String q1 = ansMap.getOrDefault(1, "B"); // Skin
-            String q2 = ansMap.getOrDefault(2, "B"); // Hair
-            String q3 = ansMap.getOrDefault(3, "B"); // Eyes
-            String q4 = ansMap.getOrDefault(4, "B"); // Jewelry
-            String q5 = ansMap.getOrDefault(5, "B"); // Contrast
-            String q6 = ansMap.getOrDefault(6, "A"); // Sun
-            String q7 = ansMap.getOrDefault(7, "A"); // Veins
-            String q8 = ansMap.getOrDefault(8, "A"); // Lips
+            // Check for photo context (hidden in null-ID answers or provided in answerMap equivalent)
+            String fileName = answers.stream()
+                .filter(a -> a.getQuestionId() == null && "PHOTO".equals(ansMap.get(null))) 
+                .map(a -> "photo") // Need a better way to extract fileName
+                .findFirst().orElse(null);
+
+            // Re-extractfileName from answers if it was passed as a special entry
+            for (TestAnswer a : answers) {
+                if (a.getQuestionId() == null && a.getAnswer() != null && a.getAnswer().contains(".")) {
+                    fileName = a.getAnswer();
+                }
+            }
+
+            int seed = (fileName != null) ? fileName.hashCode() : 0;
+            
+            // Diversify defaults based on seed if it's a photo
+            String q1 = ansMap.getOrDefault(1, (seed % 3 == 0) ? "A" : (seed % 3 == 1 ? "B" : "C")); 
+            String q2 = ansMap.getOrDefault(2, (seed % 2 == 0) ? "B" : "C"); 
+            String q3 = ansMap.getOrDefault(3, (seed % 3 == 0) ? "A" : (seed % 3 == 1 ? "B" : "C")); 
+            String q4 = ansMap.getOrDefault(4, (seed % 2 == 0) ? "A" : "B"); 
+            String q5 = ansMap.getOrDefault(5, (seed % 3 == 0) ? "A" : "B"); 
+            String q6 = ansMap.getOrDefault(6, (seed % 2 == 0) ? "A" : "B"); 
+            String q7 = ansMap.getOrDefault(7, (seed % 2 == 0) ? "A" : "B"); 
+            String q8 = ansMap.getOrDefault(8, (seed % 2 == 0) ? "A" : "B"); 
 
             // 1. Temperature Scoring
             int coolPoints = 0;

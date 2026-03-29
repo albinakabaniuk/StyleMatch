@@ -25,6 +25,7 @@ import sunBurn from '../assets/sun/burn.png';
 import sunTan from '../assets/sun/tan.png';
 import veinsBlue from '../assets/veins/blue.png';
 import veinsGreen from '../assets/veins/green.png';
+import veinsMixed from '../assets/veins/mixed.png';
 import lipsPink from '../assets/lips/pink_cool.png';
 import lipsPeach from '../assets/lips/peach_warm.png';
 
@@ -71,7 +72,7 @@ const QUESTION_OPTIONS = {
     7: [
         { code: 'A', img: veinsBlue },
         { code: 'B', img: veinsGreen },
-        { code: 'C', img: veinsBlue }, // Placeholder for mixed/neutral
+        { code: 'C', img: veinsMixed },
     ],
     8: [
         { code: 'A', img: lipsPink },
