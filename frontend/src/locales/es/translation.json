@@ -48,7 +48,7 @@
     "forgotTitle": "¿Olvidaste tu contraseña?",
     "forgotSubtitle": "Introduce tu correo para recibir un enlace de recuperación",
     "sendReset": "Enviar enlace ✨",
-    "forgotSuccess": "¡Enlace enviado! Revisa tu bandeja de entrada.",
+    "forgotSuccess": "¡Enlace enviado! Por favor, revisa tu buzón.",
     "backToLogin": "Volver a iniciar sesión",
     "resetTitle": "Restablecer contraseña",
     "resetToken": "Token de recuperación",

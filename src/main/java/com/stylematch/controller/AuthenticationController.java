@@ -40,15 +40,18 @@ public class AuthenticationController {
     private final PasswordResetTokenRepository passwordResetTokenRepository;
     private final PasswordEncoder passwordEncoder;
     private final UserService userService;
+    private final com.stylematch.service.EmailService emailService;
 
     public AuthenticationController(AuthService authService, UserRepository userRepository,
                                   PasswordResetTokenRepository passwordResetTokenRepository,
-                                  PasswordEncoder passwordEncoder, UserService userService) {
+                                  PasswordEncoder passwordEncoder, UserService userService,
+                                  com.stylematch.service.EmailService emailService) {
         this.authService = authService;
         this.userRepository = userRepository;
         this.passwordResetTokenRepository = passwordResetTokenRepository;
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
+        this.emailService = emailService;
     }
 
     @Operation(summary = "Register a new user")
@@ -104,7 +107,10 @@ public class AuthenticationController {
                 .build();
         passwordResetTokenRepository.save(resetToken);
 
-        // ===== COPY THIS TOKEN FROM LOGS TO USE IN RESET FORM =====
+        // Send Reset Email
+        emailService.sendPasswordResetEmail(user.getEmail(), token);
+
+        // ===== ALSO LOG FOR DEVELOPMENT PURPOSES =====
         log.info("=== PASSWORD RESET TOKEN for [{}] === TOKEN: [{}] ===", request.getEmail(), token);
 
         return ResponseEntity.ok(new MessageResponse("If this email is registered, a reset token has been generated."));
