@@ -16,6 +16,8 @@
     "clothingSize": "Taille de vêtement",
     "selectSize": "Choisir la taille",
     "saveProfile": "Enregistrer le profil",
+    "deleteAccountTitle": "Supprimer le compte ?",
+    "deleteAccountMsg": "Cela supprimera définitivement votre profil et tout l'historique des tests. Cette action est irréversible.",
     "sizes": {
       "XXS": "XXS",
       "XS": "XS",
@@ -294,7 +296,8 @@
     "reveal": "Voir les résultats",
     "viewProfile": "Voir les résultats",
     "viewProfileBtn": "Voir le profil",
-    "next": "Suivant"
+    "next": "Suivant",
+    "back": "Retour"
   },
   "common": {
     "delete": "Supprimer",

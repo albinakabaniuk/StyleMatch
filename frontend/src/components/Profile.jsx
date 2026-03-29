@@ -780,8 +780,8 @@ const Profile = () => {
                 <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', backdropFilter: 'blur(8px)', zIndex: 1200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}>
                     <div className="bratz-card" style={{ maxWidth: 400, textAlign: 'center' }}>
                         <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>⚠️</div>
-                        <h3 className="brand-font" style={{ color: '#ef4444' }}>{t('delete Account Title', 'Delete Account?')}</h3>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>{t('delete Account Msg', 'This will permanently remove your profile and all test history. This cannot be undone.')}</p>
+                        <h3 className="brand-font" style={{ color: '#ef4444' }}>{t('profile.deleteAccountTitle')}</h3>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>{t('profile.deleteAccountMsg')}</p>
                         <div style={{ display: 'flex', gap: '1rem' }}>
                             <button className="bratz-btn ghost" style={{ flex: 1 }} onClick={() => setShowDeleteModal(false)}>{t('cancel')}</button>
                             <button className="bratz-btn" style={{ flex: 1, background: '#ef4444' }} onClick={async () => {

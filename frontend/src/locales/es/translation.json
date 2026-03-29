@@ -16,6 +16,8 @@
     "clothingSize": "Talla de Ropa",
     "selectSize": "Seleccionar Talla",
     "saveProfile": "Guardar Perfil",
+    "deleteAccountTitle": "¿Eliminar cuenta?",
+    "deleteAccountMsg": "Esto eliminará permanentemente su perfil y todo el historial de pruebas. Esta acción no se puede deshacer.",
     "sizes": {
       "XXS": "XXS",
       "XS": "XS",
@@ -294,7 +296,8 @@
     "reveal": "Ver Resultados",
     "viewProfile": "Ver Resultados",
     "viewProfileBtn": "Ver Perfil",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "back": "Atrás"
   },
   "common": {
     "delete": "Eliminar",

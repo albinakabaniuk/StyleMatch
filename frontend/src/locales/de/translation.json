@@ -16,6 +16,8 @@
     "clothingSize": "Kleidergröße",
     "selectSize": "Größe wählen",
     "saveProfile": "Profil speichern",
+    "deleteAccountTitle": "Konto löschen?",
+    "deleteAccountMsg": "Dies wird Ihr Profil und Ihren gesamten Testverlauf dauerhaft entfernen. Dies kann nicht rückgängig gemacht werden.",
     "sizes": {
       "XXS": "XXS",
       "XS": "XS",
@@ -294,7 +296,8 @@
     "reveal": "Ergebnisse zeigen",
     "viewProfile": "Ergebnisse zeigen",
     "viewProfileBtn": "Profil ansehen",
-    "next": "Weiter"
+    "next": "Weiter",
+    "back": "Zurück"
   },
   "common": {
     "delete": "Löschen",
