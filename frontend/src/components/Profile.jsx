@@ -237,8 +237,8 @@ const Profile = () => {
     const handleAvatarChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            if (file.size > 2 * 1024 * 1024) { // 2MB limit for base64
-                setErrorMsg("Image size too large. Please select an image under 2MB.");
+            if (file.size > 10 * 1024 * 1024) { // 10MB limit
+                setErrorMsg("Image size too large. Please select an image under 10MB.");
                 return;
             }
             const reader = new FileReader();
@@ -647,11 +647,21 @@ const Profile = () => {
                                     </div>
                                     <div style={{ flex: 1 }}>
                                         <p style={{ margin: '0 0 5px 0', fontSize: '0.7rem', color: 'rgba(255,255,255,0.4)' }}>{t('uploadOwn', 'Or upload your own photo')}</p>
+                                        <label htmlFor="pc-avatar-upload" className="bratz-btn ghost small" style={{ 
+                                            display: 'inline-flex', 
+                                            cursor: 'pointer', 
+                                            padding: '8px 16px',
+                                            fontSize: '0.75rem',
+                                            border: '1px solid rgba(255,0,127,0.4)'
+                                        }}>
+                                            📸 {t('chooseFile', 'Choose Photo')}
+                                        </label>
                                         <input
+                                            id="pc-avatar-upload"
                                             type="file"
                                             accept="image/*"
                                             onChange={handleAvatarChange}
-                                            style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)' }}
+                                            style={{ display: 'none' }}
                                         />
                                     </div>
                                 </div>

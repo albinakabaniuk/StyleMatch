@@ -1,9 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import avatarWarm from '../assets/avatars/avatar_warm.png';
 import avatarCool from '../assets/avatars/avatar_cool.png';
+import avatarWarm from '../assets/avatars/avatar_warm.png';
 import avatarNeutral from '../assets/avatars/avatar_neutral.png';
 import AvatarCard from './AvatarCard';
+import userService from '../services/userService';
 
 // Map analysis results → local generated avatars (no copyright, all original)
 const RESULT_CONFIG = {
@@ -116,10 +117,26 @@ const ResultCard = ({ result, onReset }) => {
     const summary = result?.message || result?.summary || result?.aiResult?.summary || metadata?.summary || '';
     const recommendations = result?.recommendations || result?.aiResult?.recommendations || metadata?.recommendations || [];
     
-    // Additional fields for history
     const undertone = result?.undertone || metadata?.undertone || '—';
     const contrast = result?.contrastLevel || metadata?.contrast || '—';
     const season = result?.season || metadata?.season || config.name.split(' ')[1] || '—';
+
+    // ── Personalized Avatar Logic ──
+    const [profileAvatar, setProfileAvatar] = React.useState(null);
+    React.useEffect(() => {
+        const fetchProfile = async () => {
+            try {
+                const p = await userService.getProfile();
+                setProfileAvatar(p?.avatar);
+            } catch (err) { /* ignore */ }
+        };
+        fetchProfile();
+    }, []);
+
+    const isUrl = (path) => path && (path.startsWith('http') || path.startsWith('/') || path.startsWith('data:'));
+    
+    // Priority: Uploaded photo (from analysis) > Profile Avatar > Silhouette Config
+    const heroImage = result?.uploadedPhoto || (isUrl(profileAvatar) ? profileAvatar : config.avatar);
 
     return (
         <div className="bratz-card mobile-padding-sm" style={{
@@ -136,10 +153,16 @@ const ResultCard = ({ result, onReset }) => {
                         background: config.glow, filter: 'blur(40px)', opacity: 0.6, zIndex: 0
                     }} />
                     <AvatarCard
-                        src={config.avatar}
+                        src={heroImage}
                         size="lg"
                         active={true}
-                        style={{ position: 'relative', zIndex: 1 }}
+                        style={{ 
+                            position: 'relative', 
+                            zIndex: 1,
+                            objectFit: 'cover',
+                            border: '4px solid var(--bratz-pink)',
+                            boxShadow: '0 0 30px rgba(255,0,127,0.5)'
+                        }}
                     />
                  </div>
 
