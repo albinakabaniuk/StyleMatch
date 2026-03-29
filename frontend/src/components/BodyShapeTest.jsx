@@ -113,6 +113,13 @@ const BodyShapeTest = () => {
     }
   };
 
+  const handleBack = () => {
+    if (step > 0) {
+      setStep(step - 1);
+      setAnswers(answers.slice(0, -1));
+    }
+  };
+
   const finishTest = async (finalAnswers) => {
     setLoading(true);
     setError('');
@@ -198,7 +205,18 @@ const BodyShapeTest = () => {
       <div className="container mobile-padding-sm" style={{ padding: '1rem', display: 'flex', justifyContent: 'center', minHeight: '80vh', alignItems: 'center' }}>
         <div className="bratz-card mobile-padding-sm" style={{ maxWidth: 600, width: '100%', padding: 'clamp(1rem, 4vw, 2.5rem)' }}>
           <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            <span className="brand-font" style={{ fontSize: '1.2rem', color: 'var(--bratz-pink)' }}>{t('bodyShape.analysisTitle')}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                {step > 0 && (
+                    <button 
+                        onClick={handleBack}
+                        style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '1.5rem', padding: '0 5px' }}
+                        title="Back"
+                    >
+                        ←
+                    </button>
+                )}
+                <span className="brand-font" style={{ fontSize: '1.2rem', color: 'var(--bratz-pink)' }}>{t('bodyShape.analysisTitle')}</span>
+            </div>
             <span style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{t('bodyShape.stepLabel')} {step + 1} {t('bodyShape.stepOf')} {QUESTIONS.length}</span>
           </div>
 

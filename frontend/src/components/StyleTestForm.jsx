@@ -115,6 +115,12 @@ const StyleTestForm = () => {
         }
     };
 
+    const handleBack = () => {
+        if (currentStep > 0) {
+            setCurrentStep((s) => s - 1);
+        }
+    };
+
     const submitTest = async () => {
         setLoading(true);
         // API contract preserved: { questionId: Integer, answer: "A"|"B"|"C"|"D" }
@@ -172,18 +178,29 @@ const StyleTestForm = () => {
                 ))}
             </div>
 
-            <button
-                className="submit-button"
-                onClick={handleNext}
-                disabled={!answers[currentQ.id] || loading}
-                style={{ width: '100%', marginTop: '10px' }}
-            >
-                {loading
-                    ? t('analysis.analyzing')
-                    : currentStep === questions.length - 1
-                        ? t('analysis.reveal')
-                        : t('analysis.next')}
-            </button>
+            <div style={{ display: 'flex', gap: '1rem', marginTop: '10px' }}>
+                {currentStep > 0 && (
+                    <button
+                        className="bratz-btn ghost"
+                        onClick={handleBack}
+                        style={{ flex: 1 }}
+                    >
+                        {t('analysis.back', 'Back')}
+                    </button>
+                )}
+                <button
+                    className="submit-button"
+                    onClick={handleNext}
+                    disabled={!answers[currentQ.id] || loading}
+                    style={{ flex: currentStep > 0 ? 2 : 1 }}
+                >
+                    {loading
+                        ? t('analysis.analyzing')
+                        : currentStep === questions.length - 1
+                            ? t('analysis.reveal')
+                            : t('analysis.next')}
+                </button>
+            </div>
         </div>
     );
 };

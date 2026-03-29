@@ -16,6 +16,8 @@
     "clothingSize": "Clothing Size",
     "selectSize": "Select Size",
     "saveProfile": "Save Profile",
+    "deleteAccountTitle": "Delete Account?",
+    "deleteAccountMsg": "This will permanently remove your profile and all test history. This cannot be undone.",
     "sizes": {
       "XXS": "XXS",
       "XS": "XS",
@@ -292,7 +294,8 @@
     "of": "of",
     "analyzing": "Analyzing...",
     "reveal": "Reveal Results",
-    "next": "Next"
+    "next": "Next",
+    "back": "Back"
   },
   "common": {
     "delete": "Delete",
