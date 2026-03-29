@@ -246,7 +246,8 @@
     },
     "viewProfile": "Zum Profil",
     "retake": "Wiederholen",
-    "retakeBtn": "Wiederholen ✨"
+    "retakeBtn": "Wiederholen ✨",
+    "advice": "Ratschlag"
   },
   "bodyTypes": {
     "HOURGLASS": "Sanduhr",
@@ -310,13 +311,20 @@
     "errorSize": "Foto ist zu groß! Bitte wählen Sie eine Datei kleiner als 15MB.",
     "errorNoPhoto": "Bitte wählen Sie zuerst ein Foto aus!",
     "errorFail": "Fehler при der Fotoanalyse. Bitte versuchen Sie es erneut.",
-    "retake": "Anderes Foto scannen"
+    "retake": "Anderes Foto scannen",
+    "startColorTest": "Farbtest starten ✨",
+    "colorTestSubtitle": "Entdecken Sie Ihre perfekte Palette basierend auf Haut, Augen und Haaren.",
+    "bodyTestSubtitle": "Finden Sie die schmeichelhaftesten Silhouetten für Ihren individuellen Körperbau.",
+    "photoScanSubtitle": "Laden Sie ein Selfie hoch für eine sofortige KI-gestützte Saisonanalyse.",
+    "startBodyTest": "Körpertest starten ✨",
+    "tryPhotoScan": "Foto-Scan ausprobieren ✨"
   },
   "common": {
     "delete": "Löschen",
     "cancel": "Abbrechen",
     "save": "Speichern",
-    "na": "N/V"
+    "na": "N/V",
+    "homepage": "Startseite"
   },
   "errors": {
     "generic": "Etwas ist schief gelaufen. Bitte versuchen Sie es erneut.",

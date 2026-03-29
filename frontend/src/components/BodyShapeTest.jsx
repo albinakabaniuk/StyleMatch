@@ -208,10 +208,9 @@ const BodyShapeTest = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
                 <button 
                     onClick={() => navigate('/')}
-                    style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '1.2rem', padding: '0 5px' }}
-                    title={t('nav.backToHome')}
+                    style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}
                 >
-                    🏠
+                    🏠 {t('common.homepage', 'Homepage')}
                 </button>
                 {step > 0 && (
                     <button 

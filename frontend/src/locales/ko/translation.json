@@ -246,7 +246,8 @@
     },
     "viewProfile": "프로필로 이동",
     "retake": "다시 하기",
-    "retakeBtn": "다시 하기 ✨"
+    "retakeBtn": "다시 하기 ✨",
+    "advice": "조언"
   },
   "bodyTypes": {
     "HOURGLASS": "모래시계형",
@@ -310,13 +311,20 @@
     "errorSize": "사진이 너무 큽니다! 15MB보다 작은 파일을 선택해 주세요.",
     "errorNoPhoto": "먼저 사진을 선택해 주세요!",
     "errorFail": "사진 분석에 실패했습니다. 다시 시도해 주세요.",
-    "retake": "다른 사진 스캔하기"
+    "retake": "다른 사진 스캔하기",
+    "startColorTest": "컬러 테스트 시작 ✨",
+    "colorTestSubtitle": "피부, 눈, 헤어에 기반한 완벽한 팔레트를 발견하세요.",
+    "bodyTestSubtitle": "당신의 독특한 체격에 가장 잘 어울리는 실루엣을 찾으세요.",
+    "photoScanSubtitle": "즉각적인 AI 기반 계절 분석을 위해 셀카를 업로드하세요.",
+    "startBodyTest": "체형 테스트 시작 ✨",
+    "tryPhotoScan": "포토 스캔 해보기 ✨"
   },
   "common": {
     "delete": "삭제",
     "cancel": "취소",
     "save": "저장",
-    "na": "없음"
+    "na": "없음",
+    "homepage": "홈페이지"
   },
   "errors": {
     "generic": "문제가 발생했습니다. 다시 시도해 주세요.",

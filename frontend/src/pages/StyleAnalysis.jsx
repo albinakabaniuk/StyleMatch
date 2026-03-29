@@ -105,7 +105,7 @@ const StyleAnalysis = () => {
                             {tab.label}
                         </button>
                     ))}
-                    <button className="tab-btn" onClick={() => setView('start')}>← {t('common.back', 'Back')}</button>
+                    <button className="tab-btn" onClick={() => setView('start')}>← {t('common.homepage', 'Homepage')}</button>
                 </div>
             )}
 
@@ -127,8 +127,8 @@ const StyleAnalysis = () => {
                     >
                         <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🎨</div>
                         <h2 className="brand-font" style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>{t('analysis.colorType')}</h2>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>{t('colorTestSubtitle', 'Discover your perfect palette based on skin, eyes, and hair.')}</p>
-                        <button className="bratz-btn" style={{ width: '100%' }}>{t('startTesting', 'Start Color Test ✨')}</button>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>{t('analysis.colorTestSubtitle', 'Discover your perfect palette based on skin, eyes, and hair.')}</p>
+                        <button className="bratz-btn" style={{ width: '100%' }}>{t('analysis.startColorTest', 'Start Color Test ✨')}</button>
                     </div>
 
                     {/* Body Shape Card */}
@@ -141,8 +141,8 @@ const StyleAnalysis = () => {
                     >
                         <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>👗</div>
                         <h2 className="brand-font" style={{ fontSize: '1.8rem', marginBottom: '1rem' }}>{t('nav.bodyShape', 'Body Shape')}</h2>
-                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>{t('bodyTestSubtitle', 'Find the most flattering silhouettes for your unique frame.')}</p>
-                        <button className="bratz-btn" style={{ width: '100%', background: 'linear-gradient(45deg, #a855f7, #ec4899)' }}>{t('startTestingBody', 'Start Body Test ✨')}</button>
+                        <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem' }}>{t('analysis.bodyTestSubtitle', 'Find the most flattering silhouettes for your unique frame.')}</p>
+                        <button className="bratz-btn" style={{ width: '100%', background: 'linear-gradient(45deg, #a855f7, #ec4899)' }}>{t('analysis.startBodyTest', 'Start Body Test ✨')}</button>
                     </div>
 
                     {/* Photo Scan Card */}
@@ -157,9 +157,9 @@ const StyleAnalysis = () => {
                              <div style={{ fontSize: 'min(4rem, 15vw)' }}>📸</div>
                              <div className="mobile-center" style={{ textAlign: 'left', flex: 1, minWidth: '200px' }}>
                                 <h2 className="brand-font" style={{ fontSize: 'clamp(1.4rem, 5vw, 1.8rem)', marginBottom: '0.5rem' }}>{t('analysis.photoScan')}</h2>
-                                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '0.95rem' }}>{t('photoScanSubtitle', 'Upload a selfie for instant AI-powered seasonal analysis.')}</p>
+                                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', fontSize: '0.95rem' }}>{t('analysis.photoScanSubtitle', 'Upload a selfie for instant AI-powered seasonal analysis.')}</p>
                              </div>
-                             <button className="bratz-btn" style={{ minWidth: '200px', width: '100%' }}>{t('tryPhotoScan', 'Try Photo Scan ✨')}</button>
+                             <button className="bratz-btn" style={{ minWidth: '200px', width: '100%' }}>{t('analysis.tryPhotoScan', 'Try Photo Scan ✨')}</button>
                         </div>
                     </div>
                 </div>

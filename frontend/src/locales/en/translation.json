@@ -247,7 +247,8 @@
     },
     "viewProfile": "Go to Profile",
     "retake": "Try Again",
-    "retakeBtn": "Try Again ✨"
+    "retakeBtn": "Try Again ✨",
+    "advice": "Advice"
   },
   "bodyTypes": {
     "HOURGLASS": "Hourglass",
@@ -308,13 +309,20 @@
     "errorSize": "Photo is too large! Please select a file smaller than 15MB.",
     "errorNoPhoto": "Please select a photo first!",
     "errorFail": "Failed to analyze photo. Please try again.",
-    "retake": "Scan Another Photo"
+    "retake": "Scan Another Photo",
+    "startColorTest": "Start Color Test ✨",
+    "colorTestSubtitle": "Discover your perfect palette based on skin, eyes, and hair.",
+    "bodyTestSubtitle": "Find the most flattering silhouettes for your unique frame.",
+    "photoScanSubtitle": "Upload a selfie for instant AI-powered seasonal analysis.",
+    "startBodyTest": "Start Body Test ✨",
+    "tryPhotoScan": "Try Photo Scan ✨"
   },
   "common": {
     "delete": "Delete",
     "cancel": "Cancel",
     "save": "Save",
-    "na": "N/A"
+    "na": "N/A",
+    "homepage": "Homepage"
   },
   "errors": {
     "generic": "Something went wrong. Please try again.",

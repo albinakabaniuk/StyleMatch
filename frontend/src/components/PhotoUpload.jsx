@@ -44,8 +44,8 @@ const PhotoUpload = () => {
 
     return (
         <div className="form-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ color: '#ff007f', textShadow: '1px 1px 4px rgba(255,0,127,0.3)' }}>{t('analysis.photoScanTitle')}</h2>
-            <p style={{ color: '#b026ff' }}>{t('analysis.photoScanSub')}</p>
+            <h2 style={{ color: '#ff007f', textShadow: '1px 1px 4px rgba(255,0,127,0.3)' }}>{t('analysis.photoScanTitle', 'Upload Your Best Selfie! 📸')}</h2>
+            <p style={{ color: '#b026ff' }}>{t('analysis.photoScanSub', 'Let our AI analyze your gorgeous features.')}</p>
 
             {!result ? (
                 <>
@@ -67,11 +67,11 @@ const PhotoUpload = () => {
                         style={{ display: 'none' }}
                     />
                     <label htmlFor="file-upload" className="submit-button" style={{ display: 'inline-block', cursor: 'pointer', margin: '10px', backgroundColor: '#b026ff' }}>
-                        {t('analysis.chooseFile')}
+                        {t('analysis.chooseFile', 'Choose File 📂')}
                     </label>
 
                     <button onClick={handleUpload} className="submit-button" disabled={loading} style={{ margin: '10px' }}>
-                        {loading ? t('analysis.analyzing') : t('analysis.analyzeBtn')}
+                        {loading ? t('analysis.analyzing') : t('analysis.analyzeBtn', 'Analyze Photo ✨')}
                     </button>
 
                     {preview && !loading && (

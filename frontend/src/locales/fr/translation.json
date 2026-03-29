@@ -246,7 +246,8 @@
     },
     "viewProfile": "Vers le profil",
     "retake": "Recommencer",
-    "retakeBtn": "Recommencer ✨"
+    "retakeBtn": "Recommencer ✨",
+    "advice": "Conseil"
   },
   "bodyTypes": {
     "HOURGLASS": "Sablier",
@@ -310,13 +311,20 @@
     "errorSize": "La photo est trop grande ! Veuillez sélectionner un fichier de moins de 15 Mo.",
     "errorNoPhoto": "Veuillez d'abord sélectionner une photo !",
     "errorFail": "Échec de l'analyse de la photo. Veuillez réessayer.",
-    "retake": "Scanner une autre photo"
+    "retake": "Scanner une autre photo",
+    "startColorTest": "Lancer le test de couleur ✨",
+    "colorTestSubtitle": "Découvrez votre palette parfaite basée sur votre peau, vos yeux et vos cheveux.",
+    "bodyTestSubtitle": "Trouvez les silhouettes les plus flatteuses pour votre silhouette unique.",
+    "photoScanSubtitle": "Téléchargez un selfie pour une analyse saisonnière instantanée assistée par l'IA.",
+    "startBodyTest": "Lancer le test de silhouette ✨",
+    "tryPhotoScan": "Essayer le Photo Scan ✨"
   },
   "common": {
     "delete": "Supprimer",
     "cancel": "Annuler",
     "save": "Enregistrer",
-    "na": "N/D"
+    "na": "N/D",
+    "homepage": "Accueil"
   },
   "errors": {
     "generic": "Une erreur est survenue. Veuillez réessayer.",

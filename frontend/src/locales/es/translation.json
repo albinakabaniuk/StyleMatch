@@ -246,7 +246,8 @@
     },
     "viewProfile": "Ir al Perfil",
     "retake": "Repetir",
-    "retakeBtn": "Repetir ✨"
+    "retakeBtn": "Repetir ✨",
+    "advice": "Consejo"
   },
   "bodyTypes": {
     "HOURGLASS": "Reloj de arena",
@@ -310,13 +311,20 @@
     "errorSize": "¡La foto es demasiado grande! Selecciona un archivo de menos de 15MB.",
     "errorNoPhoto": "¡Por favor, selecciona una foto primero!",
     "errorFail": "Error al analizar la foto. Por favor, inténtalo de nuevo.",
-    "retake": "Escanear otra foto"
+    "retake": "Escanear otra foto",
+    "startColorTest": "Iniciar test de color ✨",
+    "colorTestSubtitle": "Descubre tu paleta perfecta basada en tu piel, ojos y cabello.",
+    "bodyTestSubtitle": "Encuentra las siluetas más favorecedoras para tu cuerpo único.",
+    "photoScanSubtitle": "Sube un selfie para un análisis estacional instantáneo impulsado por IA.",
+    "startBodyTest": "Iniciar test de cuerpo ✨",
+    "tryPhotoScan": "Probar Photo Scan ✨"
   },
   "common": {
     "delete": "Eliminar",
     "cancel": "Cancelar",
     "save": "Guardar",
-    "na": "N/D"
+    "na": "N/D",
+    "homepage": "Inicio"
   },
   "errors": {
     "generic": "Algo salió mal. Por favor, inténtalo de nuevo.",
