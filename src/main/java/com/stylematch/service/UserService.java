@@ -121,6 +121,9 @@ public class UserService implements UserDetailsService {
         user.setPassword(passwordEncoder.encode(newPassword));
         userRepository.save(user);
         log.info("Password changed for user: {}", user.getEmail());
+        
+        // Notify user via email
+        emailService.sendPasswordChangedNotification(user.getEmail());
     }
 
     @Transactional
@@ -175,5 +178,13 @@ public class UserService implements UserDetailsService {
         resetToken.setUsed(true);
         passwordResetTokenRepository.save(resetToken);
         log.info("Password successfully reset and token invalidated for user: {}", user.getEmail());
+        
+        // Notify user via email (Security requirement from main)
+        try {
+            emailService.sendPasswordChangedNotification(user.getEmail());
+            log.info("Password change notification successfully triggered for: {}", user.getEmail());
+        } catch (Exception e) {
+            log.error("FAILED to send change notification to: {} — {}", user.getEmail(), e.getMessage());
+        }
     }
 }
