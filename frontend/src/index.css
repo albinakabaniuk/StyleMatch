@@ -228,6 +228,7 @@ h4 {
   padding: 44px 40px;
   width: 100%;
   max-width: 500px;
+  margin: 0 auto;
   box-shadow: 
     0 30px 90px rgba(0, 0, 0, 0.6),
     0 0 0 1px rgba(255, 255, 255, 0.05),
@@ -608,7 +609,8 @@ h4 {
   flex-wrap: nowrap;
   gap: 12px;
   padding: 10px 4px;
-  margin-bottom: 2rem;
+  margin: 0 auto 2rem;
+  justify-content: center;
   scrollbar-width: none; /* Firefox */
   -webkit-overflow-scrolling: touch;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
