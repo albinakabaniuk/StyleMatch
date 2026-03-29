@@ -150,6 +150,9 @@ public class AuthenticationController {
         resetToken.setUsed(true);
         passwordResetTokenRepository.save(resetToken);
 
+        // Notify user via email
+        emailService.sendPasswordChangedNotification(user.getEmail());
+
         return ResponseEntity.ok(new MessageResponse("Password reset successfully. You can now log in."));
     }
 
