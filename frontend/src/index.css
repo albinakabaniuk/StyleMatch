@@ -552,6 +552,7 @@ h4 {
     display: flex !important;
     flex-direction: column !important;
     gap: 1.5rem !important;
+    align-items: center !important;
   }
   
   .mobile-no-sticky {
@@ -565,6 +566,9 @@ h4 {
   .mobile-center {
     text-align: center !important;
     justify-content: center !important;
+    align-items: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
   
   .mobile-text-sm {
