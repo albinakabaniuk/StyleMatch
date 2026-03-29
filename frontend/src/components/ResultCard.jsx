@@ -191,10 +191,10 @@ const ResultCard = ({ result, onReset }) => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(120px, 1fr))', gap: '1rem', marginBottom: '2.5rem' }}>
                 {[
                     { label: t('analysis.colorTypeTitle', 'Color Type'), value: t(`colorTypes.${colorType}`, colorType.replace('_', ' ')) },
-                    { label: t('result.undertone', 'Undertone'), value: t(`undertones.${undertone}`, undertone) },
-                    { label: t('result.contrast', 'Contrast'), value: t(`contrastLevels.${contrast}`, contrast) },
-                    result?.depth && { label: t('result.depth', 'Depth'), value: t(`depths.${result.depth}`, result.depth) },
-                    result?.chroma && { label: t('result.chroma', 'Chroma'), value: t(`chromas.${result.chroma}`, result.chroma) },
+                    { label: t('result.result.undertone', 'Undertone'), value: t(`result.undertones.${undertone.toUpperCase()}`, undertone) },
+                    { label: t('result.result.contrast', 'Contrast'), value: t(`result.contrastLevels.${contrast.toUpperCase()}`, contrast) },
+                    result?.depth && { label: t('result.result.depth', 'Depth'), value: t(`result.depths.${result.depth.toUpperCase()}`, result.depth) },
+                    result?.chroma && { label: t('result.result.chroma', 'Chroma'), value: t(`result.chromas.${result.chroma.toUpperCase()}`, result.chroma) },
                 ].filter(Boolean).map(({ label, value }) => (
                     <div key={label} className="glass-panel" style={{ padding: '1rem', textAlign: 'center' }}>
                         <span style={{ display: 'block', fontSize: '0.65rem', color: 'var(--bratz-pink)', letterSpacing: '1px', marginBottom: '0.5rem' }}>{label}</span>
@@ -206,7 +206,7 @@ const ResultCard = ({ result, onReset }) => {
             {/* Palette section */}
             <div className="glass-panel" style={{ padding: '2rem', marginBottom: '2.5rem' }}>
                 <h3 className="brand-font" style={{ fontSize: '1.5rem', color: '#fff', marginBottom: '1.5rem', textAlign: 'center' }}>
-                    {t('result.signaturePalette', 'Your Signature Palette')}
+                    {t('result.result.signaturePalette', 'Your Signature Palette')}
                 </h3>
                 <div style={{ display: 'flex', gap: '8px', height: 'clamp(80px, 15vh, 110px)', flexWrap: 'wrap' }}>
                     {(palette || []).map((color, i) => (
@@ -247,7 +247,7 @@ const ResultCard = ({ result, onReset }) => {
                 background: 'linear-gradient(to right, rgba(255,0,127,0.1), transparent)'
             }}>
                 <h3 style={{ fontSize: '0.8rem', color: 'var(--bratz-pink)', textTransform: 'uppercase', letterSpacing: '2px', marginBottom: '1rem' }}>
-                    {t('result.aiStylingAdvice', 'AI Style Advice')}
+                    {t('result.result.personalAdvice', 'AI Style Advice')}
                 </h3>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.8, color: '#f0e6ff', fontStyle: 'italic' }}>
                     "{t(advice, advice)}"

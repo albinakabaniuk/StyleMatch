@@ -7,38 +7,19 @@ import LanguageSwitcher from '../components/LanguageSwitcher';
 const ForgotPassword = () => {
     const { t } = useTranslation();
     const [email, setEmail] = useState('');
-    const [token, setToken] = useState('');
     const [success, setSuccess] = useState(false);
     const [errorMsg, setErrorMsg] = useState('');
     const [loading, setLoading] = useState(false);
-    const [registeredEmails, setRegisteredEmails] = useState([]);
-
-    // Fetch registered emails for dev testing
-    React.useEffect(() => {
-        const fetchEmails = async () => {
-            try {
-                const res = await api.get('auth/debug/emails');
-                setRegisteredEmails(res.data);
-            } catch (err) {
-                console.error("Failed to fetch debug emails:", err);
-            }
-        };
-        fetchEmails();
-    }, []);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
         setSuccess(false);
         setErrorMsg('');
-        setToken(''); // Reset token on new attempt
         const normalizedEmail = email.toLowerCase().trim();
         try {
-            const res = await api.post('auth/forgot-password', { email: normalizedEmail });
+            await api.post('auth/forgot-password', { email: normalizedEmail });
             setSuccess(true);
-            if (res.data && res.data.token) {
-                setToken(res.data.token);
-            }
         } catch (err) {
             setErrorMsg(err.response?.data?.message || err.message || 'GENERIC_ERROR');
         } finally {
@@ -75,113 +56,16 @@ const ForgotPassword = () => {
                         fontSize: '0.9rem',
                         lineHeight: 1.6,
                     }}>
-                        <div style={{ marginBottom: '12px', fontWeight: 'bold' }}>
-                            ✅ {t('auth.forgotSuccess', 'If this email is registered, a reset token has been generated.')}
+                        <div style={{ fontWeight: 'bold' }}>
+                            ✅ {t('auth.forgotSuccess', 'If this email is registered, a reset link has been generated and sent.')}
                         </div>
-                        
-                        {token ? (
-                            <div style={{ 
-                                background: 'rgba(255,255,255,0.05)', 
-                                padding: '20px', 
-                                borderRadius: '12px',
-                                border: '2px solid var(--bratz-pink)',
-                                marginTop: '15px',
-                                boxShadow: '0 0 20px rgba(192,132,252,0.3)'
-                            }}>
-                                <p style={{ margin: '0 0 12px 0', fontSize: '1rem', color: '#86efac', fontWeight: 'bold' }}>
-                                    📧 Email transmission attempted!
-                                </p>
-                                <p style={{ margin: '0 0 12px 0', fontSize: '0.85rem', color: '#fff' }}>
-                                    Please check your inbox (and spam folder). For instant testing, you can also use this <b>Direct Access Token</b>:
-                                </p>
-                                <div style={{ position: 'relative', marginBottom: '15px' }}>
-                                    <code style={{ 
-                                        display: 'block', 
-                                        background: '#000', 
-                                        padding: '12px', 
-                                        borderRadius: '6px',
-                                        fontSize: '0.9rem',
-                                        wordBreak: 'break-all',
-                                        color: '#00ff00',
-                                        border: '1px solid #444',
-                                        textAlign: 'center'
-                                    }}>{token}</code>
-                                    <button 
-                                        onClick={() => {
-                                            navigator.clipboard.writeText(token);
-                                            alert("Token copied to clipboard! ✨");
-                                        }}
-                                        style={{
-                                            position: 'absolute',
-                                            right: '8px',
-                                            top: '50%',
-                                            transform: 'translateY(-50%)',
-                                            background: 'rgba(255,255,255,0.1)',
-                                            border: 'none',
-                                            borderRadius: '4px',
-                                            color: '#fff',
-                                            padding: '4px 8px',
-                                            fontSize: '0.65rem',
-                                            cursor: 'pointer'
-                                        }}
-                                    >
-                                        Copy
-                                    </button>
-                                </div>
-                                
-                                <Link 
-                                    to={`/reset-password?token=${token}`}
-                                    className="bratz-btn"
-                                    style={{ 
-                                        width: '100%', 
-                                        textAlign: 'center', 
-                                        display: 'block', 
-                                        textDecoration: 'none',
-                                        background: 'linear-gradient(45deg, #c084fc, #ff007f)',
-                                        color: '#fff',
-                                        fontWeight: 'bold',
-                                        padding: '12px'
-                                    }}
-                                >
-                                    🚀 CLICK HERE TO RESET NOW
-                                </Link>
-                            </div>
-                        ) : (
-                            <div style={{ marginTop: '12px', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '12px' }}>
-                                <div style={{ fontSize: '0.8rem', color: '#ffcc00', marginBottom: '8px', fontWeight: 'bold' }}>
-                                    ⚠️ EMAIL NOT FOUND IN SYSTEM
-                                </div>
-                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', margin: '0 0 10px 0' }}>
-                                    We couldn't generate a token because this email isn't registered. Try one of these test accounts:
-                                </p>
-                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-                                    {registeredEmails.map(emailAddr => (
-                                        <button
-                                            key={emailAddr}
-                                            onClick={() => setEmail(emailAddr)}
-                                            style={{
-                                                background: 'rgba(192,132,252,0.1)',
-                                                border: '1px solid rgba(192,132,252,0.3)',
-                                                borderRadius: '6px',
-                                                padding: '4px 8px',
-                                                color: '#c084fc',
-                                                fontSize: '0.7rem',
-                                                cursor: 'pointer'
-                                            }}
-                                        >
-                                            {emailAddr}
-                                        </button>
-                                    ))}
-                                    {registeredEmails.length === 0 && (
-                                        <span style={{ fontSize: '0.75rem', opacity: 0.5 }}>No users registered yet.</span>
-                                    )}
-                                </div>
-                            </div>
-                        )}
+                        <p style={{ fontSize: '0.85rem', marginTop: '10px', color: 'rgba(255,255,255,0.7)' }}>
+                            Please check your inbox (and spam folder) for further instructions.
+                        </p>
                     </div>
                 )}
                 {errorMsg && (
-                    <div className="error-message">
+                    <div className="error-message" style={{ marginBottom: '20px' }}>
                         {errorMsg === 'GENERIC_ERROR' ? t('errors.generic') : errorMsg}
                     </div>
                 )}

@@ -161,7 +161,7 @@ const StyleTestForm = () => {
                     onClick={() => navigate('/')}
                     style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '0.9rem', display: 'flex', alignItems: 'center', gap: '5px' }}
                 >
-                    🏠 {t('nav.backToHome')}
+                    🏠 {t('common.homepage', 'Homepage')}
                 </button>
                 <p className="step-counter" style={{ margin: 0 }}>
                     {t('analysis.question')} {currentStep + 1} {t('analysis.of')} {questions.length}
