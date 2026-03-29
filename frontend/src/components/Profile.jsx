@@ -255,10 +255,15 @@ const Profile = () => {
         setErrorMsg('');
         try {
             const profileToUpdate = {
-                ...editForm,
+                name: editForm.name,
+                email: editForm.email,
+                gender: editForm.gender,
                 age: editForm.age ? parseInt(editForm.age) : null,
                 height: editForm.height ? parseFloat(editForm.height) : null,
-                weight: editForm.weight ? parseFloat(editForm.weight) : null
+                weight: editForm.weight ? parseFloat(editForm.weight) : null,
+                preferredLanguage: editForm.preferredLanguage,
+                avatar: editForm.avatar,
+                clothingSize: editForm.clothingSize
             };
             console.log("Sending profile update:", profileToUpdate);
             const res = await userService.updateProfile(profileToUpdate);
@@ -354,7 +359,7 @@ const Profile = () => {
                                 width: '100px',
                                 height: '100px',
                                 background: isUrlAvatar(profile?.avatar) 
-                                    ? `url(${profile.avatar}) center/cover` 
+                                    ? `url("${profile.avatar}") center/cover` 
                                     : 'linear-gradient(135deg, #ff007f, #7000ff)',
                                 borderRadius: '50%',
                                 margin: '0 auto 1rem',
@@ -510,10 +515,10 @@ const Profile = () => {
                     display: 'flex', 
                     alignItems: 'flex-start', // Better for long modals
                     justifyContent: 'center', 
-                    padding: '40px 20px',
+                    padding: 'clamp(20px, 5vw, 40px)', // Responsive padding
                     overflowY: 'auto' // Allow vertical scrolling on the overlay
                 }}>
-                    <div className="bratz-card glass-card" style={{ 
+                    <div className="bratz-card glass-card bratz-modal-content" style={{ 
                         maxWidth: 600, 
                         width: '100%', 
                         padding: '2.5rem', 
@@ -525,12 +530,21 @@ const Profile = () => {
                             <h2 className="brand-font" style={{ margin: 0 }}>{t('edit Profile', 'Edit Profile')}</h2>
                         </div>
 
-                        <form onSubmit={handleSaveProfile} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.2rem' }}>
+                        <form onSubmit={handleSaveProfile} className="profile-edit-form">
                             <div style={{ gridColumn: 'span 2' }}>
                                 <label style={{ display: 'block', fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', marginBottom: '0.5rem', textTransform: 'uppercase' }}>{t('avatarOptions', 'Avatar Options')}</label>
                                 
                                 {/* AI Presets Row */}
-                                <div style={{ display: 'flex', gap: '10px', marginBottom: '1rem', overflowX: 'auto', paddingBottom: '5px' }}>
+                                <div style={{ 
+                                    display: 'flex', 
+                                    gap: '10px', 
+                                    marginBottom: '1rem', 
+                                    overflowX: 'auto', 
+                                    paddingBottom: '8px',
+                                    WebkitOverflowScrolling: 'touch',
+                                    scrollbarWidth: 'none',
+                                    msOverflowStyle: 'none'
+                                }} className="hide-scrollbar">
                                     {[
                                         { id: 'preset1', url: '/avatars/preset1.png', label: 'AI Queen' },
                                         { id: 'emoji1', emoji: '👸', label: 'Classic' },
@@ -553,7 +567,7 @@ const Profile = () => {
                                                     width: '60px',
                                                     height: '60px',
                                                     borderRadius: '16px',
-                                                    background: preset.url ? `url(${preset.url}) center/cover` : 'rgba(255,255,255,0.08)',
+                                                    background: preset.url ? `url("${preset.url}") center/cover` : 'rgba(255,255,255,0.08)',
                                                     border: isSelected ? '3px solid var(--bratz-pink)' : '1.5px solid rgba(255,255,255,0.15)',
                                                     cursor: 'pointer',
                                                     flexShrink: 0,
@@ -597,7 +611,7 @@ const Profile = () => {
                                         width: '60px',
                                         height: '60px',
                                         background: isUrlAvatar(editForm.avatar) 
-                                            ? `url(${editForm.avatar}) center/cover` 
+                                            ? `url("${editForm.avatar}") center/cover` 
                                             : 'rgba(255,255,255,0.05)',
                                         borderRadius: '50%',
                                         border: '1px solid rgba(255,255,255,0.1)',
