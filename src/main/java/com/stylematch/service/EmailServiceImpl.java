@@ -26,6 +26,12 @@ public class EmailServiceImpl implements EmailService {
         this.mailSender = mailSender;
     }
 
+    @Value("${spring.mail.host:localhost}")
+    private String mailHost;
+
+    @Value("${spring.mail.port:587}")
+    private String mailPort;
+
     @Override
     public void sendPasswordResetEmail(String to, String token) {
         try {
@@ -59,10 +65,11 @@ public class EmailServiceImpl implements EmailService {
             mailSender.send(message);
             log.info("SUCCESS: Password reset email sent to: {}", to);
         } catch (MessagingException e) {
-            log.error("SMTP FAILURE: Failed to send reset email to {}. Error: {}", to, e.getMessage());
-            log.error("TIP: Ensure SPRING_MAIL_HOST and SPRING_MAIL_PASSWORD are set correctly in your environment.");
+            log.error("SMTP FAILURE: Failed to send reset email to {}. Host: {}:{}, User: {}. Error: {}", to, mailHost, mailPort, fromEmail, e.getMessage());
+            throw new RuntimeException("SMTP Connection Failed: " + e.getMessage());
         } catch (Exception e) {
             log.error("UNEXPECTED EMAIL ERROR for {}: {}", to, e.getMessage());
+            throw new RuntimeException("Email Error: " + e.getMessage());
         }
     }
 
