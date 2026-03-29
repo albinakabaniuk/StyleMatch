@@ -88,11 +88,11 @@ const ForgotPassword = () => {
                                 marginTop: '15px',
                                 boxShadow: '0 0 20px rgba(192,132,252,0.3)'
                             }}>
-                                <p style={{ margin: '0 0 12px 0', fontSize: '1rem', color: '#ff007f', fontWeight: 'bold' }}>
-                                    🛑 STOP! ACTION REQUIRED:
+                                <p style={{ margin: '0 0 12px 0', fontSize: '1rem', color: '#86efac', fontWeight: 'bold' }}>
+                                    📧 Email transmission attempted!
                                 </p>
                                 <p style={{ margin: '0 0 12px 0', fontSize: '0.85rem', color: '#fff' }}>
-                                    Since email delivery is currently disabled for this test, use this <b>Instant Token</b> instead:
+                                    Please check your inbox (and spam folder). For instant testing, you can also use this <b>Direct Access Token</b>:
                                 </p>
                                 <div style={{ position: 'relative', marginBottom: '15px' }}>
                                     <code style={{ 

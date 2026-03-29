@@ -58,4 +58,39 @@ public class EmailServiceImpl implements EmailService {
             log.error("UNEXPECTED EMAIL ERROR for {}: {}", to, e.getMessage());
         }
     }
+
+    @Override
+    public void sendPasswordChangedNotification(String to) {
+        try {
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+
+            helper.setFrom("StyleMatch <" + fromEmail + ">");
+            helper.setTo(to);
+            helper.setSubject("StyleMatch: Password Successfully Changed ✅");
+
+            log.info("Attempting to send password change notification to: {}", to);
+            String htmlContent = "<html><body style='font-family: Arial, sans-serif; color: #333;'>"
+                    + "<div style='max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 12px;'>"
+                    + "<h2 style='color: #22c55e; text-align: center;'>Security Alert</h2>"
+                    + "<p>Hello,</p>"
+                    + "<p>The password for your StyleMatch account has been <b>successfully changed</b>.</p>"
+                    + "<p>If you made this change, you can safely ignore this email.</p>"
+                    + "<div style='background: #fff7ed; padding: 15px; border-radius: 8px; border: 1px solid #fdba74; color: #9a3412; margin: 20px 0; font-size: 0.9rem;'>"
+                    + "If you did NOT make this change, please contact our support team immediately or reset your password again to secure your account."
+                    + "</div>"
+                    + "<p style='font-size: 0.8rem; color: #999; margin-top: 30px;'>Stay secure! ✨<br>The StyleMatch Team</p>"
+                    + "</div></body></html>";
+
+            helper.setText(htmlContent, true);
+
+            mailSender.send(message);
+            log.info("SUCCESS: Password change notification sent to: {}", to);
+        } catch (MessagingException e) {
+            log.error("SMTP FAILURE: Failed to send change notification to {}. Error: {}", to, e.getMessage());
+            log.error("TIP: Ensure SPRING_MAIL_HOST and SPRING_MAIL_PASSWORD are set correctly.");
+        } catch (Exception e) {
+            log.error("UNEXPECTED EMAIL ERROR for {}: {}", to, e.getMessage());
+        }
+    }
 }
