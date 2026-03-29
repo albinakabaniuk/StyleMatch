@@ -35,7 +35,8 @@
     "styleTest": "Stil-Test",
     "bodyShape": "Körperform",
     "login": "Einloggen",
-    "signUpLink": "Registrieren"
+    "signUpLink": "Registrieren",
+    "backToHome": "Zurück zur Startseite"
   },
   "auth": {
     "signInTitle": "Anmelden",
@@ -55,7 +56,10 @@
     "resetTitle": "Passwort zurücksetzen",
     "resetToken": "Reset-Token",
     "newPassword": "Neues Passwort",
-    "resetBtn": "Passwort aktualisieren ✨"
+    "resetBtn": "Passwort aktualisieren ✨",
+    "resetTokenPlaceholder": "Fügen Sie den Token aus Ihrer E-Mail ein",
+    "resetting": "Zurücksetzen...",
+    "resetSuccess": "Passwort aktualisiert! Weiterleitung zum Login..."
   },
   "test": {
     "result": {
@@ -297,7 +301,16 @@
     "viewProfile": "Ergebnisse zeigen",
     "viewProfileBtn": "Profil ansehen",
     "next": "Weiter",
-    "back": "Zurück"
+    "back": "Zurück",
+    "photoScanTitle": "Lade dein bestes Selfie hoch! 📸",
+    "photoScanSub": "Lasse unsere KI deine wunderschönen Merkmale analysieren.",
+    "noImage": "Kein Bild ausgewählt",
+    "chooseFile": "Datei wählen 📂",
+    "analyzeBtn": "Foto analysieren ✨",
+    "errorSize": "Foto ist zu groß! Bitte wählen Sie eine Datei kleiner als 15MB.",
+    "errorNoPhoto": "Bitte wählen Sie zuerst ein Foto aus!",
+    "errorFail": "Fehler при der Fotoanalyse. Bitte versuchen Sie es erneut.",
+    "retake": "Anderes Foto scannen"
   },
   "common": {
     "delete": "Löschen",

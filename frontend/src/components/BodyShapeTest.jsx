@@ -206,6 +206,13 @@ const BodyShapeTest = () => {
         <div className="bratz-card mobile-padding-sm" style={{ maxWidth: 600, width: '100%', padding: 'clamp(1rem, 4vw, 2.5rem)' }}>
           <div style={{ marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '15px' }}>
+                <button 
+                    onClick={() => navigate('/')}
+                    style={{ background: 'none', border: 'none', color: 'var(--bratz-pink)', cursor: 'pointer', fontSize: '1.2rem', padding: '0 5px' }}
+                    title={t('nav.backToHome')}
+                >
+                    🏠
+                </button>
                 {step > 0 && (
                     <button 
                         onClick={handleBack}

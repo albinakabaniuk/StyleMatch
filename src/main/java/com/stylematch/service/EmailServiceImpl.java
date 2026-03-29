@@ -19,6 +19,9 @@ public class EmailServiceImpl implements EmailService {
     @Value("${spring.mail.username:noreply@stylematch.com}")
     private String fromEmail;
 
+    @Value("${app.frontend-url:http://localhost:5173}")
+    private String frontendUrl;
+
     public EmailServiceImpl(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
@@ -33,16 +36,20 @@ public class EmailServiceImpl implements EmailService {
             helper.setTo(to);
             helper.setSubject("StyleMatch: Reset Your Password ✨");
 
+            String resetLink = frontendUrl + "/reset-password?token=" + token;
+
             log.info("Attempting to send password reset email to: {}", to);
-            // ... (htmlContent generation omitted for brevity in instruction, keeping same as before)
             String htmlContent = "<html><body style='font-family: Arial, sans-serif; color: #333;'>"
                     + "<div style='max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #eee; border-radius: 12px;'>"
                     + "<h2 style='color: #c084fc; text-align: center;'>StyleMatch</h2>"
                     + "<p>Hello,</p>"
-                    + "<p>We received a request to reset your password. Use the token below to set a new one:</p>"
-                    + "<div style='background: #f9f9f9; padding: 15px; border-radius: 8px; text-align: center; font-size: 1.2rem; font-weight: bold; color: #c084fc; margin: 20px 0;'>"
-                    + token
+                    + "<p>We received a request to reset your password. Click the button below to set a new one:</p>"
+                    + "<div style='text-align: center; margin: 30px 0;'>"
+                    + "<a href='" + resetLink + "' style='background-color: #c084fc; color: white; padding: 12px 24px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block;'>Reset Password ✨</a>"
                     + "</div>"
+                    + "<p>Or copy and paste this link into your browser:</p>"
+                    + "<p style='word-break: break-all; color: #c084fc;'>" + resetLink + "</p>"
+                    + "<p style='margin-top: 20px;'>Your reset token is: <strong>" + token + "</strong></p>"
                     + "<p>If you didn't request this, you can safely ignore this email.</p>"
                     + "<p style='font-size: 0.8rem; color: #999; margin-top: 30px;'>Stay stylish! ✨<br>The StyleMatch Team</p>"
                     + "</div></body></html>";
