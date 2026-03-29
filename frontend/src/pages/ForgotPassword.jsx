@@ -16,11 +16,12 @@ const ForgotPassword = () => {
         setLoading(true);
         setMessage('');
         setError('');
+        const normalizedEmail = email.toLowerCase().trim();
         try {
-            await api.post('/auth/forgot-password', { email });
+            await api.post('auth/forgot-password', { email: normalizedEmail });
             setMessage(t('auth.forgotSuccess'));
-        } catch {
-            setError(t('errors.generic'));
+        } catch (err) {
+            setError(err.response?.data?.message || err.message || t('errors.generic'));
         } finally {
             setLoading(false);
         }
