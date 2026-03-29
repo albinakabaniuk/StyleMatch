@@ -358,11 +358,18 @@ const Profile = () => {
         <div className="analysis-container">
             <Header />
 
-            <div className="mobile-stack" style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '2rem', alignItems: 'start' }}>
+            <div className="mobile-stack" style={{ 
+                maxWidth: 1000, 
+                margin: '0 auto', 
+                display: 'grid', 
+                gridTemplateColumns: window.innerWidth > 768 ? '1fr 1.5fr' : '1fr', 
+                gap: '2rem', 
+                alignItems: 'start' 
+            }}>
 
                 {/* ── Left Column: User Info ── */}
-                <div className="mobile-no-sticky" style={{ position: 'sticky', top: '2rem' }}>
-                    <div className="bratz-card glass-card" style={{ padding: '2rem', marginBottom: '1.5rem' }}>
+                <div className="mobile-no-sticky" style={{ position: window.innerWidth > 768 ? 'sticky' : 'static', top: '2rem', width: '100%' }}>
+                    <div className="bratz-card glass-card mobile-center" style={{ padding: '2rem', marginBottom: '1.5rem', marginLeft: 'auto', marginRight: 'auto' }}>
                         <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
                             <div style={{
                                 width: '100px',
@@ -406,7 +413,13 @@ const Profile = () => {
                             )}
                         </div>
 
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '0.8rem', marginBottom: '2rem' }}>
+                        <div style={{ 
+                            display: 'grid', 
+                            gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', 
+                            gap: '0.8rem', 
+                            marginBottom: '2rem',
+                            justifyContent: 'center' 
+                        }}>
                             <InfoItem icon="🎂" label={t('age')} value={profile?.age} />
                             <InfoItem icon="⚧" label={t('gender', 'Gender')} value={profile?.gender} />
                             <InfoItem icon="📏" label={t('height')} value={profile?.height ? `${profile.height} cm` : t('common.na', '—')} />
@@ -432,7 +445,7 @@ const Profile = () => {
                         </button>
                     </div>
 
-                    <div className="bratz-card glass-card" style={{ padding: '1.5rem' }}>
+                    <div className="bratz-card glass-card mobile-center" style={{ padding: '1.5rem', marginLeft: 'auto', marginRight: 'auto' }}>
                         <h4 style={{ margin: '0 0 1rem 0', fontSize: '0.9rem', color: '#ff007f', textTransform: 'uppercase' }}>
                             {t('settings', 'Account Settings')}
                         </h4>
@@ -441,7 +454,7 @@ const Profile = () => {
                                 style={{ width: '100%' }}
                                 buttonStyle={{ 
                                     width: '100%', 
-                                    justifyContent: 'flex-start',
+                                    justifyContent: window.innerWidth > 768 ? 'flex-start' : 'center',
                                     background: 'rgba(255,255,255,0.05)',
                                     border: '1px solid rgba(255,255,255,0.1)',
                                     borderRadius: '12px',

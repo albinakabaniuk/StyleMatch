@@ -99,7 +99,7 @@ const LanguageSwitcher = ({ value, style, buttonStyle, onLanguageChange }) => {
             <div style={{
                 position: 'absolute',
                 top: 'calc(100% + 10px)',
-                right: 0,
+                right: window.innerWidth < 640 ? 'auto' : 0,
                 width: '180px',
                 background: 'rgba(15, 5, 25, 0.9)',
                 backdropFilter: 'blur(20px)',
@@ -109,9 +109,15 @@ const LanguageSwitcher = ({ value, style, buttonStyle, onLanguageChange }) => {
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 opacity: isOpen ? 1 : 0,
                 visibility: isOpen ? 'visible' : 'hidden',
-                transform: isOpen ? 'translateY(0) scale(1)' : 'translateY(-10px) scale(0.95)',
                 boxShadow: '0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(176, 38, 255, 0.2)',
-                padding: '8px'
+                padding: '8px',
+                /* Handle mobile centering */
+                left: window.innerWidth < 640 ? '50%' : 'auto',
+                transformOrigin: window.innerWidth < 640 ? 'top center' : 'top right',
+                transform: isOpen 
+                    ? (window.innerWidth < 640 ? 'translateY(0) translateX(-50%) scale(1)' : 'translateY(0) scale(1)') 
+                    : (window.innerWidth < 640 ? 'translateY(-10px) translateX(-50%) scale(0.95)' : 'translateY(-10px) scale(0.95)'),
+                zIndex: 1001
             }}>
                 {LANGUAGES.map((lang) => {
                     const isActive = i18n.language === lang.code || i18n.language?.startsWith(`${lang.code}-`);

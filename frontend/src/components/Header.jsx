@@ -13,7 +13,7 @@ const Header = () => {
     };
 
     return (
-        <div className="bratz-nav" style={{ overflow: 'hidden' }}>
+        <div className="bratz-nav">
             <span 
                 className="mobile-center"
                 onClick={() => navigate('/analysis')}
