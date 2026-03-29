@@ -4,18 +4,19 @@ import { analyzePhoto } from '../services/analysisService';
 import ResultCard from './ResultCard';
 
 const PhotoUpload = () => {
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [file, setFile] = useState(null);
-    const [preview, setPreview] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState(null);
     const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
+    const [statusMsg, setStatusMsg] = useState('');
+    const [preview, setPreview] = useState(null);
+    const [result, setResult] = useState(null);
 
     const handleFileChange = (e) => {
         const selectedFile = e.target.files[0];
         if (selectedFile) {
             if (selectedFile.size > 15 * 1024 * 1024) {
-                setError('Photo is too large! Please select a file smaller than 15MB.');
+                setError('analysis.errorSize');
                 return;
             }
             setFile(selectedFile);
@@ -26,73 +27,172 @@ const PhotoUpload = () => {
 
     const handleUpload = async () => {
         if (!file) {
-            setError('Please select a photo first!');
+            setError('analysis.errorNoPhoto');
             return;
         }
-        setError('');
         setLoading(true);
+        setStatusMsg('analysis.uploading');
+        
         try {
+            const statusSequence = [
+                { msg: 'analysis.analyzingColors', delay: 1500 },
+                { msg: 'analysis.identifyingUndertone', delay: 3000 },
+                { msg: 'analysis.matchingPalette', delay: 4500 }
+            ];
+
+            statusSequence.forEach(({ msg, delay }) => {
+                setTimeout(() => {
+                    if (loading) setStatusMsg(msg);
+                }, delay);
+            });
+
             const data = await analyzePhoto(file, i18n.language);
             setResult(data);
         } catch (err) {
             console.error('Photo analysis failed:', err);
-            setError('Failed to analyze photo. Please try again.');
+            setError('analysis.errorFail');
         } finally {
             setLoading(false);
+            setStatusMsg('');
         }
     };
 
     return (
-        <div className="form-container" style={{ textAlign: 'center' }}>
-            <h2 style={{ color: '#ff007f', textShadow: '1px 1px 4px rgba(255,0,127,0.3)' }}>{t('analysis.photoScanTitle', 'Upload Your Best Selfie! 📸')}</h2>
-            <p style={{ color: '#b026ff' }}>{t('analysis.photoScanSub', 'Let our AI analyze your gorgeous features.')}</p>
-
+        <div style={{ animation: 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)' }}>
             {!result ? (
-                <>
-                    <div style={{ margin: '20px 0' }}>
+                <div className="bratz-card glass-card" style={{ 
+                    textAlign: 'center', 
+                    border: '1.5px solid var(--bratz-pink)',
+                    background: 'rgba(20, 5, 40, 0.7)',
+                    boxShadow: '0 20px 50px rgba(255, 0, 127, 0.2)'
+                }}>
+                    <h2 className="brand-font" style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>
+                        {t('analysis.photoScanTitle', 'AI Photo Scan')}
+                    </h2>
+                    
+                    <p style={{ color: '#fff', opacity: 0.8, marginBottom: '2rem', fontSize: '0.95rem', lineHeight: '1.6' }}>
+                        {t('analysis.photoScanDesc', 'Upload a well-lit portrait photo for instant AI analysis of your seasonal color type.')}
+                    </p>
+
+                    {error && <p className="error-message" style={{ marginBottom: '1.5rem' }}>{t(error, error)}</p>}
+
+                    <div 
+                        className="neon-border"
+                        style={{
+                            border: '2px dashed rgba(176, 38, 255, 0.4)',
+                            borderRadius: '20px',
+                            padding: '30px',
+                            cursor: 'pointer',
+                            transition: 'all 0.3s',
+                            background: preview ? 'transparent' : 'rgba(255, 255, 255, 0.03)',
+                            position: 'relative',
+                            overflow: 'hidden'
+                        }}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => {
+                            e.preventDefault();
+                            const droppedFile = e.dataTransfer.files[0];
+                            if (droppedFile) {
+                                if (droppedFile.size > 15 * 1024 * 1024) {
+                                    setError('analysis.errorSize');
+                                    return;
+                                }
+                                setFile(droppedFile);
+                                setPreview(URL.createObjectURL(droppedFile));
+                                setError('');
+                            }
+                        }}
+                        onClick={() => !loading && document.getElementById('photo-input').click()}
+                    >
+                        <input 
+                            id="photo-input"
+                            type="file" 
+                            accept="image/*" 
+                            onChange={handleFileChange} 
+                            style={{ display: 'none' }} 
+                        />
+                        
                         {preview ? (
-                            <img src={preview} alt="Preview" style={{ width: '200px', height: '200px', objectFit: 'cover', borderRadius: '20px', border: '3px solid #ff007f', boxShadow: '0 0 15px rgba(255,0,127,0.5)' }} />
+                            <img 
+                                src={preview} 
+                                alt="Preview" 
+                                style={{ width: '100%', maxHeight: '300px', objectFit: 'contain', borderRadius: '12px', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }} 
+                            />
                         ) : (
-                            <div style={{ width: '200px', height: '200px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#fdf0fb', border: '2px dashed #ff007f', borderRadius: '20px', color: '#ff007f' }}>
-                                {t('analysis.noImage')}
+                            <div style={{ padding: '20px 0' }}>
+                                <div style={{ fontSize: '3rem', marginBottom: '10px' }}>📸</div>
+                                <p style={{ color: 'var(--bratz-pink)', fontWeight: 600 }}>
+                                    {t('analysis.clickToUpload', 'Click or Drag Photo')}
+                                </p>
+                                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', marginTop: '8px' }}>
+                                    {t('analysis.maxSize', 'Max size: 15MB')}
+                                </p>
+                            </div>
+                        )}
+                        
+                        {loading && (
+                            <div style={{ 
+                                position: 'absolute', 
+                                inset: 0, 
+                                background: 'rgba(10, 0, 21, 0.8)', 
+                                display: 'flex', 
+                                flexDirection: 'column',
+                                alignItems: 'center', 
+                                justifyContent: 'center',
+                                borderRadius: '18px',
+                                zIndex: 10
+                            }}>
+                                <div className="loading-spinner" style={{ 
+                                    width: '50px', 
+                                    height: '50px', 
+                                    border: '4px solid rgba(176, 38, 255, 0.1)',
+                                    borderTop: '4px solid var(--bratz-pink)',
+                                    borderRadius: '50%',
+                                    animation: 'spin 1s linear infinite',
+                                    marginBottom: '15px'
+                                }} />
+                                <p className="brand-font" style={{ fontSize: '1.1rem', letterSpacing: '1px' }}>
+                                    {t(statusMsg || 'analysis.loading')}
+                                </p>
                             </div>
                         )}
                     </div>
 
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleFileChange}
-                        id="file-upload"
-                        style={{ display: 'none' }}
-                    />
-                    <label htmlFor="file-upload" className="submit-button" style={{ display: 'inline-block', cursor: 'pointer', margin: '10px', backgroundColor: '#b026ff' }}>
-                        {t('analysis.chooseFile', 'Choose File 📂')}
-                    </label>
-
-                    <button onClick={handleUpload} className="submit-button" disabled={loading} style={{ margin: '10px' }}>
-                        {loading ? t('analysis.analyzing') : t('analysis.analyzeBtn', 'Analyze Photo ✨')}
-                    </button>
-
                     {preview && !loading && (
-                        <div style={{ marginTop: '10px' }}>
+                        <div style={{ marginTop: '20px', display: 'flex', gap: '12px', justifyContent: 'center' }}>
+                           <button 
+                                onClick={handleUpload} 
+                                className="bratz-btn"
+                                style={{ flex: 1 }}
+                            >
+                                ✨ {t('analysis.startScan', 'Analyze Photo')}
+                            </button>
                             <button 
                                 onClick={() => { setFile(null); setPreview(null); }}
-                                style={{ background: 'none', border: 'none', color: '#b026ff', cursor: 'pointer', textDecoration: 'underline', fontSize: '0.9rem' }}
+                                className="bratz-btn ghost"
+                                style={{ flex: 0.5 }}
                             >
-                                {t('analysis.retake')}
+                                {t('analysis.retake', 'Changed Mind')}
                             </button>
                         </div>
                     )}
-
-                    {error && <p className="error-message">{t(error, error)}</p>}
-                </>
+                </div>
             ) : (
                 <ResultCard 
                     result={{ ...result, uploadedPhoto: preview }} 
                     onReset={() => { setResult(null); setFile(null); setPreview(null); }} 
                 />
             )}
+
+            <style>{`
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                .loading-spinner {
+                    box-shadow: 0 0 15px rgba(255, 0, 127, 0.3);
+                }
+            `}</style>
         </div>
     );
 };
